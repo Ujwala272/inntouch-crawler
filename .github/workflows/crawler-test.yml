@@ -3,6 +3,15 @@ name: Crawler Dependency Install & Test
 on:
   # Manual trigger
   workflow_dispatch:
+    inputs:
+      crawl_mode:
+        description: 'Crawl mode'
+        required: true
+        default: 'full'
+        type: choice
+        options:
+          - full
+          - discovery
 
   # Trigger on push to crawler directory
   push:
@@ -65,43 +74,83 @@ jobs:
             --start-url "https://www.inn-touch.ca/community/local-sales-library?forceNoRedirect=true" \
             --dry-run
 
-      - name: Run full InnTouch crawl (100 pages, with downloads)
+      - name: Run InnTouch crawl
         working-directory: ./crawler
         env:
           INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
           INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
+          CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'full' }}
         run: |
-          # Run the full crawl with file downloads and verbose logging
-          node bin/crawl.js \
-            --config config/inntouch.config.json \
-            --verbose
+          if [ "$CRAWL_MODE" = "discovery" ]; then
+            echo "🔍 Running DISCOVERY mode (500 pages max, no downloads)"
+            node bin/crawl.js \
+              --config config/inntouch-discovery.config.json \
+              --verbose
+          else
+            echo "📥 Running FULL mode (100 pages, with downloads)"
+            node bin/crawl.js \
+              --config config/inntouch.config.json \
+              --verbose
+          fi
 
       - name: Verify output files
         working-directory: ./crawler
+        env:
+          CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'full' }}
         run: |
           echo "Checking output files..."
           ls -lh output/
           echo ""
-          echo "Checking downloads..."
-          ls -lh output/downloads/ | head -20
-          echo ""
-          echo "Download count:"
-          find output/downloads -type f | wc -l
-          echo ""
-          echo "JSON output preview:"
-          head -50 output/inntouch_library_content.json
-          echo ""
-          echo "CSV output preview:"
-          head -10 output/inntouch_library_content.csv
-          echo ""
-          echo "Pages extracted:"
-          node -e "const data = require('./output/inntouch_library_content.json'); console.log('Total pages:', data.pages?.length || 0); console.log('Categories:', data.categories?.length || 0); console.log('Files downloaded:', data.metadata?.statistics?.filesDownloaded || 0);"
+
+          if [ "$CRAWL_MODE" = "discovery" ]; then
+            echo "=== DISCOVERY MODE RESULTS ==="
+            echo "JSON output preview:"
+            head -50 output/inntouch_discovery.json
+            echo ""
+            echo "Analysis:"
+            node -e "
+              const data = require('./output/inntouch_discovery.json');
+              console.log('Total pages crawled:', data.pages?.length || 0);
+              console.log('Categories found:', data.categories?.length || 0);
+              console.log('');
+              console.log('Content Type Breakdown:');
+              const types = {};
+              data.pages?.forEach(p => {
+                const url = p.url || '';
+                if (url.includes('/docs/DOC-')) types['Documents'] = (types['Documents'] || 0) + 1;
+                else if (url.includes('/pages/')) types['Pages'] = (types['Pages'] || 0) + 1;
+                else types['Other'] = (types['Other'] || 0) + 1;
+              });
+              Object.entries(types).forEach(([k,v]) => console.log('  -', k + ':', v));
+              console.log('');
+              console.log('Total unique URLs discovered:', data.pages?.length || 0);
+              console.log('Potential files (not downloaded):', data.pages?.reduce((sum, p) => sum + (p.documents?.length || 0) + (p.images?.length || 0), 0));
+            "
+          else
+            echo "=== FULL MODE RESULTS ==="
+            echo "Checking downloads..."
+            ls -lh output/downloads/ | head -20
+            echo ""
+            echo "Download count:"
+            find output/downloads -type f | wc -l
+            echo ""
+            echo "JSON output preview:"
+            head -50 output/inntouch_library_content.json
+            echo ""
+            echo "CSV output preview:"
+            head -10 output/inntouch_library_content.csv
+            echo ""
+            echo "Pages extracted:"
+            node -e "const data = require('./output/inntouch_library_content.json'); console.log('Total pages:', data.pages?.length || 0); console.log('Categories:', data.categories?.length || 0); console.log('Files downloaded:', data.metadata?.statistics?.filesDownloaded || 0);"
+          fi
 
       - name: Upload output artifacts
         uses: actions/upload-artifact@v4
         if: always()
+        env:
+          CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'full' }}
         with:
-          name: inntouch-full-crawl-${{ github.run_number }}
+          name: inntouch-${{ github.event.inputs.crawl_mode || 'full' }}-crawl-${{ github.run_number }}
           path: |
             crawler/output/*.json
             crawler/output/*.csv
@@ -128,13 +177,30 @@ jobs:
           echo "**NPM Version:** $(npm --version)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          if [ -f crawler/output/inntouch_library_content.json ]; then
-            cd crawler
-            echo "**Pages Extracted:** $(node -e "console.log(require('./output/inntouch_library_content.json').pages?.length || 0)")" >> $GITHUB_STEP_SUMMARY
-            echo "**Categories Found:** $(node -e "console.log(require('./output/inntouch_library_content.json').categories?.length || 0)")" >> $GITHUB_STEP_SUMMARY
-            echo "**Files Downloaded:** $(node -e "console.log(require('./output/inntouch_library_content.json').metadata?.statistics?.filesDownloaded || 0)")" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "✅ Full crawl completed successfully" >> $GITHUB_STEP_SUMMARY
+          CRAWL_MODE="${{ github.event.inputs.crawl_mode || 'full' }}"
+
+          if [ "$CRAWL_MODE" = "discovery" ]; then
+            if [ -f crawler/output/inntouch_discovery.json ]; then
+              cd crawler
+              echo "**Mode:** Discovery (no downloads)" >> $GITHUB_STEP_SUMMARY
+              echo "**Pages Discovered:** $(node -e "console.log(require('./output/inntouch_discovery.json').pages?.length || 0)")" >> $GITHUB_STEP_SUMMARY
+              echo "**Categories Found:** $(node -e "console.log(require('./output/inntouch_discovery.json').categories?.length || 0)")" >> $GITHUB_STEP_SUMMARY
+              echo "**Potential Files:** $(node -e "const d=require('./output/inntouch_discovery.json'); console.log(d.pages?.reduce((s,p)=>s+(p.documents?.length||0)+(p.images?.length||0),0)||0)")" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "✅ Discovery crawl completed successfully" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "❌ No discovery output generated" >> $GITHUB_STEP_SUMMARY
+            fi
           else
-            echo "❌ No output files generated" >> $GITHUB_STEP_SUMMARY
+            if [ -f crawler/output/inntouch_library_content.json ]; then
+              cd crawler
+              echo "**Mode:** Full (with downloads)" >> $GITHUB_STEP_SUMMARY
+              echo "**Pages Extracted:** $(node -e "console.log(require('./output/inntouch_library_content.json').pages?.length || 0)")" >> $GITHUB_STEP_SUMMARY
+              echo "**Categories Found:** $(node -e "console.log(require('./output/inntouch_library_content.json').categories?.length || 0)")" >> $GITHUB_STEP_SUMMARY
+              echo "**Files Downloaded:** $(node -e "console.log(require('./output/inntouch_library_content.json').metadata?.statistics?.filesDownloaded || 0)")" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "✅ Full crawl completed successfully" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "❌ No output files generated" >> $GITHUB_STEP_SUMMARY
+            fi
           fi
