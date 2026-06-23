@@ -170,6 +170,10 @@ export class GenericCrawler {
         await sleep(2000);
       }
 
+      // Additional wait for JavaScript/AJAX content
+      consoleLogger.debug('Waiting for dynamic content to load...');
+      await sleep(3000);
+
       // Extract content
       const content = await this.extractor.extractContent(this.page, url);
       content.depth = depth;

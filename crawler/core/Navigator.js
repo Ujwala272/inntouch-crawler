@@ -33,12 +33,23 @@ export class Navigator {
         const clickableDivs = document.querySelectorAll('div[onclick], div[data-url], div.clickable').length;
         const jiveLinks = document.querySelectorAll('.jive-link, .j-link, [class*="tile"], [class*="category"]').length;
 
+        // Get ALL anchor tags with their hrefs
+        const allAnchorList = Array.from(document.querySelectorAll('a')).slice(0, 10).map(a => ({
+          href: a.href || '(no href)',
+          text: a.textContent.trim().substring(0, 50),
+          classes: a.className
+        }));
+
         return {
           allAnchors,
           anchorsWithHref,
           clickableDivs,
           jiveLinks,
           bodyClasses: document.body.className,
+          documentTitle: document.title,
+          url: window.location.href,
+          allAnchorSamples: allAnchorList,
+          bodyHTML: document.body ? document.body.innerHTML.substring(0, 500) : 'NO BODY',
           sampleElements: Array.from(document.querySelectorAll('.j-tile, .jive-tile, [class*="tile"]')).slice(0, 3).map(el => ({
             tag: el.tagName,
             classes: el.className,
