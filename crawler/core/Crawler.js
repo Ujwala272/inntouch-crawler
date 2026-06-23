@@ -153,17 +153,21 @@ export class GenericCrawler {
 
       // Navigate to page
       await this.page.goto(url, {
-        waitUntil: 'networkidle',
+        waitUntil: 'domcontentloaded',
         timeout: 60000
       });
 
       // Wait for content to load
       if (this.config.crawl?.waitForSelector) {
         try {
-          await this.page.waitForSelector(this.config.crawl.waitForSelector, { timeout: 5000 });
+          await this.page.waitForSelector(this.config.crawl.waitForSelector, { timeout: 10000 });
         } catch (e) {
           // Continue even if selector not found
+          consoleLogger.warn(`Selector not found: ${this.config.crawl.waitForSelector}`);
         }
+      } else {
+        // Give page a moment to render if no selector specified
+        await sleep(2000);
       }
 
       // Extract content

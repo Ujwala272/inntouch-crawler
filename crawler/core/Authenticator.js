@@ -52,7 +52,7 @@ export class Authenticator {
 
     // Navigate to login page
     await page.goto(loginUrl, {
-      waitUntil: 'networkidle',
+      waitUntil: 'domcontentloaded',
       timeout: 60000
     });
 
@@ -74,7 +74,7 @@ export class Authenticator {
 
     // Wait for navigation after submit
     await Promise.all([
-      page.waitForNavigation({ waitUntil: 'networkidle', timeout: 60000 }),
+      page.waitForNavigation({ waitUntil: 'domcontentloaded', timeout: 60000 }),
       page.click(submitSelector)
     ]);
 
