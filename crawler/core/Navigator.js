@@ -19,6 +19,7 @@ export class Navigator {
 
     this.queue = [];
     this.pagesVisited = 0;
+    this.totalDiscovered = 0;
   }
 
   /**
@@ -77,6 +78,7 @@ export class Navigator {
       const newLinks = [];
       const filteredLinks = [];
       for (const link of links) {
+        this.totalDiscovered++; // Track every URL discovered
         const shouldCrawl = this.shouldCrawl(link.url, currentUrl, currentDepth + 1);
         if (!shouldCrawl) {
           filteredLinks.push(link.url);
@@ -236,6 +238,13 @@ export class Navigator {
   }
 
   /**
+   * Get total URLs discovered
+   */
+  getTotalDiscovered() {
+    return this.totalDiscovered;
+  }
+
+  /**
    * Get statistics
    */
   getStats() {
@@ -243,7 +252,8 @@ export class Navigator {
       queueSize: this.queue.length,
       pagesVisited: this.pagesVisited,
       maxPages: this.maxPages,
-      maxDepth: this.maxDepth
+      maxDepth: this.maxDepth,
+      urlsDiscovered: this.totalDiscovered
     };
   }
 }

@@ -47,7 +47,9 @@ export class JsonExporter {
       errors,
       startUrl,
       startTime,
-      endTime
+      endTime,
+      navigatorStats,
+      queueStatus
     } = crawlResults;
 
     // Calculate statistics
@@ -55,7 +57,9 @@ export class JsonExporter {
       pagesVisited: pages.length,
       filesDownloaded: this.countDownloadedFiles(pages),
       errors: errors.length,
-      duration: this.calculateDuration(startTime, endTime)
+      duration: this.calculateDuration(startTime, endTime),
+      urlsDiscovered: navigatorStats?.urlsDiscovered || pages.length,
+      maxDepthReached: this.getMaxDepth(pages)
     };
 
     // Detect library info from first page
@@ -78,7 +82,11 @@ export class JsonExporter {
           maxDepth: config.crawl?.maxDepth,
           maxPages: config.crawl?.maxPages
         },
-        statistics
+        statistics,
+        queueStatus: queueStatus || {
+          remainingInQueue: 0,
+          totalDiscovered: pages.length
+        }
       },
       library: libraryInfo,
       categories,
@@ -123,6 +131,14 @@ export class JsonExporter {
       count += page.images.filter(i => i.filename).length;
     });
     return count;
+  }
+
+  /**
+   * Get maximum depth reached
+   */
+  getMaxDepth(pages) {
+    if (!pages || pages.length === 0) return 0;
+    return Math.max(...pages.map(p => p.depth || 0));
   }
 
   /**

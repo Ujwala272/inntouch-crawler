@@ -63,6 +63,14 @@ export class GenericCrawler {
       // Crawl pages (BFS)
       await this.crawlPages();
 
+      // Capture final navigator stats and queue status
+      this.results.navigatorStats = this.navigator.getStats();
+      this.results.queueStatus = {
+        remainingInQueue: this.navigator.getQueueSize(),
+        totalDiscovered: this.navigator.getTotalDiscovered(),
+        urlsCrawled: this.navigator.getPagesVisited()
+      };
+
       // Export results
       await this.exportResults();
 

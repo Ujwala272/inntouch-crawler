@@ -104,27 +104,154 @@ jobs:
 
           if [ "$CRAWL_MODE" = "discovery" ]; then
             echo "=== DISCOVERY MODE RESULTS ==="
-            echo "JSON output preview:"
-            head -50 output/inntouch_discovery.json
             echo ""
-            echo "Analysis:"
+            echo "Detailed Analysis:"
             node -e "
               const data = require('./output/inntouch_discovery.json');
-              console.log('Total pages crawled:', data.pages?.length || 0);
-              console.log('Categories found:', data.categories?.length || 0);
+              const pages = data.pages || [];
+              const metadata = data.metadata || {};
+              const stats = metadata.statistics || {};
+
+              console.log('═══════════════════════════════════════════════════════════');
+              console.log('📊 DISCOVERY CRAWL REPORT');
+              console.log('═══════════════════════════════════════════════════════════');
               console.log('');
-              console.log('Content Type Breakdown:');
-              const types = {};
-              data.pages?.forEach(p => {
+
+              // 1 & 2. URLs discovered vs crawled
+              console.log('🔍 URL Discovery:');
+              console.log('  • Total unique URLs discovered:', pages.length);
+              console.log('  • Total URLs actually crawled:', stats.pagesVisited || pages.length);
+
+              // 3. URLs skipped
+              const maxPages = 500;
+              const skipped = Math.max(0, (stats.urlsDiscovered || pages.length) - pages.length);
+              console.log('  • URLs skipped (queue/limit):', skipped);
+              if (pages.length >= maxPages) {
+                console.log('  ⚠️  WARNING: Hit maxPages limit! More content likely exists.');
+              }
+              console.log('');
+
+              // 4 & 5. Categories and content breakdown
+              console.log('📁 Content Organization:');
+
+              // Extract categories from URLs
+              const categoryMap = {};
+              const categoryPattern = /\/local-sales-library\/([^\/\?]+)/;
+
+              pages.forEach(p => {
                 const url = p.url || '';
-                if (url.includes('/docs/DOC-')) types['Documents'] = (types['Documents'] || 0) + 1;
-                else if (url.includes('/pages/')) types['Pages'] = (types['Pages'] || 0) + 1;
-                else types['Other'] = (types['Other'] || 0) + 1;
+                const match = url.match(categoryPattern);
+                if (match && match[1]) {
+                  const category = match[1]
+                    .replace(/-/g, ' ')
+                    .replace(/\\b\\w/g, l => l.toUpperCase());
+
+                  if (!categoryMap[category]) {
+                    categoryMap[category] = {
+                      pages: [],
+                      documents: 0,
+                      videos: 0
+                    };
+                  }
+                  categoryMap[category].pages.push(url);
+                  categoryMap[category].documents += (p.documents?.length || 0);
+                  categoryMap[category].videos += (p.videos?.length || 0);
+                }
               });
-              Object.entries(types).forEach(([k,v]) => console.log('  -', k + ':', v));
+
+              const categories = Object.keys(categoryMap).sort();
+              console.log('  • Top-level categories discovered:', categories.length);
               console.log('');
-              console.log('Total unique URLs discovered:', data.pages?.length || 0);
-              console.log('Potential files (not downloaded):', data.pages?.reduce((sum, p) => sum + (p.documents?.length || 0) + (p.images?.length || 0), 0));
+              console.log('  Category Breakdown:');
+              categories.forEach(cat => {
+                const info = categoryMap[cat];
+                console.log(\`    - \${cat}\`);
+                console.log(\`        Pages: \${info.pages.length}\`);
+                console.log(\`        Documents: \${info.documents}\`);
+                console.log(\`        Videos: \${info.videos}\`);
+              });
+              console.log('');
+
+              // Content type breakdown
+              console.log('📄 Content Type Distribution:');
+              const types = {
+                'Category Pages': 0,
+                'Document Pages (DOC-)': 0,
+                'Standard Pages': 0,
+                'Other': 0
+              };
+
+              pages.forEach(p => {
+                const url = p.url || '';
+                if (url.includes('/docs/DOC-')) types['Document Pages (DOC-)']++;
+                else if (url.match(categoryPattern) && !url.includes('/docs/')) types['Category Pages']++;
+                else if (url.includes('/pages/')) types['Standard Pages']++;
+                else types['Other']++;
+              });
+
+              Object.entries(types).forEach(([k,v]) => {
+                if (v > 0) console.log(\`  • \${k}: \${v}\`);
+              });
+              console.log('');
+
+              // 6. Maximum depth reached
+              console.log('🌲 Crawl Depth Analysis:');
+              const depths = pages.map(p => p.depth || 0);
+              const maxDepth = depths.length > 0 ? Math.max(...depths) : 0;
+              const depthDistribution = {};
+              depths.forEach(d => {
+                depthDistribution[d] = (depthDistribution[d] || 0) + 1;
+              });
+
+              console.log('  • Maximum crawl depth reached:', maxDepth);
+              console.log('  • Depth distribution:');
+              Object.keys(depthDistribution).sort().forEach(d => {
+                console.log(\`      Depth \${d}: \${depthDistribution[d]} pages\`);
+              });
+              console.log('');
+
+              // 7. Queue status
+              console.log('⏸️  Queue Status:');
+              const queueInfo = metadata.queueStatus || {};
+              const remainingUrls = queueInfo.remainingInQueue || 0;
+              const totalDiscovered = queueInfo.totalDiscovered || pages.length;
+
+              if (remainingUrls > 0) {
+                console.log('  ⚠️  URLs remain in queue:', remainingUrls);
+                console.log('  • These URLs were discovered but not crawled');
+                console.log('  • Reason: Hit maxPages limit (\${maxPages})');
+              } else {
+                console.log('  ✅ Queue empty - all discovered URLs were crawled');
+              }
+              console.log('');
+
+              // Additional insights
+              console.log('📦 Resource Summary:');
+              const totalDocs = pages.reduce((sum, p) => sum + (p.documents?.length || 0), 0);
+              const totalImages = pages.reduce((sum, p) => sum + (p.images?.length || 0), 0);
+              const totalVideos = pages.reduce((sum, p) => sum + (p.videos?.length || 0), 0);
+
+              console.log('  • PDF/Document references:', totalDocs);
+              console.log('  • Image references:', totalImages);
+              console.log('  • Video embeds:', totalVideos);
+              console.log('  • Total resources found:', totalDocs + totalImages + totalVideos);
+              console.log('');
+
+              // Recommendations
+              console.log('💡 Recommendations:');
+              if (pages.length >= maxPages || remainingUrls > 0) {
+                const recommended = Math.ceil(pages.length * 1.5);
+                console.log(\`  ⚠️  Content limit reached! Increase maxPages to \${recommended}+ and re-run.\`);
+              } else {
+                console.log(\`  ✅ All content discovered. Run full crawl with maxPages: \${pages.length + 50}\`);
+              }
+
+              if (maxDepth >= 4) {
+                console.log('  ℹ️  Deep nesting detected. Content well-organized in categories.');
+              }
+
+              console.log('');
+              console.log('═══════════════════════════════════════════════════════════');
             "
           else
             echo "=== FULL MODE RESULTS ==="
