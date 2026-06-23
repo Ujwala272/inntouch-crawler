@@ -65,19 +65,15 @@ jobs:
             --start-url "https://www.inn-touch.ca/community/local-sales-library?forceNoRedirect=true" \
             --dry-run
 
-      - name: Run quick InnTouch crawl test (5 pages, no downloads)
+      - name: Run full InnTouch crawl (100 pages, with downloads)
         working-directory: ./crawler
         env:
           INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
           INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
         run: |
-          # Update config to run headless in CI
-          sed -i 's/"headless": false/"headless": true/' config/inntouch-quick-test.config.json
-
-          # Run the test
+          # Run the full crawl with file downloads
           node bin/crawl.js \
-            --config config/inntouch-quick-test.config.json \
-            --no-download
+            --config config/inntouch.config.json
 
       - name: Verify output files
         working-directory: ./crawler
@@ -85,24 +81,30 @@ jobs:
           echo "Checking output files..."
           ls -lh output/
           echo ""
+          echo "Checking downloads..."
+          ls -lh output/downloads/ | head -20
+          echo ""
+          echo "Download count:"
+          find output/downloads -type f | wc -l
+          echo ""
           echo "JSON output preview:"
-          head -50 output/test_library_content.json
+          head -50 output/inntouch_library_content.json
           echo ""
           echo "CSV output preview:"
-          head -10 output/test_library_content.csv
+          head -10 output/inntouch_library_content.csv
           echo ""
           echo "Pages extracted:"
-          node -e "const data = require('./output/test_library_content.json'); console.log('Total pages:', data.pages?.length || 0); console.log('Categories:', data.categories?.length || 0);"
+          node -e "const data = require('./output/inntouch_library_content.json'); console.log('Total pages:', data.pages?.length || 0); console.log('Categories:', data.categories?.length || 0); console.log('Files downloaded:', data.metadata?.statistics?.filesDownloaded || 0);"
 
       - name: Upload output artifacts
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: crawler-output-${{ github.run_number }}
+          name: inntouch-full-crawl-${{ github.run_number }}
           path: |
             crawler/output/*.json
             crawler/output/*.csv
-            crawler/output/test-downloads/**
+            crawler/output/downloads/**
           retention-days: 30
 
       - name: Upload npm debug logs on failure
@@ -125,12 +127,13 @@ jobs:
           echo "**NPM Version:** $(npm --version)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          if [ -f crawler/output/test_library_content.json ]; then
+          if [ -f crawler/output/inntouch_library_content.json ]; then
             cd crawler
-            echo "**Pages Extracted:** $(node -e "console.log(require('./output/test_library_content.json').pages?.length || 0)")" >> $GITHUB_STEP_SUMMARY
-            echo "**Categories Found:** $(node -e "console.log(require('./output/test_library_content.json').categories?.length || 0)")" >> $GITHUB_STEP_SUMMARY
+            echo "**Pages Extracted:** $(node -e "console.log(require('./output/inntouch_library_content.json').pages?.length || 0)")" >> $GITHUB_STEP_SUMMARY
+            echo "**Categories Found:** $(node -e "console.log(require('./output/inntouch_library_content.json').categories?.length || 0)")" >> $GITHUB_STEP_SUMMARY
+            echo "**Files Downloaded:** $(node -e "console.log(require('./output/inntouch_library_content.json').metadata?.statistics?.filesDownloaded || 0)")" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "✅ Output files generated successfully" >> $GITHUB_STEP_SUMMARY
+            echo "✅ Full crawl completed successfully" >> $GITHUB_STEP_SUMMARY
           else
             echo "❌ No output files generated" >> $GITHUB_STEP_SUMMARY
           fi
