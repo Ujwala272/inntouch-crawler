@@ -1,0 +1,39 @@
+{
+  "name": "Generic Website Preset",
+  "description": "Heuristic-based configuration for arbitrary websites",
+  "auth": {
+    "strategy": "none"
+  },
+  "extraction": {
+    "useHeuristics": true,
+    "selectors": {
+      "title": "h1, .title, .page-title, .post-title, article h1",
+      "body": "article, main, .content, .post-content, .entry-content",
+      "videos": "iframe[src*='vimeo'], iframe[src*='youtube'], iframe[src*='youtu.be'], video",
+      "images": "img[src]",
+      "documents": "a[href$='.pdf'], a[href$='.docx'], a[href$='.xlsx'], a[href$='.pptx']"
+    }
+  },
+  "crawl": {
+    "maxDepth": 2,
+    "maxPages": 50,
+    "allowedDomains": [],
+    "includePatterns": [],
+    "excludePatterns": [
+      "/login",
+      "/logout",
+      "/admin",
+      "/wp-admin",
+      "/search",
+      "/tag/",
+      "/author/"
+    ],
+    "delay": 1000
+  },
+  "download": {
+    "enabled": true,
+    "downloadDir": "./downloads",
+    "allowedTypes": ["pdf", "docx", "xlsx", "pptx", "jpg", "png"],
+    "maxFileSize": 52428800
+  }
+}

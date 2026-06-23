@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment
+.env
+.env.local
+*.local
+
+# Output
+output/
+downloads/
+*.json
+*.csv
+!config/**/*.json
+!package.json
+
+# Logs
+*.log
+logs/
+
+# Session files
+*-session.json
+auth-session.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Playwright
+playwright/.cache/
+test-results/

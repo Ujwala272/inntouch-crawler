@@ -1,0 +1,138 @@
+name: Crawler Dependency Install & Test
+
+on:
+  # Manual trigger
+  workflow_dispatch:
+
+  # Trigger on push to crawler directory
+  push:
+    paths:
+      - 'crawler/**'
+      - '.github/workflows/crawler-test.yml'
+
+  # Trigger on pull request
+  pull_request:
+    paths:
+      - 'crawler/**'
+
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+          cache-dependency-path: crawler/package-lock.json
+
+      - name: Install crawler dependencies
+        working-directory: ./crawler
+        run: npm install
+
+      - name: Install Playwright Chromium browser
+        working-directory: ./crawler
+        run: npx playwright install chromium --with-deps
+
+      - name: Verify installation
+        working-directory: ./crawler
+        run: |
+          echo "Checking node_modules..."
+          ls -la node_modules/ | head -20
+          echo ""
+          echo "Checking Playwright installation..."
+          npx playwright --version
+          echo ""
+          echo "Testing module import..."
+          node -e "import('./core/Crawler.js').then(() => console.log('✅ Crawler module loaded successfully')).catch(e => { console.error('❌ Failed:', e.message); process.exit(1); })"
+
+      - name: Create .env file
+        working-directory: ./crawler
+        run: |
+          echo "INNTOUCH_USERNAME=${{ secrets.INNTOUCH_USERNAME }}" >> .env
+          echo "INNTOUCH_PASSWORD=${{ secrets.INNTOUCH_PASSWORD }}" >> .env
+          echo "BASE_URL=https://www.inn-touch.ca" >> .env
+          echo "HEADLESS=true" >> .env
+          echo "LOG_LEVEL=info" >> .env
+
+      - name: Run dry-run test
+        working-directory: ./crawler
+        run: |
+          node bin/crawl.js \
+            --preset jive \
+            --start-url "https://www.inn-touch.ca/community/local-sales-library?forceNoRedirect=true" \
+            --dry-run
+
+      - name: Run quick InnTouch crawl test (5 pages, no downloads)
+        working-directory: ./crawler
+        env:
+          INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
+          INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
+        run: |
+          # Update config to run headless in CI
+          sed -i 's/"headless": false/"headless": true/' config/inntouch-quick-test.config.json
+
+          # Run the test
+          node bin/crawl.js \
+            --config config/inntouch-quick-test.config.json \
+            --no-download
+
+      - name: Verify output files
+        working-directory: ./crawler
+        run: |
+          echo "Checking output files..."
+          ls -lh output/
+          echo ""
+          echo "JSON output preview:"
+          head -50 output/test_library_content.json
+          echo ""
+          echo "CSV output preview:"
+          head -10 output/test_library_content.csv
+          echo ""
+          echo "Pages extracted:"
+          node -e "const data = require('./output/test_library_content.json'); console.log('Total pages:', data.pages?.length || 0); console.log('Categories:', data.categories?.length || 0);"
+
+      - name: Upload output artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: crawler-output-${{ github.run_number }}
+          path: |
+            crawler/output/*.json
+            crawler/output/*.csv
+            crawler/output/test-downloads/**
+          retention-days: 30
+
+      - name: Upload npm debug logs on failure
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: npm-debug-logs-${{ github.run_number }}
+          path: |
+            crawler/npm-debug.log
+            crawler/package-lock.json
+          retention-days: 7
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Crawler Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Node Version:** $(node --version)" >> $GITHUB_STEP_SUMMARY
+          echo "**NPM Version:** $(npm --version)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f crawler/output/test_library_content.json ]; then
+            cd crawler
+            echo "**Pages Extracted:** $(node -e "console.log(require('./output/test_library_content.json').pages?.length || 0)")" >> $GITHUB_STEP_SUMMARY
+            echo "**Categories Found:** $(node -e "console.log(require('./output/test_library_content.json').categories?.length || 0)")" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "✅ Output files generated successfully" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ No output files generated" >> $GITHUB_STEP_SUMMARY
+          fi

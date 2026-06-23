@@ -1,0 +1,88 @@
+name: InnTouch Library Scraper
+
+on:
+  # Manual trigger button
+  workflow_dispatch:
+    inputs:
+      target_org:
+        description: 'Target Salesforce org'
+        required: true
+        default: 'qa'
+        type: choice
+        options:
+          - qa
+          - dev
+          - prod
+
+  # Scheduled: Every Monday at 6:00 AM EST
+  schedule:
+    - cron: '0 11 * * 1'  # 11:00 UTC = 6:00 AM EST
+
+jobs:
+  scrape-and-import:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          cd scraper
+          npm install puppeteer cheerio fs-extra dotenv
+
+      - name: Run scraper
+        env:
+          INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
+          INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
+        run: |
+          cd scraper
+          node scraper-github-actions.js
+
+      - name: Upload to Salesforce
+        env:
+          SF_CLIENT_ID: ${{ secrets.SF_CLIENT_ID }}
+          SF_CLIENT_SECRET: ${{ secrets.SF_CLIENT_SECRET }}
+          SF_USERNAME: ${{ secrets.SF_USERNAME }}
+          SF_PASSWORD: ${{ secrets.SF_PASSWORD }}
+          SF_INSTANCE_URL: ${{ secrets.SF_INSTANCE_URL }}
+          TARGET_ORG: ${{ github.event.inputs.target_org || 'qa' }}
+        run: |
+          cd scraper
+          node salesforce-uploader.js
+
+      - name: Archive extraction results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: extraction-results-${{ github.run_number }}
+          path: |
+            scraper/output/*.json
+            scraper/output/*.csv
+          retention-days: 30
+
+      - name: Send notification
+        if: always()
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        run: |
+          STATUS=${{ job.status }}
+          curl -X POST $SLACK_WEBHOOK \
+            -H 'Content-Type: application/json' \
+            -d "{
+              \"text\": \"InnTouch Library Scraper - $STATUS\",
+              \"blocks\": [
+                {
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \"*InnTouch Library Scraper*\\n*Status:* $STATUS\\n*Org:* ${{ github.event.inputs.target_org || 'qa' }}\\n*Run:* <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>\"
+                  }
+                }
+              ]
+            }"

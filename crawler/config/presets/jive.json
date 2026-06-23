@@ -1,0 +1,53 @@
+{
+  "name": "Jive Community Platform Preset",
+  "description": "Configuration for Jive-based community platforms (like InnTouch)",
+  "auth": {
+    "strategy": "form",
+    "loginUrl": "${BASE_URL}/login.jspa",
+    "selectors": {
+      "username": "input[name='username'], input#username",
+      "password": "input[name='password'], input#password",
+      "submit": "input[type='submit'], button[type='submit']"
+    },
+    "successIndicator": {
+      "urlNotContains": "/login"
+    }
+  },
+  "extraction": {
+    "useHeuristics": true,
+    "selectors": {
+      "title": "h1, .j-placeTitle, .j-placeName, span.j-place-name",
+      "body": ".jive-rendered-content, .j-description, .jive-description-text",
+      "category": "h2, .j-category",
+      "videos": "iframe[src*='vimeo'], iframe[src*='youtube'], iframe[src*='youtu.be']",
+      "images": "img[src*='cachefly'], img[src*='/servlet/'], img.jive-image",
+      "documents": "a[href*='/docs/DOC-'], a[href*='/servlet/JiveServlet/download'], a[href$='.pdf'], a[href$='.docx']"
+    }
+  },
+  "crawl": {
+    "maxDepth": 3,
+    "maxPages": 100,
+    "allowedDomains": ["inn-touch.ca"],
+    "includePatterns": [
+      "/community/",
+      "/docs/DOC-"
+    ],
+    "excludePatterns": [
+      "/login",
+      "/logout",
+      "/profile",
+      "/people",
+      "/admin",
+      "/search",
+      "/content/edit"
+    ],
+    "waitForSelector": ".jive-rendered-content, .j-description",
+    "delay": 1500
+  },
+  "download": {
+    "enabled": true,
+    "downloadDir": "./downloads",
+    "allowedTypes": ["pdf", "docx", "xlsx", "pptx", "jpg", "png", "gif"],
+    "maxFileSize": 52428800
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "generic-library-crawler",
+  "version": "1.0.0",
+  "description": "Generic web crawler for library content extraction and Salesforce import",
+  "main": "core/Crawler.js",
+  "type": "module",
+  "bin": {
+    "crawl": "./bin/crawl.js"
+  },
+  "scripts": {
+    "start": "node bin/crawl.js",
+    "crawl:inntouch": "node bin/crawl.js --preset jive --config config/inntouch.config.json",
+    "test": "echo \"Tests not yet implemented\""
+  },
+  "keywords": [
+    "crawler",
+    "web-scraping",
+    "playwright",
+    "salesforce",
+    "library",
+    "content-extraction"
+  ],
+  "author": "Choice Hotels",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.44.0",
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.2.0",
+    "commander": "^12.1.0",
+    "winston": "^3.13.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

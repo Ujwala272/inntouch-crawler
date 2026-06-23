@@ -1,0 +1,57 @@
+{
+  "name": "InnTouch Local Sales Library - Quick Test",
+  "startUrl": "https://www.inn-touch.ca/community/local-sales-library?forceNoRedirect=true",
+  "headless": false,
+  "auth": {
+    "strategy": "form",
+    "loginUrl": "https://www.inn-touch.ca/login.jspa",
+    "credentials": {
+      "username": "${INNTOUCH_USERNAME}",
+      "password": "${INNTOUCH_PASSWORD}"
+    },
+    "selectors": {
+      "username": "input[name='username'], input#username",
+      "password": "input[name='password'], input#password",
+      "submit": "button[type='submit'], input[type='submit']"
+    },
+    "successIndicator": {
+      "urlContains": "/community"
+    }
+  },
+  "crawl": {
+    "maxDepth": 1,
+    "maxPages": 5,
+    "allowedDomains": ["www.inn-touch.ca", "inn-touch.ca"],
+    "includePatterns": [
+      "/community/local-sales-library"
+    ],
+    "excludePatterns": [
+      "/login",
+      "/logout"
+    ],
+    "waitForSelector": ".jive-rendered-content, .j-description, .j-body-main",
+    "delay": 2000
+  },
+  "extraction": {
+    "useHeuristics": true,
+    "selectors": {
+      "title": "h1, .j-placeTitle, span.j-place-name, .j-orig-place-name",
+      "body": ".jive-rendered-content, .j-description, .j-body-main",
+      "category": "h2, .j-browse-title",
+      "videos": "iframe[src*='vimeo'], iframe[src*='youtube'], iframe[src*='youtu.be']",
+      "images": "img[src*='cachefly'], img[src*='/servlet/'], img.jive-image",
+      "documents": "a[href*='/docs/DOC-'], a[href*='/servlet/JiveServlet/download'], a[href$='.pdf'], a[href$='.docx'], a.jive-attachment-link"
+    }
+  },
+  "download": {
+    "enabled": true,
+    "downloadDir": "./output/test-downloads",
+    "allowedTypes": ["pdf", "docx", "xlsx", "pptx", "jpg", "png", "gif"],
+    "maxFileSize": 52428800
+  },
+  "output": {
+    "formats": ["json", "csv"],
+    "jsonFile": "./output/test_library_content.json",
+    "csvFile": "./output/test_library_content.csv"
+  }
+}
