@@ -40,8 +40,13 @@ export class Navigator {
 
       // Filter and add to queue
       const newLinks = [];
+      const filteredLinks = [];
       for (const link of links) {
-        if (this.shouldCrawl(link.url, currentUrl, currentDepth + 1)) {
+        const shouldCrawl = this.shouldCrawl(link.url, currentUrl, currentDepth + 1);
+        if (!shouldCrawl) {
+          filteredLinks.push(link.url);
+        }
+        if (shouldCrawl) {
           // Mark as visited to avoid adding duplicate
           if (!this.deduplicator.hasVisited(link.url)) {
             this.deduplicator.markVisited(link.url);
@@ -53,6 +58,12 @@ export class Navigator {
             });
           }
         }
+      }
+
+      // Debug: show sample of filtered URLs
+      if (filteredLinks.length > 0) {
+        consoleLogger.debug(`Filtered out ${filteredLinks.length} links (samples):`);
+        filteredLinks.slice(0, 5).forEach(url => consoleLogger.debug(`  - ${url}`));
       }
 
       // Add to queue

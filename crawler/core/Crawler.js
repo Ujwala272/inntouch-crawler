@@ -187,6 +187,9 @@ export class GenericCrawler {
       // Add to results
       this.results.pages.push(content);
 
+      // Wait a bit for dynamic content (AJAX/JavaScript) to fully load
+      await sleep(1000);
+
       // Discover new links
       await this.navigator.discoverLinks(this.page, url, depth);
 
