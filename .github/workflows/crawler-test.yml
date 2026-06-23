@@ -71,9 +71,10 @@ jobs:
           INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
           INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
         run: |
-          # Run the full crawl with file downloads
+          # Run the full crawl with file downloads and verbose logging
           node bin/crawl.js \
-            --config config/inntouch.config.json
+            --config config/inntouch.config.json \
+            --verbose
 
       - name: Verify output files
         working-directory: ./crawler
