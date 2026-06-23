@@ -26,6 +26,30 @@ export class Navigator {
    */
   async discoverLinks(page, currentUrl, currentDepth) {
     try {
+      // Debug: Check what elements are on the page
+      const pageInfo = await page.evaluate(() => {
+        const allAnchors = document.querySelectorAll('a').length;
+        const anchorsWithHref = document.querySelectorAll('a[href]').length;
+        const clickableDivs = document.querySelectorAll('div[onclick], div[data-url], div.clickable').length;
+        const jiveLinks = document.querySelectorAll('.jive-link, .j-link, [class*="tile"], [class*="category"]').length;
+
+        return {
+          allAnchors,
+          anchorsWithHref,
+          clickableDivs,
+          jiveLinks,
+          bodyClasses: document.body.className,
+          sampleElements: Array.from(document.querySelectorAll('.j-tile, .jive-tile, [class*="tile"]')).slice(0, 3).map(el => ({
+            tag: el.tagName,
+            classes: el.className,
+            hasLink: el.querySelector('a') !== null,
+            linkHref: el.querySelector('a')?.href || null
+          }))
+        };
+      });
+
+      consoleLogger.debug(`Page structure: ${JSON.stringify(pageInfo, null, 2)}`);
+
       // Extract all links from page
       const links = await page.evaluate(() => {
         const anchors = Array.from(document.querySelectorAll('a[href]'));
