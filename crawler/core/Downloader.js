@@ -40,6 +40,9 @@ export class Downloader {
       return null;
     }
 
+    // Store current page URL to restore later
+    const currentUrl = page.url();
+
     try {
       // Check if already downloaded
       if (this.deduplicator.hasFile(url)) {
@@ -127,9 +130,10 @@ export class Downloader {
       return { extension: urlExtension, source: 'url' };
     }
 
-    // Step 2: Try HTTP Content-Type header
+    // Step 2: Try HTTP Content-Type header using context.request (no navigation)
     try {
-      const response = await page.goto(url, { waitUntil: 'commit', timeout: 10000 });
+      const context = page.context();
+      const response = await context.request.head(url, { timeout: 10000 });
       const contentType = response.headers()['content-type'];
 
       if (contentType) {
@@ -147,15 +151,13 @@ export class Downloader {
   }
 
   /**
-   * Download file using Playwright
+   * Download file using Playwright context.request (no navigation)
    */
   async download(page, url, filepath) {
     try {
-      // Navigate to file URL and get response
-      const response = await page.goto(url, {
-        waitUntil: 'commit',
-        timeout: 30000
-      });
+      // Use context.request to fetch file WITHOUT navigating the page
+      const context = page.context();
+      const response = await context.request.get(url, { timeout: 30000 });
 
       // Get file buffer
       const buffer = await response.body();
