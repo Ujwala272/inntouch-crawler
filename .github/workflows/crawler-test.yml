@@ -102,7 +102,7 @@ jobs:
       - name: Verify output files
         working-directory: ./crawler
         env:
-          CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'full' }}
+          CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'smart' }}
         run: |
           echo "Checking output files..."
           ls -lh output/
@@ -259,6 +259,19 @@ jobs:
               console.log('');
               console.log('═══════════════════════════════════════════════════════════');
             "
+          elif [ "$CRAWL_MODE" = "smart" ]; then
+            echo "=== SMART MODE RESULTS ==="
+            echo "Checking downloads..."
+            ls -lh output/downloads/ | head -20
+            echo ""
+            echo "Download count:"
+            find output/downloads -type f | wc -l
+            echo ""
+            echo "Summary report:"
+            cat output/crawl_summary.json
+            echo ""
+            echo "Pages extracted:"
+            node -e "const data = require('./output/inntouch_smart_crawl.json'); console.log('Total pages:', data.pages?.length || 0); console.log('Categories:', data.categories?.length || 0); console.log('Files downloaded:', data.metadata?.statistics?.filesDownloaded || 0);"
           else
             echo "=== FULL MODE RESULTS ==="
             echo "Checking downloads..."
@@ -281,9 +294,9 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         env:
-          CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'full' }}
+          CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'smart' }}
         with:
-          name: inntouch-${{ github.event.inputs.crawl_mode || 'full' }}-crawl-${{ github.run_number }}
+          name: inntouch-${{ github.event.inputs.crawl_mode || 'smart' }}-crawl-${{ github.run_number }}
           path: |
             crawler/output/*.json
             crawler/output/*.csv
@@ -310,7 +323,7 @@ jobs:
           echo "**NPM Version:** $(npm --version)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          CRAWL_MODE="${{ github.event.inputs.crawl_mode || 'full' }}"
+          CRAWL_MODE="${{ github.event.inputs.crawl_mode || 'smart' }}"
 
           if [ "$CRAWL_MODE" = "discovery" ]; then
             if [ -f crawler/output/inntouch_discovery.json ]; then
@@ -323,6 +336,18 @@ jobs:
               echo "✅ Discovery crawl completed successfully" >> $GITHUB_STEP_SUMMARY
             else
               echo "❌ No discovery output generated" >> $GITHUB_STEP_SUMMARY
+            fi
+          elif [ "$CRAWL_MODE" = "smart" ]; then
+            if [ -f crawler/output/inntouch_smart_crawl.json ]; then
+              cd crawler
+              echo "**Mode:** Smart (deduplication, inventory)" >> $GITHUB_STEP_SUMMARY
+              echo "**Pages Extracted:** $(node -e "console.log(require('./output/inntouch_smart_crawl.json').pages?.length || 0)")" >> $GITHUB_STEP_SUMMARY
+              echo "**Categories Found:** $(node -e "console.log(require('./output/inntouch_smart_crawl.json').categories?.length || 0)")" >> $GITHUB_STEP_SUMMARY
+              echo "**Files Downloaded:** $(node -e "console.log(require('./output/inntouch_smart_crawl.json').metadata?.statistics?.filesDownloaded || 0)")" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "✅ Smart crawl completed successfully" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "❌ No smart crawl output generated" >> $GITHUB_STEP_SUMMARY
             fi
           else
             if [ -f crawler/output/inntouch_library_content.json ]; then
