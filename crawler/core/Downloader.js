@@ -74,7 +74,7 @@ export class Downloader {
 
       // Check if duplicate by title
       if (this.deduplicateByTitle && metadata.title) {
-        const normalized Title = this.normalizeTitle(metadata.title);
+        const normalizedTitle = this.normalizeTitle(metadata.title);
         if (this.titleIndex.has(normalizedTitle)) {
           const existingUrl = this.titleIndex.get(normalizedTitle);
           consoleLogger.debug(`File already downloaded (title): ${normalizedTitle}`);
