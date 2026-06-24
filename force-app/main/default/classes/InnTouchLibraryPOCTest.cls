@@ -27,7 +27,7 @@ private class InnTouchLibraryPOCTest {
 
         // Verify translations created
         List<Translations__c> translations = [SELECT Id FROM Translations__c WHERE Content__c IN (SELECT Id FROM Content__c WHERE Content_Unique_Id__c LIKE 'poc-%')];
-        System.assertEquals(10, translations.size(), 'Should create 10 translations (1 category + 9 pages)');
+        System.assertEquals(11, translations.size(), 'Should create 11 translations (1 library + 1 category + 9 pages)');
     }
 
     @isTest

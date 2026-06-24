@@ -41,27 +41,32 @@ public class InnTouchLibraryPOC {
             results.put('library', library);
             System.debug('✓ Library created: ' + library.Id);
 
-            // Step 2: Create Lead Generation category
+            // Step 2: Create library translation
+            Translations__c libraryTranslation = createLibraryTranslation(library.Id);
+            results.put('libraryTranslation', libraryTranslation);
+            System.debug('✓ Library translation created: ' + libraryTranslation.Id);
+
+            // Step 3: Create Lead Generation category
             Content__c category = createCategory(library.Id);
             results.put('category', category);
             System.debug('✓ Category created: ' + category.Id);
 
-            // Step 3: Create category translations (English only for POC)
+            // Step 4: Create category translations (English only for POC)
             Translations__c categoryTranslation = createCategoryTranslation(category.Id);
             results.put('categoryTranslation', categoryTranslation);
             System.debug('✓ Category translation created: ' + categoryTranslation.Id);
 
-            // Step 4: Create 9 content pages
+            // Step 5: Create 9 content pages
             List<Content__c> contentPages = createContentPages(library.Id, category.Id);
             results.put('contentPages', contentPages);
             System.debug('✓ Content pages created: ' + contentPages.size());
 
-            // Step 5: Create content page translations (English only)
+            // Step 6: Create content page translations (English only)
             List<Translations__c> contentTranslations = createContentTranslations(contentPages);
             results.put('contentTranslations', contentTranslations);
             System.debug('✓ Content translations created: ' + contentTranslations.size());
 
-            // Step 6: Note about file uploads
+            // Step 7: Note about file uploads
             System.debug('');
             System.debug('⚠️  FILES MUST BE UPLOADED MANUALLY:');
             System.debug('   1. Upload 20 files from downloads/ folder');
@@ -70,7 +75,7 @@ public class InnTouchLibraryPOC {
             System.debug('   4. Run uploadPOCFiles() after manual upload');
             System.debug('');
 
-            // Step 7: Create topic associations (optional)
+            // Step 8: Create topic associations (optional)
             List<Content_Topic__c> topicAssociations = createTopicAssociations(library, category, contentPages);
             results.put('topicAssociations', topicAssociations);
             System.debug('✓ Topic associations created: ' + topicAssociations.size());
@@ -80,7 +85,7 @@ public class InnTouchLibraryPOC {
             System.debug('Library ID: ' + library.Id);
             System.debug('Category ID: ' + category.Id);
             System.debug('Content Pages: ' + contentPages.size());
-            System.debug('Translations: ' + contentTranslations.size());
+            System.debug('Translations: ' + (1 + 1 + contentTranslations.size()) + ' (1 library + 1 category + ' + contentTranslations.size() + ' pages)');
             System.debug('Topics: ' + topicAssociations.size());
             System.debug('');
             System.debug('Next Steps:');
@@ -119,6 +124,36 @@ public class InnTouchLibraryPOC {
         );
         insert library;
         return library;
+    }
+
+    /**
+     * Creates library translation (English only for POC)
+     */
+    private static Translations__c createLibraryTranslation(Id libraryId) {
+        Translations__c translation = new Translations__c(
+            Content__c = libraryId,
+            Name = 'English',
+            Title__c = 'Local Sales Library (POC)',
+            Summary__c = 'A comprehensive collection of sales training resources, tools, and best practices for local sales teams. Access lead generation strategies, prospecting techniques, objection handling, and market segment-specific content to drive revenue growth.',
+            Body__c = '<h2>Welcome to the Local Sales Library</h2>' +
+                      '<p>This library provides you with everything you need to succeed in local sales. ' +
+                      'Explore our comprehensive collection of training materials, templates, and resources ' +
+                      'organized by sales process step and market segment.</p>' +
+                      '<h3>What\'s Inside:</h3>' +
+                      '<ul>' +
+                      '<li><strong>Lead Generation:</strong> Prospecting strategies and tools to identify new opportunities</li>' +
+                      '<li><strong>Building Rapport:</strong> Techniques for establishing strong client relationships</li>' +
+                      '<li><strong>Presenting Your Hotel:</strong> Best practices for showcasing your property</li>' +
+                      '<li><strong>Closing the Sale:</strong> Objection handling and closing strategies</li>' +
+                      '<li><strong>Sales Tools:</strong> Templates, scripts, and resources for daily activities</li>' +
+                      '<li><strong>Market Segments:</strong> Industry-specific sales approaches</li>' +
+                      '</ul>' +
+                      '<p>Start exploring by selecting a category below.</p>',
+            Version__c = 1.0,
+            Status__c = 'Published'
+        );
+        insert translation;
+        return translation;
     }
 
     /**
@@ -367,10 +402,10 @@ public class InnTouchLibraryPOC {
             ];
 
             validation.put('test2_translations', new Map<String, Object>{
-                'status' => translations.size() == 10 ? 'PASS' : 'FAIL',
-                'expected' => 10,
+                'status' => translations.size() == 11 ? 'PASS' : 'FAIL',
+                'expected' => 11,
                 'actual' => translations.size(),
-                'details' => '1 Category + 9 Pages (English only)'
+                'details' => '1 Library + 1 Category + 9 Pages (English only)'
             });
             System.debug('✓ Test 2 - Translations: ' + translations.size() + ' records');
 
