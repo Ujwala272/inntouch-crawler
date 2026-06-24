@@ -20,6 +20,16 @@ export class Downloader {
     this.downloadedCount = 0;
     this.skippedCount = 0;
     this.errors = [];
+
+    // Enhanced deduplication
+    this.generateInventory = this.config.generateInventory !== false;
+    this.deduplicateByTitle = this.config.deduplicateByTitle !== false;
+    this.deduplicateByHash = this.config.deduplicateByHash !== false;
+
+    // Inventory tracking
+    this.inventory = [];
+    this.titleIndex = new Map(); // title -> url
+    this.hashIndex = new Map();  // hash -> url
   }
 
   /**
@@ -37,6 +47,16 @@ export class Downloader {
    */
   async downloadFile(page, url, metadata = {}) {
     if (!this.enabled) {
+      // Still add to inventory even if not downloading
+      if (this.generateInventory) {
+        this.addToInventory({
+          url,
+          title: metadata.title,
+          type: metadata.type || 'unknown',
+          downloaded: false,
+          reason: 'Downloads disabled'
+        });
+      }
       return null;
     }
 
@@ -44,12 +64,33 @@ export class Downloader {
     const currentUrl = page.url();
 
     try {
-      // Check if already downloaded
+      // Check if already downloaded by URL
       if (this.deduplicator.hasFile(url)) {
         const existing = this.deduplicator.getFile(url);
-        consoleLogger.debug(`File already downloaded: ${existing.filename}`);
+        consoleLogger.debug(`File already downloaded (URL): ${existing.filename}`);
         this.skippedCount++;
         return existing;
+      }
+
+      // Check if duplicate by title
+      if (this.deduplicateByTitle && metadata.title) {
+        const normalized Title = this.normalizeTitle(metadata.title);
+        if (this.titleIndex.has(normalizedTitle)) {
+          const existingUrl = this.titleIndex.get(normalizedTitle);
+          consoleLogger.debug(`File already downloaded (title): ${normalizedTitle}`);
+          this.skippedCount++;
+          if (this.generateInventory) {
+            this.addToInventory({
+              url,
+              title: metadata.title,
+              type: metadata.type,
+              downloaded: false,
+              reason: `Duplicate of ${existingUrl}`,
+              duplicateType: 'title'
+            });
+          }
+          return null;
+        }
       }
 
       // Detect file type
@@ -171,6 +212,80 @@ export class Downloader {
   }
 
   /**
+   * Add file to inventory
+   */
+  addToInventory(entry) {
+    this.inventory.push({
+      ...entry,
+      timestamp: new Date().toISOString()
+    });
+  }
+
+  /**
+   * Normalize title for deduplication
+   */
+  normalizeTitle(title) {
+    return title
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s]/g, '')
+      .replace(/\s+/g, ' ');
+  }
+
+  /**
+   * Calculate file hash (simple for now)
+   */
+  async calculateHash(filepath) {
+    try {
+      const crypto = await import('crypto');
+      const buffer = await fs.readFile(filepath);
+      return crypto.createHash('md5').update(buffer).digest('hex');
+    } catch (error) {
+      return null;
+    }
+  }
+
+  /**
+   * Get file inventory
+   */
+  getInventory() {
+    return this.inventory;
+  }
+
+  /**
+   * Export inventory to CSV
+   */
+  async exportInventory(outputPath) {
+    if (!this.generateInventory || this.inventory.length === 0) {
+      return null;
+    }
+
+    try {
+      const csvLines = [];
+      csvLines.push('URL,Title,Type,Downloaded,Reason,Duplicate Type,Timestamp');
+
+      this.inventory.forEach(entry => {
+        csvLines.push([
+          entry.url || '',
+          (entry.title || '').replace(/,/g, ';'),
+          entry.type || '',
+          entry.downloaded ? 'Yes' : 'No',
+          (entry.reason || '').replace(/,/g, ';'),
+          entry.duplicateType || '',
+          entry.timestamp || ''
+        ].join(','));
+      });
+
+      await fs.writeFile(outputPath, csvLines.join('\n'));
+      consoleLogger.success(`Inventory exported to: ${outputPath}`);
+      return outputPath;
+    } catch (error) {
+      consoleLogger.error(`Failed to export inventory: ${error.message}`);
+      return null;
+    }
+  }
+
+  /**
    * Get download statistics
    */
   getStats() {
@@ -178,7 +293,8 @@ export class Downloader {
       downloaded: this.downloadedCount,
       skipped: this.skippedCount,
       errors: this.errors.length,
-      downloadDir: this.downloadDir
+      downloadDir: this.downloadDir,
+      inventorySize: this.inventory.length
     };
   }
 }

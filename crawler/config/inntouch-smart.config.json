@@ -1,0 +1,71 @@
+{
+  "name": "InnTouch Local Sales Library - Smart Crawl",
+  "startUrl": "https://www.inn-touch.ca/community/local-sales-library?forceNoRedirect=true",
+  "headless": true,
+  "auth": {
+    "strategy": "form",
+    "loginUrl": "https://www.inn-touch.ca/login.jspa",
+    "credentials": {
+      "username": "${INNTOUCH_USERNAME}",
+      "password": "${INNTOUCH_PASSWORD}"
+    },
+    "selectors": {
+      "username": "input[name='username'], input#username",
+      "password": "input[name='password'], input#password",
+      "submit": "button[type='submit'], input[type='submit']"
+    },
+    "successIndicator": {
+      "urlNotContains": "/login"
+    }
+  },
+  "crawl": {
+    "maxDepth": 5,
+    "maxPages": 600,
+    "allowedDomains": ["www.inn-touch.ca", "inn-touch.ca"],
+    "includePatterns": [
+      "/community/local-sales-library",
+      "/docs/DOC-"
+    ],
+    "excludePatterns": [
+      "/login",
+      "/logout",
+      "/profile",
+      "/people",
+      "/admin",
+      "/diff$",
+      "/version/",
+      "/edit$",
+      "/servlet/JiveServlet/(?!download)",
+      "#"
+    ],
+    "waitForSelector": ".jive-rendered-content",
+    "delay": 1000
+  },
+  "extraction": {
+    "useHeuristics": true,
+    "selectors": {
+      "title": "h1, .j-placeTitle, span.j-place-name",
+      "body": ".jive-rendered-content, .j-description",
+      "category": "h2",
+      "videos": "iframe[src*='vimeo'], iframe[src*='youtube']",
+      "images": "img[src*='cachefly'], img[src*='/servlet/']",
+      "documents": "a[href*='/docs/DOC-'], a[href*='/servlet/JiveServlet/download'], a[href$='.pdf']"
+    }
+  },
+  "download": {
+    "enabled": true,
+    "downloadDir": "./output/downloads",
+    "allowedTypes": ["pdf", "docx", "xlsx", "pptx", "jpg", "png", "gif"],
+    "maxFileSize": 52428800,
+    "generateInventory": true,
+    "deduplicateByTitle": true,
+    "deduplicateByHash": true
+  },
+  "output": {
+    "formats": ["json", "csv"],
+    "jsonFile": "./output/inntouch_smart_crawl.json",
+    "csvFile": "./output/inntouch_smart_crawl.csv",
+    "inventoryFile": "./output/file_inventory.csv",
+    "summaryFile": "./output/crawl_summary.json"
+  }
+}

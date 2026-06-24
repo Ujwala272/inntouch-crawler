@@ -2,10 +2,11 @@
  * GenericCrawler - Main orchestrator for library website crawling
  */
 
+import fs from 'fs-extra';
 import { chromium } from 'playwright';
 import { Authenticator } from './Authenticator.js';
 import { Navigator } from './Navigator.js';
-import { Extractor } from './Extractor.js';
+import { Extractor} from './Extractor.js';
 import { Downloader } from './Downloader.js';
 import { Deduplicator } from './Deduplicator.js';
 import { JsonExporter } from '../exporters/JsonExporter.js';
@@ -231,6 +232,80 @@ export class GenericCrawler {
     if (formats.includes('csv')) {
       const csvExporter = new CsvExporter(this.config.output);
       await csvExporter.export(this.results);
+    }
+
+    // Export file inventory
+    if (this.config.output?.inventoryFile) {
+      await this.downloader.exportInventory(this.config.output.inventoryFile);
+    }
+
+    // Export summary report
+    if (this.config.output?.summaryFile) {
+      await this.exportSummaryReport(this.config.output.summaryFile);
+    }
+  }
+
+  /**
+   * Export summary report
+   */
+  async exportSummaryReport(outputPath) {
+    try {
+      const pages = this.results.pages || [];
+
+      // Categorize content
+      const uniqueDocuments = new Set();
+      const uniquePDFs = new Set();
+      const uniqueVideos = new Set();
+      const uniqueContentPages = new Set();
+
+      pages.forEach(page => {
+        // Content pages
+        if (page.url.includes('/docs/DOC-')) {
+          uniqueContentPages.add(page.url);
+        }
+
+        // Documents
+        (page.documents || []).forEach(doc => {
+          if (doc.url) {
+            uniqueDocuments.add(doc.url);
+            if (doc.url.toLowerCase().endsWith('.pdf')) {
+              uniquePDFs.add(doc.url);
+            }
+          }
+        });
+
+        // Videos
+        (page.videos || []).forEach(video => {
+          if (video.url) {
+            uniqueVideos.add(video.url);
+          }
+        });
+      });
+
+      const summary = {
+        crawlCompleted: new Date().toISOString(),
+        statistics: {
+          totalPagesCrawled: pages.length,
+          uniqueContentPages: uniqueContentPages.size,
+          uniqueDocuments: uniqueDocuments.size,
+          uniquePDFs: uniquePDFs.size,
+          uniqueVideos: uniqueVideos.size,
+          filesDownloaded: this.downloader.downloadedCount,
+          filesSkipped: this.downloader.skippedCount,
+          errors: this.results.errors.length
+        },
+        contentBreakdown: {
+          documentPages: pages.filter(p => p.url.includes('/docs/DOC-')).length,
+          categoryPages: pages.filter(p => p.url.includes('/local-sales-library/') && !p.url.includes('/docs/')).length,
+          otherPages: pages.filter(p => !p.url.includes('/docs/DOC-') && !p.url.includes('/local-sales-library/')).length
+        },
+        downloaderStats: this.downloader.getStats()
+      };
+
+      await fs.writeJson(outputPath, summary, { spaces: 2 });
+      consoleLogger.success(`Summary report exported to: ${outputPath}`);
+    } catch (error) {
+      consoleLogger.error(`Failed to export summary: ${error.message}`);
     }
   }
 

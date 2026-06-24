@@ -178,6 +178,30 @@ export class Navigator {
         }
       }
 
+      // Smart filtering: Skip noise URLs
+      // Skip version/diff/edit pages
+      if (absoluteUrl.match(/\/(diff|version|edit)($|\/|\?)/)) {
+        return false;
+      }
+
+      // Skip servlet URLs except download
+      if (absoluteUrl.includes('/servlet/') &&
+          !absoluteUrl.includes('/servlet/JiveServlet/download')) {
+        return false;
+      }
+
+      // Skip anchor links (fragments)
+      if (absoluteUrl.includes('#')) {
+        return false;
+      }
+
+      // Skip search/filter URLs with query params (but allow normal params)
+      const urlObj = new URL(absoluteUrl);
+      const params = urlObj.searchParams;
+      if (params.has('filterID') || params.has('search') || params.has('query')) {
+        return false;
+      }
+
       return true;
     } catch (error) {
       return false;
