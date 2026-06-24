@@ -7,9 +7,10 @@ on:
       crawl_mode:
         description: 'Crawl mode'
         required: true
-        default: 'full'
+        default: 'smart'
         type: choice
         options:
+          - smart
           - full
           - discovery
 
@@ -79,12 +80,17 @@ jobs:
         env:
           INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
           INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
-          CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'full' }}
+          CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'smart' }}
         run: |
           if [ "$CRAWL_MODE" = "discovery" ]; then
             echo "🔍 Running DISCOVERY mode (500 pages max, no downloads)"
             node bin/crawl.js \
               --config config/inntouch-discovery.config.json \
+              --verbose
+          elif [ "$CRAWL_MODE" = "smart" ]; then
+            echo "🎯 Running SMART mode (600 pages, deduplication, inventory)"
+            node bin/crawl.js \
+              --config config/inntouch-smart.config.json \
               --verbose
           else
             echo "📥 Running FULL mode (100 pages, with downloads)"
