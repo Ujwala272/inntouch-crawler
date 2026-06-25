@@ -1,0 +1,45 @@
+{
+  "name": "InnTouch Marketing Suite",
+  "description": "Crawl InnTouch Marketing Suite library",
+  "startUrl": "https://www.inn-touch.ca/community/marketing-suite",
+  "maxPages": 100,
+  "maxDepth": 3,
+  "downloadFiles": true,
+  "outputDir": "output/marketing-suite",
+  "authentication": {
+    "type": "form",
+    "loginUrl": "https://www.inn-touch.ca/login",
+    "usernameField": "username",
+    "passwordField": "password",
+    "submitButton": "button[type='submit']"
+  },
+  "crawlRules": {
+    "allowedDomains": ["www.inn-touch.ca"],
+    "allowedPaths": [
+      "/community/marketing-suite"
+    ],
+    "excludedPaths": [
+      "/people/",
+      "/search",
+      "/login",
+      "/logout"
+    ],
+    "fileTypes": ["pdf", "docx", "xlsx", "pptx", "png", "jpg", "jpeg", "gif"]
+  },
+  "selectors": {
+    "content": ".j-body-main, .jive-rendered-content, main, article",
+    "title": "h1, .j-thread-title, title",
+    "links": "a[href]",
+    "documents": "a[href*='.pdf'], a[href*='.docx'], a[href*='.xlsx'], a[href*='.pptx']",
+    "images": "img[src*='MainPage'], img.j-attachment-image",
+    "videos": "iframe[src*='vimeo'], iframe[src*='youtube']"
+  },
+  "options": {
+    "waitForSelector": ".j-body-main, main",
+    "waitTime": 3000,
+    "screenshotOnError": true,
+    "deduplication": true,
+    "respectRobotsTxt": false,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  }
+}

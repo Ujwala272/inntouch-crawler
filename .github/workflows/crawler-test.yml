@@ -4,6 +4,14 @@ on:
   # Manual trigger
   workflow_dispatch:
     inputs:
+      library:
+        description: 'Which library to crawl'
+        required: true
+        default: 'local-sales'
+        type: choice
+        options:
+          - local-sales
+          - marketing-suite
       crawl_mode:
         description: 'Crawl mode'
         required: true
@@ -80,9 +88,15 @@ jobs:
         env:
           INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
           INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
+          LIBRARY: ${{ github.event.inputs.library || 'local-sales' }}
           CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'smart' }}
         run: |
-          if [ "$CRAWL_MODE" = "discovery" ]; then
+          if [ "$LIBRARY" = "marketing-suite" ]; then
+            echo "🎨 Crawling Marketing Suite library"
+            node bin/crawl.js \
+              --config config/marketing-suite.config.json \
+              --verbose
+          elif [ "$CRAWL_MODE" = "discovery" ]; then
             echo "🔍 Running DISCOVERY mode (500 pages max, no downloads)"
             node bin/crawl.js \
               --config config/inntouch-discovery.config.json \
