@@ -275,17 +275,49 @@ jobs:
             "
           elif [ "$CRAWL_MODE" = "smart" ]; then
             echo "=== SMART MODE RESULTS ==="
-            echo "Checking downloads..."
-            ls -lh output/downloads/ | head -20
+            echo "Output directory structure:"
+            ls -lR output/ | head -50
             echo ""
-            echo "Download count:"
-            find output/downloads -type f | wc -l
+
+            # Find the actual output directory (marketing-suite or root)
+            if [ -d "output/marketing-suite" ]; then
+              OUTPUT_DIR="output/marketing-suite"
+              JSON_FILE="$OUTPUT_DIR/marketing_suite_crawl.json"
+              SUMMARY_FILE="$OUTPUT_DIR/crawl_summary.json"
+            else
+              OUTPUT_DIR="output"
+              JSON_FILE="$OUTPUT_DIR/inntouch_smart_crawl.json"
+              SUMMARY_FILE="$OUTPUT_DIR/crawl_summary.json"
+            fi
+
+            echo "Using output directory: $OUTPUT_DIR"
             echo ""
-            echo "Summary report:"
-            cat output/crawl_summary.json
+
+            if [ -d "$OUTPUT_DIR/downloads" ]; then
+              echo "Checking downloads..."
+              ls -lh "$OUTPUT_DIR/downloads/" | head -20
+              echo ""
+              echo "Download count:"
+              find "$OUTPUT_DIR/downloads" -type f | wc -l
+            else
+              echo "No downloads directory found"
+            fi
+
             echo ""
-            echo "Pages extracted:"
-            node -e "const data = require('./output/inntouch_smart_crawl.json'); console.log('Total pages:', data.pages?.length || 0); console.log('Categories:', data.categories?.length || 0); console.log('Files downloaded:', data.metadata?.statistics?.filesDownloaded || 0);"
+            if [ -f "$SUMMARY_FILE" ]; then
+              echo "Summary report:"
+              cat "$SUMMARY_FILE"
+            else
+              echo "No summary file found"
+            fi
+
+            echo ""
+            if [ -f "$JSON_FILE" ]; then
+              echo "Pages extracted:"
+              node -e "const data = require('./$JSON_FILE'); console.log('Total pages:', data.pages?.length || 0); console.log('Categories:', data.categories?.length || 0); console.log('Files downloaded:', data.metadata?.statistics?.filesDownloaded || 0);"
+            else
+              echo "No JSON output found at $JSON_FILE"
+            fi
           else
             echo "=== FULL MODE RESULTS ==="
             echo "Checking downloads..."
@@ -308,13 +340,14 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         env:
+          LIBRARY: ${{ github.event.inputs.library || 'local-sales' }}
           CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'smart' }}
         with:
-          name: inntouch-${{ github.event.inputs.crawl_mode || 'smart' }}-crawl-${{ github.run_number }}
+          name: ${{ github.event.inputs.library || 'local-sales' }}-${{ github.event.inputs.crawl_mode || 'smart' }}-${{ github.run_number }}
           path: |
-            crawler/output/*.json
-            crawler/output/*.csv
-            crawler/output/downloads/**
+            crawler/output/**/*.json
+            crawler/output/**/*.csv
+            crawler/output/**/downloads/**
           retention-days: 30
 
       - name: Upload npm debug logs on failure
