@@ -1,45 +1,71 @@
 {
   "name": "InnTouch Marketing Suite",
-  "description": "Crawl InnTouch Marketing Suite library",
   "startUrl": "https://www.inn-touch.ca/community/marketing-suite",
-  "maxPages": 100,
-  "maxDepth": 3,
-  "downloadFiles": true,
-  "outputDir": "output/marketing-suite",
-  "authentication": {
-    "type": "form",
-    "loginUrl": "https://www.inn-touch.ca/login",
-    "usernameField": "username",
-    "passwordField": "password",
-    "submitButton": "button[type='submit']"
+  "headless": true,
+  "auth": {
+    "strategy": "form",
+    "loginUrl": "https://www.inn-touch.ca/login.jspa",
+    "credentials": {
+      "username": "${INNTOUCH_USERNAME}",
+      "password": "${INNTOUCH_PASSWORD}"
+    },
+    "selectors": {
+      "username": "input[name='username'], input#username",
+      "password": "input[name='password'], input#password",
+      "submit": "button[type='submit'], input[type='submit']"
+    },
+    "successIndicator": {
+      "urlNotContains": "/login"
+    }
   },
-  "crawlRules": {
-    "allowedDomains": ["www.inn-touch.ca"],
-    "allowedPaths": [
-      "/community/marketing-suite"
+  "crawl": {
+    "maxDepth": 5,
+    "maxPages": 600,
+    "allowedDomains": ["www.inn-touch.ca", "inn-touch.ca"],
+    "includePatterns": [
+      "/community/marketing-suite",
+      "/docs/DOC-"
     ],
-    "excludedPaths": [
-      "/people/",
-      "/search",
+    "excludePatterns": [
       "/login",
-      "/logout"
+      "/logout",
+      "/profile",
+      "/people",
+      "/admin",
+      "/diff$",
+      "/version/",
+      "/edit$",
+      "/servlet/JiveServlet/(?!download)",
+      "#"
     ],
-    "fileTypes": ["pdf", "docx", "xlsx", "pptx", "png", "jpg", "jpeg", "gif"]
+    "waitForSelector": ".jive-rendered-content",
+    "delay": 1000
   },
-  "selectors": {
-    "content": ".j-body-main, .jive-rendered-content, main, article",
-    "title": "h1, .j-thread-title, title",
-    "links": "a[href]",
-    "documents": "a[href*='.pdf'], a[href*='.docx'], a[href*='.xlsx'], a[href*='.pptx']",
-    "images": "img[src*='MainPage'], img.j-attachment-image",
-    "videos": "iframe[src*='vimeo'], iframe[src*='youtube']"
+  "extraction": {
+    "useHeuristics": true,
+    "selectors": {
+      "title": "h1, .j-placeTitle, span.j-place-name",
+      "body": ".jive-rendered-content, .j-description",
+      "category": "h2",
+      "videos": "iframe[src*='vimeo'], iframe[src*='youtube']",
+      "images": "img[src*='cachefly'], img[src*='/servlet/']",
+      "documents": "a[href*='/docs/DOC-'], a[href*='/servlet/JiveServlet/download'], a[href$='.pdf']"
+    }
   },
-  "options": {
-    "waitForSelector": ".j-body-main, main",
-    "waitTime": 3000,
-    "screenshotOnError": true,
-    "deduplication": true,
-    "respectRobotsTxt": false,
-    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  "download": {
+    "enabled": true,
+    "downloadDir": "./output/marketing-suite/downloads",
+    "allowedTypes": ["pdf", "docx", "xlsx", "pptx", "jpg", "png", "gif"],
+    "maxFileSize": 52428800,
+    "generateInventory": true,
+    "deduplicateByTitle": true,
+    "deduplicateByHash": true
+  },
+  "output": {
+    "formats": ["json", "csv"],
+    "jsonFile": "./output/marketing-suite/marketing_suite_crawl.json",
+    "csvFile": "./output/marketing-suite/marketing_suite_crawl.csv",
+    "inventoryFile": "./output/marketing-suite/file_inventory.csv",
+    "summaryFile": "./output/marketing-suite/crawl_summary.json"
   }
 }
