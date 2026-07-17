@@ -40,14 +40,19 @@ export class GenericCrawler {
   }
 
   /**
-   * Main crawl method
+   * Main crawl method. Accepts either a single start URL (crawls outward
+   * following discovered links, up to maxDepth/maxPages) or an array of
+   * seed URLs (page-scoped crawl: only those exact pages are fetched when
+   * maxDepth is 0, since any links they discover land at depth 1 and get
+   * rejected by Navigator.shouldCrawl).
    */
-  async crawl(startUrl) {
-    this.results.startUrl = startUrl;
+  async crawl(startUrlOrUrls) {
+    const seedUrls = Array.isArray(startUrlOrUrls) ? startUrlOrUrls : [startUrlOrUrls];
+    this.results.startUrl = seedUrls.length === 1 ? seedUrls[0] : seedUrls;
     this.results.startTime = Date.now();
 
     try {
-      consoleLogger.info(`🚀 Starting crawl: ${startUrl}`);
+      consoleLogger.info(`🚀 Starting crawl: ${seedUrls.length} seed URL(s)`);
       consoleLogger.info(`Max pages: ${this.navigator.maxPages}, Max depth: ${this.navigator.maxDepth}`);
 
       // Initialize
@@ -58,8 +63,10 @@ export class GenericCrawler {
         await this.authenticate();
       }
 
-      // Add start URL to queue
-      this.navigator.addToQueue(startUrl, 0);
+      // Seed the queue with all start URLs at depth 0
+      for (const url of seedUrls) {
+        this.navigator.addToQueue(url, 0);
+      }
 
       // Crawl pages (BFS)
       await this.crawlPages();

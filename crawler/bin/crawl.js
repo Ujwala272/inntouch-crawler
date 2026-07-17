@@ -26,10 +26,15 @@ program
   .description('Generic library website crawler with Salesforce export')
   .version('1.0.0');
 
+function collectUrl(value, previous) {
+  return previous.concat([value]);
+}
+
 program
   .option('-c, --config <file>', 'Path to JSON config file')
   .option('-p, --preset <name>', 'Use preset: jive, generic')
   .option('-u, --start-url <url>', 'Starting URL to crawl')
+  .option('--seed-url <url>', 'A single page to crawl (repeatable); combine with --max-depth 0 to fetch only these exact pages, not the whole site', collectUrl, [])
   .option('--username <username>', 'Authentication username')
   .option('--password <password>', 'Authentication password')
   .option('--max-depth <n>', 'Maximum crawl depth', parseInt)
@@ -53,8 +58,9 @@ async function main() {
     const config = await loadConfig(options);
 
     // Validate required fields
-    if (!config.startUrl) {
-      consoleLogger.error('Error: Start URL is required (use --start-url or config file)');
+    const seedUrls = options.seedUrl.length > 0 ? options.seedUrl : config.startUrl;
+    if (!seedUrls || (Array.isArray(seedUrls) && seedUrls.length === 0)) {
+      consoleLogger.error('Error: Start URL is required (use --start-url, --seed-url, or config file)');
       process.exit(1);
     }
 
@@ -66,7 +72,7 @@ async function main() {
     // Dry run: just print config and exit
     if (options.dryRun) {
       console.log('\n🔍 DRY RUN MODE\n');
-      console.log('Start URL:', config.startUrl);
+      console.log('Start URL(s):', seedUrls);
       console.log('Max Depth:', config.crawl.maxDepth);
       console.log('Max Pages:', config.crawl.maxPages);
       console.log('Auth Strategy:', config.auth?.strategy || 'none');
@@ -79,7 +85,7 @@ async function main() {
     consoleLogger.info('Initializing crawler...');
     const crawler = new GenericCrawler(config);
 
-    await crawler.crawl(config.startUrl);
+    await crawler.crawl(seedUrls);
 
     consoleLogger.success('🎉 Done!');
     process.exit(0);

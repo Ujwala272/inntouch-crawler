@@ -1,0 +1,73 @@
+{
+  "name": "InnTouch Local Sales Library - Handling Objections & Closing the Sale (page-scoped)",
+  "startUrl": [
+    "https://www.inn-touch.ca/community/local-sales-library/closing-the-sale/pages/main",
+    "https://www.inn-touch.ca/docs/DOC-55937",
+    "https://www.inn-touch.ca/docs/DOC-56150",
+    "https://www.inn-touch.ca/docs/DOC-56135",
+    "https://www.inn-touch.ca/docs/DOC-55939",
+    "https://www.inn-touch.ca/docs/DOC-56204"
+  ],
+  "headless": true,
+  "auth": {
+    "strategy": "form",
+    "loginUrl": "https://www.inn-touch.ca/login.jspa",
+    "credentials": {
+      "username": "${INNTOUCH_USERNAME}",
+      "password": "${INNTOUCH_PASSWORD}"
+    },
+    "selectors": {
+      "username": "input[name='username'], input#username",
+      "password": "input[name='password'], input#password",
+      "submit": "button[type='submit'], input[type='submit']"
+    },
+    "successIndicator": {
+      "urlNotContains": "/login"
+    }
+  },
+  "crawl": {
+    "maxDepth": 0,
+    "maxPages": 10,
+    "allowedDomains": ["www.inn-touch.ca", "inn-touch.ca"],
+    "includePatterns": [
+      "/community/local-sales-library",
+      "/docs/DOC-"
+    ],
+    "excludePatterns": [
+      "/login",
+      "/logout",
+      "/profile",
+      "/people",
+      "/admin"
+    ],
+    "waitForSelector": ".jive-rendered-content",
+    "delay": 1000
+  },
+  "extraction": {
+    "useHeuristics": true,
+    "selectors": {
+      "title": "h1, .j-placeTitle, span.j-place-name",
+      "body": ".jive-rendered-content, .j-description",
+      "category": "h2",
+      "videos": "iframe[src*='vimeo'], iframe[src*='youtube']",
+      "images": "img[src*='cachefly'], img[src*='/servlet/']",
+      "documents": "a[href*='/docs/DOC-'], a[href*='/servlet/JiveServlet/download'], a[href$='.pdf']"
+    }
+  },
+  "download": {
+    "enabled": true,
+    "downloadDir": "./output/handling-objections/downloads",
+    "allowedTypes": ["pdf", "docx", "xlsx", "pptx", "jpg", "png", "gif"],
+    "maxFileSize": 52428800,
+    "generateInventory": true,
+    "deduplicateByTitle": true,
+    "deduplicateByHash": true
+  },
+  "output": {
+    "formats": ["json", "csv"],
+    "jsonFile": "./output/handling-objections/handling_objections_crawl.json",
+    "csvFile": "./output/handling-objections/handling_objections_crawl.csv",
+    "inventoryFile": "./output/handling-objections/file_inventory.csv",
+    "summaryFile": "./output/handling-objections/crawl_summary.json"
+  }
+}

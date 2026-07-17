@@ -21,6 +21,12 @@ on:
           - smart
           - full
           - discovery
+          - page
+      page_config:
+        description: 'Config file name (crawler/config/), only used when crawl_mode is "page"'
+        required: false
+        default: 'inntouch-handling-objections.config.json'
+        type: string
 
   # Trigger on push to crawler directory
   push:
@@ -90,8 +96,14 @@ jobs:
           INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
           LIBRARY: ${{ github.event.inputs.library || 'local-sales' }}
           CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'smart' }}
+          PAGE_CONFIG: ${{ github.event.inputs.page_config || 'inntouch-handling-objections.config.json' }}
         run: |
-          if [ "$LIBRARY" = "marketing-suite" ]; then
+          if [ "$CRAWL_MODE" = "page" ]; then
+            echo "📄 Running PAGE-SCOPED mode (config/$PAGE_CONFIG) — fetches only the seeded page(s), not the whole library"
+            node bin/crawl.js \
+              --config "config/$PAGE_CONFIG" \
+              --verbose
+          elif [ "$LIBRARY" = "marketing-suite" ]; then
             echo "🎨 Crawling Marketing Suite library"
             node bin/crawl.js \
               --config config/marketing-suite.config.json \
@@ -122,7 +134,26 @@ jobs:
           ls -lh output/
           echo ""
 
-          if [ "$CRAWL_MODE" = "discovery" ]; then
+          if [ "$CRAWL_MODE" = "page" ]; then
+            echo "=== PAGE-SCOPED MODE RESULTS ==="
+            OUTPUT_DIR=$(find output -mindepth 1 -maxdepth 1 -type d | head -1)
+            echo "Using output directory: $OUTPUT_DIR"
+            echo ""
+            if [ -d "$OUTPUT_DIR/downloads" ]; then
+              echo "Downloaded files:"
+              ls -lh "$OUTPUT_DIR/downloads/"
+              echo ""
+              echo "Download count: $(find "$OUTPUT_DIR/downloads" -type f | wc -l)"
+            else
+              echo "No downloads directory found"
+            fi
+            echo ""
+            JSON_FILE=$(find "$OUTPUT_DIR" -maxdepth 1 -iname "*_crawl.json" | head -1)
+            if [ -n "$JSON_FILE" ]; then
+              echo "Pages crawled:"
+              node -e "const data = require('./$JSON_FILE'); console.log('Total pages:', data.pages?.length || 0); (data.pages||[]).forEach(p => console.log(' -', p.url, '| docs:', (p.documents||[]).length));"
+            fi
+          elif [ "$CRAWL_MODE" = "discovery" ]; then
             echo "=== DISCOVERY MODE RESULTS ==="
             echo ""
             echo "Detailed Analysis:"
