@@ -1,0 +1,72 @@
+name: Crawl Single InnTouch Page
+
+on:
+  workflow_dispatch:
+    inputs:
+      page_url:
+        description: 'Full URL of the single InnTouch page to crawl'
+        required: true
+        type: string
+
+jobs:
+  crawl-page:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install crawler dependencies
+        working-directory: ./crawler
+        run: npm install
+
+      - name: Install Playwright Chromium browser
+        working-directory: ./crawler
+        run: npx playwright install chromium --with-deps
+
+      - name: Crawl the page
+        working-directory: ./crawler
+        env:
+          INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
+          INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
+        run: |
+          node bin/crawl-page.js "${{ github.event.inputs.page_url }}" --verbose
+
+      - name: Show results
+        working-directory: ./crawler
+        run: |
+          OUTPUT_DIR=$(find output/single-page -mindepth 1 -maxdepth 1 -type d | head -1)
+          echo "Output directory: $OUTPUT_DIR"
+          echo ""
+          if [ -d "$OUTPUT_DIR/downloads" ]; then
+            echo "Downloaded files:"
+            ls -lh "$OUTPUT_DIR/downloads/"
+          else
+            echo "No files downloaded"
+          fi
+          echo ""
+          JSON_FILE=$(find "$OUTPUT_DIR" -maxdepth 1 -iname "*_crawl.json" | head -1)
+          if [ -n "$JSON_FILE" ]; then
+            node -e "
+              const data = require('./$JSON_FILE');
+              console.log('Pages crawled:', data.pages?.length || 0);
+              (data.pages || []).forEach(p => {
+                console.log(' -', p.url);
+                console.log('     documents:', (p.documents||[]).length, '| images:', (p.images||[]).length, '| videos:', (p.videos||[]).length);
+              });
+            "
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: single-page-${{ github.run_number }}
+          path: |
+            crawler/output/single-page/**
+          retention-days: 30
