@@ -1,0 +1,47 @@
+name: Dump InnTouch Page HTML
+
+on:
+  workflow_dispatch:
+    inputs:
+      page_url:
+        description: 'Full URL of the InnTouch page to dump'
+        required: true
+        type: string
+
+jobs:
+  dump-page-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install crawler dependencies
+        working-directory: ./crawler
+        run: npm install
+
+      - name: Install Playwright Chromium browser
+        working-directory: ./crawler
+        run: npx playwright install chromium --with-deps
+
+      - name: Dump page HTML
+        working-directory: ./crawler
+        env:
+          INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
+          INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
+        run: |
+          node bin/dump-page-html.js "${{ github.event.inputs.page_url }}" --out output/page-dump.html
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: page-dump-${{ github.run_number }}
+          path: |
+            crawler/output/page-dump.html
+          retention-days: 30
