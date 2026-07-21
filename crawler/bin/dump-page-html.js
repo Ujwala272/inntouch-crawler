@@ -58,7 +58,19 @@ async function main() {
   const authenticator = new Authenticator(authConfig);
   await authenticator.authenticate(context, page);
 
-  await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 });
+  // Match the working crawler's navigation (domcontentloaded + selector wait +
+  // settle time) rather than networkidle - Jive's community pages can render
+  // an "Error | iNN-touch" shell under networkidle for reasons not fully
+  // understood, but resolve fine with this sequence (as proven by the
+  // original page-scoped crawl of this same URL).
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+  try {
+    await page.waitForSelector('.jive-rendered-content', { timeout: 10000 });
+  } catch (e) {
+    consoleLogger.warn('Selector .jive-rendered-content not found, continuing anyway');
+  }
+  await page.waitForTimeout(5000);
+
   const html = await page.content();
   await fs.writeFile(outFile, html);
 
