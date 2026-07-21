@@ -28,17 +28,6 @@ on:
         default: 'inntouch-handling-objections.config.json'
         type: string
 
-  # Trigger on push to crawler directory
-  push:
-    paths:
-      - 'crawler/**'
-      - '.github/workflows/crawler-test.yml'
-
-  # Trigger on pull request
-  pull_request:
-    paths:
-      - 'crawler/**'
-
 jobs:
   install-and-test:
     runs-on: ubuntu-latest
