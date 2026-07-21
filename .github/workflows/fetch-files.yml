@@ -1,0 +1,52 @@
+name: Fetch InnTouch Files by Manifest
+
+on:
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: 'Path to manifest JSON (crawler/config/), array of {url, filename}'
+        required: true
+        type: string
+
+jobs:
+  fetch-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install crawler dependencies
+        working-directory: ./crawler
+        run: npm install
+
+      - name: Install Playwright Chromium browser
+        working-directory: ./crawler
+        run: npx playwright install chromium --with-deps
+
+      - name: Fetch files
+        working-directory: ./crawler
+        env:
+          INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
+          INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
+        run: |
+          node bin/fetch-files.js "${{ github.event.inputs.manifest }}"
+
+      - name: Show results
+        working-directory: ./crawler
+        run: |
+          cat output/fetched-files/fetch_results.json
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fetched-files-${{ github.run_number }}
+          path: |
+            crawler/output/fetched-files/**
+          retention-days: 30
