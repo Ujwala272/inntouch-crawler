@@ -1,0 +1,52 @@
+name: Resolve and Fetch InnTouch Files from DOC Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: 'Path to manifest JSON (crawler/config/), array of {docUrl, filename}'
+        required: true
+        type: string
+
+jobs:
+  resolve-and-fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install crawler dependencies
+        working-directory: ./crawler
+        run: npm install
+
+      - name: Install Playwright Chromium browser
+        working-directory: ./crawler
+        run: npx playwright install chromium --with-deps
+
+      - name: Resolve and fetch files
+        working-directory: ./crawler
+        env:
+          INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
+          INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
+        run: |
+          node bin/resolve-and-fetch.js "${{ github.event.inputs.manifest }}"
+
+      - name: Show results
+        working-directory: ./crawler
+        run: |
+          cat output/resolved-files/resolve_results.json
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resolved-files-${{ github.run_number }}
+          path: |
+            crawler/output/resolved-files/**
+          retention-days: 30
