@@ -10,12 +10,12 @@
       "password": "${CHOICECENTRAL_PASSWORD}"
     },
     "selectors": {
-      "username": "input[name='username'], input#username, input[type='email']",
-      "password": "input[name='password'], input#password, input[type='password']",
-      "submit": "button[type='submit'], input[type='submit']"
+      "username": "input[name='USER_NAME']",
+      "password": "input[name='PASSWORD']",
+      "submit": "input[type='submit']"
     },
     "successIndicator": {
-      "urlNotContains": "login"
+      "urlNotContains": "/loginmgr/login"
     }
   },
   "crawl": {
