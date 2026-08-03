@@ -187,7 +187,8 @@ export class Extractor {
         candidates.forEach(el => {
           if (el.tagName === 'NAV' || el.tagName === 'FOOTER' ||
               el.classList.contains('nav') || el.classList.contains('footer') ||
-              el.classList.contains('sidebar') || el.classList.contains('menu')) {
+              el.classList.contains('sidebar') || el.classList.contains('menu') ||
+              el.querySelector('nav')) {
             return;
           }
 
@@ -225,10 +226,11 @@ export class Extractor {
         let bestCandidate = null;
 
         candidates.forEach(el => {
-          // Skip nav, footer, sidebar
+          // Skip nav, footer, sidebar, and any wrapper that merely contains one
           if (el.tagName === 'NAV' || el.tagName === 'FOOTER' ||
               el.classList.contains('nav') || el.classList.contains('footer') ||
-              el.classList.contains('sidebar') || el.classList.contains('menu')) {
+              el.classList.contains('sidebar') || el.classList.contains('menu') ||
+              el.querySelector('nav')) {
             return;
           }
 
