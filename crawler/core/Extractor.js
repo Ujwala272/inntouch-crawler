@@ -115,13 +115,20 @@ export class Extractor {
    * Extract body text
    */
   async extractBody(page) {
+    // Try configured selectors first - a miss (0 matches on this particular
+    // page) must not abort extraction, since the same selector list is
+    // reused across pages with different markup (e.g. a category page vs.
+    // the homepage on the same site).
     try {
-      // Try configured selectors first
       if (this.selectors.body) {
-        const body = await page.locator(this.selectors.body).first().textContent();
+        const body = await page.locator(this.selectors.body).first().textContent({ timeout: 5000 });
         if (body) return cleanText(body);
       }
+    } catch (error) {
+      // Selector didn't match on this page - fall through to heuristics
+    }
 
+    try {
       // Try heuristic extraction
       if (this.useHeuristics) {
         return await this.extractBodyHeuristic(page);
@@ -139,27 +146,28 @@ export class Extractor {
    * Extract body HTML
    */
   async extractBodyHtml(page) {
-    try {
-      if (this.selectors.body) {
-        return await page.locator(this.selectors.body).first().innerHTML();
+    if (this.selectors.body) {
+      try {
+        const html = await page.locator(this.selectors.body).first().innerHTML({ timeout: 5000 });
+        if (html) return html;
+      } catch (error) {
+        // Selector didn't match on this page - fall through to generic tags
       }
-
-      // Try semantic HTML5 tags
-      const semanticSelectors = ['article', 'main', '.content', '.post-content', '.article-content'];
-
-      for (const selector of semanticSelectors) {
-        try {
-          const html = await page.locator(selector).first().innerHTML();
-          if (html) return html;
-        } catch (e) {
-          continue;
-        }
-      }
-
-      return '';
-    } catch (error) {
-      return '';
     }
+
+    // Try semantic HTML5 tags
+    const semanticSelectors = ['article', 'main', '.content', '.post-content', '.article-content'];
+
+    for (const selector of semanticSelectors) {
+      try {
+        const html = await page.locator(selector).first().innerHTML({ timeout: 2000 });
+        if (html) return html;
+      } catch (e) {
+        continue;
+      }
+    }
+
+    return '';
   }
 
   /**
