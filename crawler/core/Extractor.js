@@ -188,7 +188,7 @@ export class Extractor {
           if (el.tagName === 'NAV' || el.tagName === 'FOOTER' ||
               el.classList.contains('nav') || el.classList.contains('footer') ||
               el.classList.contains('sidebar') || el.classList.contains('menu') ||
-              el.querySelector('nav') || el.closest('nav')) {
+              el.querySelector('nav, footer') || el.closest('nav, footer')) {
             return;
           }
 
@@ -230,7 +230,7 @@ export class Extractor {
           if (el.tagName === 'NAV' || el.tagName === 'FOOTER' ||
               el.classList.contains('nav') || el.classList.contains('footer') ||
               el.classList.contains('sidebar') || el.classList.contains('menu') ||
-              el.querySelector('nav') || el.closest('nav')) {
+              el.querySelector('nav, footer') || el.closest('nav, footer')) {
             return;
           }
 
