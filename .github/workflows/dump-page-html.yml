@@ -8,10 +8,15 @@ on:
         required: true
         type: string
       no_auth:
-        description: 'Skip InnTouch login (use for non-InnTouch sites)'
+        description: 'Skip login entirely'
         required: false
         default: false
         type: boolean
+      config_file:
+        description: 'Config file (crawler/config/) to reuse auth/waitForSelector from, for non-InnTouch sites'
+        required: false
+        default: ''
+        type: string
 
 jobs:
   dump-page-html:
@@ -39,12 +44,18 @@ jobs:
         env:
           INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
           INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
+          CHOICECENTRAL_USERNAME: ${{ secrets.CHOICECENTRAL_USERNAME }}
+          CHOICECENTRAL_PASSWORD: ${{ secrets.CHOICECENTRAL_PASSWORD }}
+          CONFIG_FILE: ${{ github.event.inputs.config_file }}
         run: |
+          ARGS=("${{ github.event.inputs.page_url }}" --out output/page-dump.html)
           if [ "${{ github.event.inputs.no_auth }}" = "true" ]; then
-            node bin/dump-page-html.js "${{ github.event.inputs.page_url }}" --out output/page-dump.html --no-auth
-          else
-            node bin/dump-page-html.js "${{ github.event.inputs.page_url }}" --out output/page-dump.html
+            ARGS+=(--no-auth)
           fi
+          if [ -n "$CONFIG_FILE" ]; then
+            ARGS+=(--config "$CONFIG_FILE")
+          fi
+          node bin/dump-page-html.js "${ARGS[@]}"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

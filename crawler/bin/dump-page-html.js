@@ -6,11 +6,16 @@
  * first content fragment, missing later tiles/links entirely.
  *
  * Usage:
- *   node bin/dump-page-html.js <url> [--out <file>] [--no-auth]
+ *   node bin/dump-page-html.js <url> [--out <file>] [--no-auth] [--config <file>]
  *
- * --no-auth skips the InnTouch login step entirely and just navigates
- * to the URL as-is - use this to inspect a page/site whose login form
- * or auth flow isn't known yet (e.g. before writing a new site config).
+ * --no-auth skips the login step entirely and just navigates to the URL
+ * as-is - use this to inspect a page/site whose login form or auth flow
+ * isn't known yet (e.g. before writing a new site config).
+ *
+ * --config <file> reuses the auth block and crawl.waitForSelector from an
+ * existing crawler config (e.g. config/choicecentral-local-marketing.config.json)
+ * instead of the hardcoded InnTouch login - use this to see the actual
+ * post-login DOM for a non-InnTouch site.
  */
 
 import path from 'path';
@@ -28,30 +33,43 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const args = process.argv.slice(2);
-const url = args.find((a, i) => !a.startsWith('--') && args[i - 1] !== '--out');
+const url = args.find((a, i) => !a.startsWith('--') && args[i - 1] !== '--out' && args[i - 1] !== '--config');
 const outIdx = args.indexOf('--out');
 const outFile = outIdx !== -1 ? args[outIdx + 1] : path.join(__dirname, '..', 'output', 'page-dump.html');
 const noAuth = args.includes('--no-auth');
+const configIdx = args.indexOf('--config');
+const configFile = configIdx !== -1 ? args[configIdx + 1] : null;
 
 if (!url) {
-  console.error('Usage: node bin/dump-page-html.js <url> [--out <file>]');
+  console.error('Usage: node bin/dump-page-html.js <url> [--out <file>] [--no-auth] [--config <file>]');
   process.exit(1);
 }
 
-const authConfig = JSON.parse(JSON.stringify({
-  strategy: 'form',
-  loginUrl: 'https://www.inn-touch.ca/login.jspa',
-  credentials: {
-    username: '${INNTOUCH_USERNAME}',
-    password: '${INNTOUCH_PASSWORD}',
-  },
-  selectors: {
-    username: "input[name='username'], input#username",
-    password: "input[name='password'], input#password",
-    submit: "button[type='submit'], input[type='submit']",
-  },
-  successIndicator: { urlNotContains: '/login' },
-}), (key, value) => (typeof value === 'string' ? substituteEnvVars(value) : value));
+const siteConfig = configFile
+  ? JSON.parse(fs.readFileSync(path.resolve(configFile), 'utf8'))
+  : {
+      auth: {
+        strategy: 'form',
+        loginUrl: 'https://www.inn-touch.ca/login.jspa',
+        credentials: {
+          username: '${INNTOUCH_USERNAME}',
+          password: '${INNTOUCH_PASSWORD}',
+        },
+        selectors: {
+          username: "input[name='username'], input#username",
+          password: "input[name='password'], input#password",
+          submit: "button[type='submit'], input[type='submit']",
+        },
+        successIndicator: { urlNotContains: '/login' },
+      },
+      crawl: { waitForSelector: '.jive-rendered-content' },
+    };
+
+const authConfig = JSON.parse(
+  JSON.stringify(siteConfig.auth),
+  (key, value) => (typeof value === 'string' ? substituteEnvVars(value) : value)
+);
+const waitForSelector = siteConfig.crawl?.waitForSelector || null;
 
 async function main() {
   await fs.ensureDir(path.dirname(outFile));
@@ -73,11 +91,11 @@ async function main() {
   // understood, but resolve fine with this sequence (as proven by the
   // original page-scoped crawl of this same URL).
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
-  if (!noAuth) {
+  if (!noAuth && waitForSelector) {
     try {
-      await page.waitForSelector('.jive-rendered-content', { timeout: 10000 });
+      await page.waitForSelector(waitForSelector, { timeout: 10000 });
     } catch (e) {
-      consoleLogger.warn('Selector .jive-rendered-content not found, continuing anyway');
+      consoleLogger.warn(`Selector ${waitForSelector} not found, continuing anyway`);
     }
   }
   await page.waitForTimeout(5000);
