@@ -66,7 +66,21 @@ export function generateIdFromUrl(url) {
  * Extract file extension from URL or content type
  */
 export function getFileExtension(url, contentType = null) {
-  // Try URL extension first
+  const knownExtensions = ['pdf', 'docx', 'xlsx', 'pptx', 'doc', 'xls', 'ppt', 'jpg', 'jpeg', 'png', 'gif', 'svg', 'mp4', 'webm', 'zip'];
+
+  // Scan the full URL (including query string) for a known extension, closest
+  // to the end first - handles download links proxied through a query param,
+  // e.g. index.asp?Action=GET&ID=path/to/file.pdf, where the real file
+  // extension isn't on the URL path.
+  const matches = [...url.matchAll(/\.([a-zA-Z0-9]{2,5})(?=[?&#]|$)/g)];
+  for (let i = matches.length - 1; i >= 0; i--) {
+    const ext = matches[i][1].toLowerCase();
+    if (knownExtensions.includes(ext)) {
+      return ext;
+    }
+  }
+
+  // Try URL path extension (covers any extension, not just known ones)
   try {
     const parsed = new URL(url);
     const ext = path.extname(parsed.pathname).toLowerCase();

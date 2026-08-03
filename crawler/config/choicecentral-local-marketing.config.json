@@ -19,24 +19,25 @@
     }
   },
   "crawl": {
-    "maxDepth": 5,
-    "maxPages": 300,
+    "maxDepth": 2,
+    "maxPages": 30,
     "allowedDomains": ["apps.choicecentral.com"],
     "includePatterns": [
       "/choicebuys/brandstandards/LocalMarketing"
     ],
     "excludePatterns": [
       "/logout",
-      "/admin"
+      "/admin",
+      "/loginmgr/"
     ],
     "delay": 1000
   },
   "extraction": {
     "useHeuristics": true,
     "selectors": {
-      "title": "h1, .page-title",
-      "body": "main, .content, article",
-      "documents": "a[href$='.pdf'], a[href$='.docx'], a[href$='.xlsx'], a[href$='.pptx']",
+      "title": "h2, .page-title, h1",
+      "body": "section.cta_part, main, .content, article",
+      "documents": "a[href$='.pdf'], a[href$='.docx'], a[href$='.xlsx'], a[href$='.pptx'], a[href*='Action=GET']",
       "images": "img[src]"
     }
   },
