@@ -167,7 +167,42 @@ export class Extractor {
       }
     }
 
-    return '';
+    // Last resort: same "largest content block" heuristic used by
+    // extractBodyHeuristic, but returning innerHTML so links/formatting
+    // survive - needed for pages whose markup uses neither the configured
+    // selector nor any of the semantic tags above.
+    return await this.extractBodyHtmlHeuristic(page);
+  }
+
+  /**
+   * Heuristic-based body HTML extraction (mirrors extractBodyHeuristic)
+   */
+  async extractBodyHtmlHeuristic(page) {
+    try {
+      return await page.evaluate(() => {
+        const candidates = document.querySelectorAll('div, section, article');
+        let maxLength = 0;
+        let bestCandidate = null;
+
+        candidates.forEach(el => {
+          if (el.tagName === 'NAV' || el.tagName === 'FOOTER' ||
+              el.classList.contains('nav') || el.classList.contains('footer') ||
+              el.classList.contains('sidebar') || el.classList.contains('menu')) {
+            return;
+          }
+
+          const text = el.textContent.trim();
+          if (text.length > maxLength) {
+            maxLength = text.length;
+            bestCandidate = el;
+          }
+        });
+
+        return bestCandidate ? bestCandidate.innerHTML : '';
+      });
+    } catch (error) {
+      return '';
+    }
   }
 
   /**
