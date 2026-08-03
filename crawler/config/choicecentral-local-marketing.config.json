@@ -1,0 +1,59 @@
+{
+  "name": "ChoiceCentral Local Marketing",
+  "startUrl": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp",
+  "headless": true,
+  "auth": {
+    "strategy": "form",
+    "loginUrl": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp",
+    "credentials": {
+      "username": "${CHOICECENTRAL_USERNAME}",
+      "password": "${CHOICECENTRAL_PASSWORD}"
+    },
+    "selectors": {
+      "username": "input[name='username'], input#username, input[type='email']",
+      "password": "input[name='password'], input#password, input[type='password']",
+      "submit": "button[type='submit'], input[type='submit']"
+    },
+    "successIndicator": {
+      "urlNotContains": "login"
+    }
+  },
+  "crawl": {
+    "maxDepth": 5,
+    "maxPages": 300,
+    "allowedDomains": ["apps.choicecentral.com"],
+    "includePatterns": [
+      "/choicebuys/brandstandards/LocalMarketing"
+    ],
+    "excludePatterns": [
+      "/logout",
+      "/admin"
+    ],
+    "delay": 1000
+  },
+  "extraction": {
+    "useHeuristics": true,
+    "selectors": {
+      "title": "h1, .page-title",
+      "body": "main, .content, article",
+      "documents": "a[href$='.pdf'], a[href$='.docx'], a[href$='.xlsx'], a[href$='.pptx']",
+      "images": "img[src]"
+    }
+  },
+  "download": {
+    "enabled": true,
+    "downloadDir": "./output/choicecentral-local-marketing/downloads",
+    "allowedTypes": ["pdf", "docx", "xlsx", "pptx", "jpg", "png", "gif"],
+    "maxFileSize": 52428800,
+    "generateInventory": true,
+    "deduplicateByTitle": true,
+    "deduplicateByHash": true
+  },
+  "output": {
+    "formats": ["json", "csv"],
+    "jsonFile": "./output/choicecentral-local-marketing/choicecentral_local_marketing_crawl.json",
+    "csvFile": "./output/choicecentral-local-marketing/choicecentral_local_marketing_crawl.csv",
+    "inventoryFile": "./output/choicecentral-local-marketing/file_inventory.csv",
+    "summaryFile": "./output/choicecentral-local-marketing/crawl_summary.json"
+  }
+}

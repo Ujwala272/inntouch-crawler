@@ -12,6 +12,7 @@ on:
         options:
           - local-sales
           - marketing-suite
+          - choicecentral-local-marketing
       crawl_mode:
         description: 'Crawl mode'
         required: true
@@ -66,6 +67,8 @@ jobs:
         run: |
           echo "INNTOUCH_USERNAME=${{ secrets.INNTOUCH_USERNAME }}" >> .env
           echo "INNTOUCH_PASSWORD=${{ secrets.INNTOUCH_PASSWORD }}" >> .env
+          echo "CHOICECENTRAL_USERNAME=${{ secrets.CHOICECENTRAL_USERNAME }}" >> .env
+          echo "CHOICECENTRAL_PASSWORD=${{ secrets.CHOICECENTRAL_PASSWORD }}" >> .env
           echo "BASE_URL=https://www.inn-touch.ca" >> .env
           echo "HEADLESS=true" >> .env
           echo "LOG_LEVEL=info" >> .env
@@ -83,6 +86,8 @@ jobs:
         env:
           INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
           INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
+          CHOICECENTRAL_USERNAME: ${{ secrets.CHOICECENTRAL_USERNAME }}
+          CHOICECENTRAL_PASSWORD: ${{ secrets.CHOICECENTRAL_PASSWORD }}
           LIBRARY: ${{ github.event.inputs.library || 'local-sales' }}
           CRAWL_MODE: ${{ github.event.inputs.crawl_mode || 'smart' }}
           PAGE_CONFIG: ${{ github.event.inputs.page_config || 'inntouch-handling-objections.config.json' }}
@@ -96,6 +101,11 @@ jobs:
             echo "🎨 Crawling Marketing Suite library"
             node bin/crawl.js \
               --config config/marketing-suite.config.json \
+              --verbose
+          elif [ "$LIBRARY" = "choicecentral-local-marketing" ]; then
+            echo "🏬 Crawling ChoiceCentral Local Marketing library"
+            node bin/crawl.js \
+              --config config/choicecentral-local-marketing.config.json \
               --verbose
           elif [ "$CRAWL_MODE" = "discovery" ]; then
             echo "🔍 Running DISCOVERY mode (500 pages max, no downloads)"
