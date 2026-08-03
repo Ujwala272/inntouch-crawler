@@ -366,6 +366,19 @@ jobs:
             node -e "const data = require('./output/inntouch_library_content.json'); console.log('Total pages:', data.pages?.length || 0); console.log('Categories:', data.categories?.length || 0); console.log('Files downloaded:', data.metadata?.statistics?.filesDownloaded || 0);"
           fi
 
+      - name: Validate crawl output
+        working-directory: ./crawler
+        env:
+          LIBRARY: ${{ github.event.inputs.library || 'local-sales' }}
+        run: |
+          if [ "$LIBRARY" = "choicecentral-local-marketing" ]; then
+            node bin/validate-crawl.js output/choicecentral-local-marketing/choicecentral_local_marketing_crawl.json
+          elif [ "$LIBRARY" = "marketing-suite" ]; then
+            node bin/validate-crawl.js output/marketing-suite/marketing_suite_crawl.json
+          else
+            echo "No validator wired up yet for library '$LIBRARY' - skipping (add a case here as new libraries are added)"
+          fi
+
       - name: Upload output artifacts
         uses: actions/upload-artifact@v4
         if: always()
