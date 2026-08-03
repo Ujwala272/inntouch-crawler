@@ -4,9 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       page_url:
-        description: 'Full URL of the InnTouch page to dump'
+        description: 'Full URL of the page to dump'
         required: true
         type: string
+      no_auth:
+        description: 'Skip InnTouch login (use for non-InnTouch sites)'
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   dump-page-html:
@@ -35,7 +40,11 @@ jobs:
           INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
           INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
         run: |
-          node bin/dump-page-html.js "${{ github.event.inputs.page_url }}" --out output/page-dump.html
+          if [ "${{ github.event.inputs.no_auth }}" = "true" ]; then
+            node bin/dump-page-html.js "${{ github.event.inputs.page_url }}" --out output/page-dump.html --no-auth
+          else
+            node bin/dump-page-html.js "${{ github.event.inputs.page_url }}" --out output/page-dump.html
+          fi
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

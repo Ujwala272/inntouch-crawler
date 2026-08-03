@@ -6,7 +6,11 @@
  * first content fragment, missing later tiles/links entirely.
  *
  * Usage:
- *   node bin/dump-page-html.js <url> [--out <file>]
+ *   node bin/dump-page-html.js <url> [--out <file>] [--no-auth]
+ *
+ * --no-auth skips the InnTouch login step entirely and just navigates
+ * to the URL as-is - use this to inspect a page/site whose login form
+ * or auth flow isn't known yet (e.g. before writing a new site config).
  */
 
 import path from 'path';
@@ -24,9 +28,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const args = process.argv.slice(2);
-const url = args.find(a => !a.startsWith('--'));
+const url = args.find((a, i) => !a.startsWith('--') && args[i - 1] !== '--out');
 const outIdx = args.indexOf('--out');
 const outFile = outIdx !== -1 ? args[outIdx + 1] : path.join(__dirname, '..', 'output', 'page-dump.html');
+const noAuth = args.includes('--no-auth');
 
 if (!url) {
   console.error('Usage: node bin/dump-page-html.js <url> [--out <file>]');
@@ -55,8 +60,12 @@ async function main() {
   const context = await browser.newContext();
   const page = await context.newPage();
 
-  const authenticator = new Authenticator(authConfig);
-  await authenticator.authenticate(context, page);
+  if (!noAuth) {
+    const authenticator = new Authenticator(authConfig);
+    await authenticator.authenticate(context, page);
+  } else {
+    consoleLogger.warn('Skipping authentication (--no-auth)');
+  }
 
   // Match the working crawler's navigation (domcontentloaded + selector wait +
   // settle time) rather than networkidle - Jive's community pages can render
@@ -64,12 +73,16 @@ async function main() {
   // understood, but resolve fine with this sequence (as proven by the
   // original page-scoped crawl of this same URL).
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
-  try {
-    await page.waitForSelector('.jive-rendered-content', { timeout: 10000 });
-  } catch (e) {
-    consoleLogger.warn('Selector .jive-rendered-content not found, continuing anyway');
+  if (!noAuth) {
+    try {
+      await page.waitForSelector('.jive-rendered-content', { timeout: 10000 });
+    } catch (e) {
+      consoleLogger.warn('Selector .jive-rendered-content not found, continuing anyway');
+    }
   }
   await page.waitForTimeout(5000);
+
+  consoleLogger.info(`Final URL after navigation: ${page.url()}`);
 
   const html = await page.content();
   await fs.writeFile(outFile, html);
