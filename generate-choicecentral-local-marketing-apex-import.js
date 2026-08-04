@@ -119,6 +119,7 @@ public class ChoiceCentralLocalMarketingImporter {
         Content__c library = new Content__c(
             Name = LIBRARY_NAME,
             Content_Unique_Id__c = LIBRARY_ID_PREFIX,
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX,
             Content_Type__c = 'Library',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -139,6 +140,7 @@ public class ChoiceCentralLocalMarketingImporter {
     apex += `        categories.add(new Content__c(
             Name = '${escapeApexString(entry.title)}',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-${entry.slug}',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-${entry.slug}',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -170,6 +172,7 @@ public class ChoiceCentralLocalMarketingImporter {
     apex += `        articles.add(new Content__c(
             Name = '${escapeApexString(entry.title)}',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-${entry.parentSlug}-${entry.slug}',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-${entry.parentSlug}-${entry.slug}',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),

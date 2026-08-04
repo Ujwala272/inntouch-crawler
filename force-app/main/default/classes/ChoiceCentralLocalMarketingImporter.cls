@@ -40,6 +40,7 @@ public class ChoiceCentralLocalMarketingImporter {
         Content__c library = new Content__c(
             Name = LIBRARY_NAME,
             Content_Unique_Id__c = LIBRARY_ID_PREFIX,
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX,
             Content_Type__c = 'Library',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -57,6 +58,7 @@ public class ChoiceCentralLocalMarketingImporter {
         categories.add(new Content__c(
             Name = 'Digital Marketing',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-digital-marketing',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-digital-marketing',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -69,6 +71,7 @@ public class ChoiceCentralLocalMarketingImporter {
         categories.add(new Content__c(
             Name = 'Website',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-website',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-website',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -81,6 +84,7 @@ public class ChoiceCentralLocalMarketingImporter {
         categories.add(new Content__c(
             Name = 'Collateral & Photography',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-collateral-photography',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-collateral-photography',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -93,6 +97,7 @@ public class ChoiceCentralLocalMarketingImporter {
         categories.add(new Content__c(
             Name = 'Co-op Marketing Program',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-co-op-marketing',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-co-op-marketing',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -105,6 +110,7 @@ public class ChoiceCentralLocalMarketingImporter {
         categories.add(new Content__c(
             Name = 'New Hotels',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-new-hotels',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-new-hotels',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -117,6 +123,7 @@ public class ChoiceCentralLocalMarketingImporter {
         categories.add(new Content__c(
             Name = 'B2B Marketing',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-b2b-marketing',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-b2b-marketing',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -129,6 +136,7 @@ public class ChoiceCentralLocalMarketingImporter {
         categories.add(new Content__c(
             Name = 'Choice Accelerate',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-choice-accelerate',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-choice-accelerate',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -154,6 +162,7 @@ public class ChoiceCentralLocalMarketingImporter {
         articles.add(new Content__c(
             Name = 'RevUp',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-digital-marketing-revup',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-digital-marketing-revup',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -166,6 +175,7 @@ public class ChoiceCentralLocalMarketingImporter {
         articles.add(new Content__c(
             Name = 'Search Engine Optimization (SEO)',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-digital-marketing-seo',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-digital-marketing-seo',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -178,6 +188,7 @@ public class ChoiceCentralLocalMarketingImporter {
         articles.add(new Content__c(
             Name = 'Social Media',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-digital-marketing-social-media',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-digital-marketing-social-media',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -190,6 +201,7 @@ public class ChoiceCentralLocalMarketingImporter {
         articles.add(new Content__c(
             Name = 'Tripadvisor',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-digital-marketing-tripadvisor',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-digital-marketing-tripadvisor',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -202,6 +214,7 @@ public class ChoiceCentralLocalMarketingImporter {
         articles.add(new Content__c(
             Name = 'Vanity Sites',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-website-vanity-sites',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-website-vanity-sites',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
@@ -214,6 +227,7 @@ public class ChoiceCentralLocalMarketingImporter {
         articles.add(new Content__c(
             Name = 'SmartMarketing',
             Content_Unique_Id__c = LIBRARY_ID_PREFIX + '-collateral-photography-smartmarketing',
+            Content_Article_URL__c = '/resources?tabName=Reference&name=' + LIBRARY_ID_PREFIX + '-collateral-photography-smartmarketing',
             Content_Type__c = 'Reference Guides',
             Status__c = 'Published',
             Published_Date__c = Date.today(),
