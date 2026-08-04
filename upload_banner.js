@@ -12,6 +12,14 @@
  *    set, the hero renders as a blank box (its CSS background-image URL
  *    resolves to nothing). Patched here right after upload, since the
  *    ContentDocument Id needed for the URL is only known post-upload.
+ *
+ * IMPORTANT: Banner_Image__c's URL host must be the Experience Cloud
+ * community domain (e.g. choicehotelsfranchise--urapolu2.sandbox.my.site.com),
+ * NOT the API domain from `sf org display` (...my.salesforce.com) - the
+ * library detail page renders inside the community, and the API domain's
+ * image either 404s or is blocked there, rendering as a blank box.
+ * ccUtilityClass derives this same community host from
+ * SiteDetail.SecureUrl for the "Zx" site.
  */
 const fs = require('fs');
 const path = require('path');
@@ -19,6 +27,7 @@ const { execSync } = require('child_process');
 
 const API = 'v60.0';
 const LIBRARY_UID = '00018-local-marketing-support-suite';
+const ZX_SITE_DURABLE_ID = '0DMPB00000004DK4AY';
 const IMAGE_PATH = path.join(__dirname, 'choicecentral-local-marketing', 'downloads', 'LocalMarketing.png');
 
 function orgAuth(alias) {
@@ -70,7 +79,11 @@ async function main() {
   const docId = (await queryAll(A, `SELECT ContentDocumentId FROM ContentVersion WHERE Id = '${cv.id}'`))[0].ContentDocumentId;
   console.log(`ContentDocument Id: ${docId}`);
 
-  const downloadUrl = `${A.url}/sfc/servlet.shepherd/document/download/${docId}`;
+  const siteDetail = (await queryAll(A, `SELECT SecureUrl FROM SiteDetail WHERE DurableId = '${ZX_SITE_DURABLE_ID}'`))[0];
+  const communityUrl = new URL(siteDetail.SecureUrl);
+  const communityBaseUrl = `${communityUrl.protocol}//${communityUrl.host}`;
+
+  const downloadUrl = `${communityBaseUrl}/sfc/servlet.shepherd/document/download/${docId}`;
   await rest(A, `/services/data/${API}/sobjects/Content__c/${lib.Id}`, 'PATCH', {
     Banner_Image__c: downloadUrl
   });

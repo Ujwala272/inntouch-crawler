@@ -361,10 +361,16 @@ public class ChoiceCentralLocalMarketingImporter {
 // hide an HTML comment inside), so an HTML-comment marker there shows up as
 // literal visible text. Body__c passes '<!-- truncated -->' explicitly,
 // since lightning-formatted-rich-text/rendered HTML there does hide it.
+// Cuts at the last whitespace boundary before maxLength rather than an
+// exact character count, so it never lands mid-word (e.g. "...select a"
+// instead of "...select a topic").
 function truncate(str, maxLength, marker = '') {
   if (!str) return '';
   if (str.length <= maxLength) return str;
-  return str.substring(0, maxLength) + marker;
+  let cut = str.substring(0, maxLength);
+  const lastSpace = cut.lastIndexOf(' ');
+  if (lastSpace > 0) cut = cut.substring(0, lastSpace);
+  return cut + marker;
 }
 
 function escapeApexString(str) {

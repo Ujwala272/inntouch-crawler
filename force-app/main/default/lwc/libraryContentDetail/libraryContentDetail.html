@@ -1,0 +1,221 @@
+<!--
+ * @author Ujwala Rapolu
+ *
+ * @date May/25/2026
+ *
+ * @description CHCMIG-262 Renders the detail view for a library content record on the microsite.
+ *              Wires to libraryContentDetailCtrl.getLibraryDetail to load the parent library, topic categories,
+ *              and featured reference guides for the given recordId. Supports tabbed navigation between
+ *              an Overview tab and per-category tabs, handles guide navigation (internal and external URLs),
+ *              and surfaces toast notifications on load errors.
+-->
+<template>
+    <div class="library-detail-root">
+
+        <template if:true={isLoading}>
+            <div class="spinner-wrap">
+                <lightning-spinner alternative-text="Loading" variant="brand" size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:true={toastDetails}>
+            <c-cc-toast-message
+                toast-type={toastDetails.toastType}
+                toast-message={toastDetails.toastMessage}>
+            </c-cc-toast-message>
+        </template>
+
+        <template if:true={hasData}>
+
+            <div class="hero" style={heroStyle}>
+                <div class="hero-overlay">
+                    <div class="hero-content">
+                        <h1 class="hero-title">{parentTitle}</h1>
+                        <template if:true={parentSummary}>
+                            <p class="hero-summary">{parentSummary}</p>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <div role="tablist" aria-label="Library categories" class="tabs" onkeydown={handleTabKeyDown}>
+                <template for:each={tabList} for:item="tab">
+                    <button
+                        key={tab.key}
+                        type="button"
+                        role="tab"
+                        class={tab.cssClass}
+                        data-tab={tab.key}
+                        aria-selected={tab.ariaSelected}
+                        tabindex={tab.tabIndex}
+                        onclick={handleTabClick}>
+                        {tab.label}
+                    </button>
+                </template>
+            </div>
+
+            <div class="tab-panels">
+
+                <template if:true={isOverviewActive}>
+                    <section class="overview-panel" role="tabpanel" aria-label="Overview">
+                        <div class="overview-grid">
+                            <div class="overview-text">
+                                <h2 class="section-title">{parentTitle}</h2>
+                                <template if:true={parentDescription}>
+                                    <lightning-formatted-rich-text
+                                        class="overview-description"
+                                        value={parentDescription}>
+                                    </lightning-formatted-rich-text>
+                                </template>
+                            </div>
+                            <template if:true={parentImageUrl}>
+                                <div class="overview-image">
+                                    <img src={parentImageUrl} alt={parentTitle} />
+                                </div>
+                            </template>
+                        </div>
+
+                        <div class="topic-area-section">
+                            <h3 class="section-subtitle">{labels.topicAreas}</h3>
+
+                            <template if:true={hasCategories}>
+                                <div class="category-card-grid">
+                                    <template for:each={categories} for:item="cat">
+                                        <article
+                                            key={cat.categoryName}
+                                            class="category-card"
+                                            tabindex="0"
+                                            role="button"
+                                            data-category={cat.categoryName}
+                                            onclick={handleCategoryCardClick}
+                                            onkeydown={handleCategoryCardKeyDown}>
+                                            <div class="category-card-header">
+                                                <h4 class="category-card-title">{cat.categoryName}</h4>
+                                            </div>
+                                            <template if:true={cat.hasTopics}>
+                                                <ul class="topic-list">
+                                                    <template for:each={cat.topics} for:item="topic">
+                                                        <li key={topic} class="topic-item">{topic}</li>
+                                                    </template>
+                                                </ul>
+                                            </template>
+                                            <template if:false={cat.hasTopics}>
+                                                <p class="empty-inline">{labels.emptyTopics}</p>
+                                            </template>
+                                            <div class="category-card-footer">
+                                                <span class="learn-more">{labels.learnMore}</span>
+                                                <img class="learn-more-icon" src={rightIcon} alt="" width="16" height="16" />
+                                            </div>
+                                        </article>
+                                    </template>
+                                </div>
+                            </template>
+
+                            <template if:false={hasCategories}>
+                                <div class="empty-state">{labels.emptyCategories}</div>
+                            </template>
+                        </div>
+
+                        <div class="featured-section">
+                            <div class="featured-header">
+                                <h3 class="section-subtitle">{labels.featuredGuides}</h3>
+                            </div>
+
+                            <template if:true={hasFeaturedGuides}>
+                                <div class="featured-grid">
+                                    <template for:each={featuredReferenceGuides} for:item="guide">
+                                        <article
+                                            key={guide.id}
+                                            class="featured-card"
+                                            tabindex="0"
+                                            role="link"
+                                            data-id={guide.id}
+                                            onclick={handleGuideClick}
+                                            onkeydown={handleGuideKeyDown}>
+                                            <template if:true={guide.thumbnail}>
+                                                <div class="featured-thumb">
+                                                    <img src={guide.thumbnail} alt={guide.title} />
+                                                </div>
+                                            </template>
+                                            <div class="featured-body">
+                                                <h4 class="featured-title">{guide.title}</h4>
+                                                <template if:true={guide.summary}>
+                                                    <p class="featured-summary">{guide.summary}</p>
+                                                </template>
+                                                <template if:true={guide.hasTopics}>
+                                                    <div class="pill-row">
+                                                        <template for:each={guide.topics} for:item="topic">
+                                                            <span key={topic} class="pill">{topic}</span>
+                                                        </template>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </article>
+                                    </template>
+                                </div>
+                            </template>
+
+                            <template if:false={hasFeaturedGuides}>
+                                <div class="empty-state">{labels.emptyGuides}</div>
+                            </template>
+                        </div>
+                    </section>
+                </template>
+
+                <template if:false={isOverviewActive}>
+                    <section class="category-panel" role="tabpanel" aria-label={activeCategoryLabel}>
+                        <div class="category-panel-header">
+                            <h2 class="section-title">{activeCategoryLabel}</h2>
+                            <template if:true={activeCategory.hasTopics}>
+                                <div class="pill-row">
+                                    <template for:each={activeCategory.topics} for:item="topic">
+                                        <span key={topic} class="pill pill-soft">{topic}</span>
+                                    </template>
+                                </div>
+                            </template>
+                        </div>
+
+                        <template if:true={activeCategory.hasContent}>
+                            <div class="featured-grid">
+                                <template for:each={activeCategory.relatedContent} for:item="guide">
+                                    <article
+                                        key={guide.id}
+                                        class="featured-card"
+                                        tabindex="0"
+                                        role="link"
+                                        data-id={guide.id}
+                                        onclick={handleGuideClick}
+                                        onkeydown={handleGuideKeyDown}>
+                                        <template if:true={guide.thumbnail}>
+                                            <div class="featured-thumb">
+                                                <img src={guide.thumbnail} alt={guide.title} />
+                                            </div>
+                                        </template>
+                                        <div class="featured-body">
+                                            <h4 class="featured-title">{guide.title}</h4>
+                                            <template if:true={guide.summary}>
+                                                <p class="featured-summary">{guide.summary}</p>
+                                            </template>
+                                        </div>
+                                    </article>
+                                </template>
+                            </div>
+                        </template>
+
+                        <template if:false={activeCategory.hasContent}>
+                            <div class="empty-state">{labels.emptyCategoryContent}</div>
+                        </template>
+                    </section>
+                </template>
+
+            </div>
+        </template>
+
+        <template if:true={showEmptyState}>
+            <div class="empty-state library-empty">
+                {labels.emptyLibrary}
+            </div>
+        </template>
+
+    </div>
+</template>
