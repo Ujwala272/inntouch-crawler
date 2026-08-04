@@ -1,0 +1,1380 @@
+{
+  "metadata": {
+    "crawlId": "3fe1a1e2-625c-47cb-b985-82cd55617823",
+    "startUrl": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp",
+    "crawledAt": "2026-08-03T23:51:14.876Z",
+    "config": {
+      "maxDepth": 2,
+      "maxPages": 30
+    },
+    "statistics": {
+      "pagesVisited": 14,
+      "filesDownloaded": 83,
+      "errors": 16,
+      "duration": "-1785800660s",
+      "urlsDiscovered": 442,
+      "maxDepthReached": 1
+    },
+    "queueStatus": {
+      "remainingInQueue": 44,
+      "totalDiscovered": 442,
+      "urlsCrawled": 30
+    }
+  },
+  "library": {
+    "name": "Local Marketing Support Suite.",
+    "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp",
+    "description": "Local Marketing Support Suite. Choice wants to help you take local marketing into your own hands. The Local Marketing Support Suite is where you will find tools, resources, and educational materials on all areas of Marketing. To get started, select a topic below to learn What it is?, What does Ch...",
+    "scrapedAt": "2026-08-03T23:44:27.958Z"
+  },
+  "categories": [
+    {
+      "id": "localmarketing",
+      "name": "LocalMarketing",
+      "pages": [
+        "indexasp"
+      ],
+      "depth": 1
+    },
+    {
+      "id": "home",
+      "name": "Home",
+      "pages": [
+        "indexasp",
+        "revupasp",
+        "seoasp",
+        "social-mediaasp",
+        "tripadvisorasp",
+        "indexasp",
+        "vanityasp",
+        "indexasp",
+        "collateralasp",
+        "indexasp",
+        "indexasp",
+        "b2b-marketing-opportunitiesasp",
+        "indexasp"
+      ],
+      "depth": 1
+    }
+  ],
+  "pages": [
+    {
+      "id": "indexasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp",
+      "title": "Local Marketing Support Suite.",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Local Marketing Support Suite."
+        },
+        {
+          "level": 3,
+          "text": "DigitalMarketing"
+        },
+        {
+          "level": 3,
+          "text": "Website"
+        },
+        {
+          "level": 3,
+          "text": "Collateral &\nPhotography"
+        },
+        {
+          "level": 3,
+          "text": "Co-op Marketing\nProgram"
+        }
+      ],
+      "body": "Local Marketing Support Suite. Choice wants to help you take local marketing into your own hands. The Local Marketing Support Suite is where you will find tools, resources, and educational materials on all areas of Marketing. To get started, select a topic below to learn What it is?, What does Choice do?, and What can you do? throughout these areas of Marketing. Let’s start with an overview of Market itself. There are many definitions to Marketing, the American Marketing Association (AMA) defines Marketing as: “Marketing is the activity, set of institutions, and processes for creating, communicating, delivering, and exchanging offerings that have value for customers, clients, partners, and society at large.” The following confidential and proprietary documents provide a high-level overview of Choice’s US marketing strategy and marketing mix. What is Marketing? (3 Pages PDF) Check out our Marketing Checklist to help you get started: Local Marketing Checklist (2 Pages PDF) Secondary Name Checklist (1 Page PDF) - designed to walk hotels through updating all digital marketing listings when they update to their secondary name. This document covers why this is important, and outlines the different channels that will need to be updated. How Choice Marketing Supports Your Hotel (2 Pages PDF) Choice Accelerate – Digital Demand Generation Program 2026 National Campaign: Travel Values Travel Values continues to showcase the strength and versatility of the Choice Hotels portfolio, spotlighting brands that define value today. Keegan-Michael Key returns for a third year as a familiar presence, adding warmth and humor that help the message connect with guests. The campaign also spotlights Choice Privileges®, a powerful source of repeat stays for your hotel. To reach travelers where they are, the campaign will be seen across various entertainment and sports channels in the United States, including notable prime sports moments like college basketball. The campaign will also appear across Choice Hotels’ and Key’s social media channels, including Facebook, Instagram, Pinterest, Snap, and TikTok. Check out our commercials on our YouTube channel Read the press release here Celebrate the World’s Biggest Soccer Event – 2026 (1 Page PDF) Choice Hotels Reaching AARP Members (2 Pages PDF)",
+      "bodyHtml": "\n        <div class=\"container\">\n            <div class=\"row align-items-center\">\n                <div class=\"col-lg-8\">\n                    <div class=\"cta_part_iner\">\n                        <div class=\"cta_part_text\">\n                            \n                            <h2>Local Marketing Support Suite.</h2>\n                            <p id=\"regular\">Choice wants to help you take  local marketing into your own hands. The Local Marketing Support Suite is where  you will find tools, resources, and educational materials on all areas of  Marketing. </p>\n                          <p id=\"regular\">To get started, select a topic  below to learn <em><strong>What it is?, What does Choice do?, and What can you do?</strong></em> &nbsp; throughout these areas of Marketing. </p>\n                          <p id=\"regular\">Let’s start with an overview of Market itself.  There are many definitions to Marketing, the American Marketing Association  (AMA) defines Marketing as:</p>\n                          \n    <blockquote class=\"blockquote mb-0\">\n      <p id=\"regular\"> <em><strong>“Marketing is the activity, set of  institutions, and processes for creating, communicating, delivering, and  exchanging offerings that have value for customers, clients, partners, and  society at large.”</strong></em></p>\n      <!--<footer class=\"blockquote-footer\">Someone famous in <cite title=\"Source Title\">Source Title</cite></footer>-->\n    </blockquote>\n\n\t\t\t\t\t\t\t\n                          <p id=\"regular-top\">The following confidential and  proprietary documents provide a high-level overview of Choice’s US marketing  strategy and marketing mix. </p>\n                           <blockquote>\n\t\t\t\t\t\t\t<ul id=\"content\">\n                              <li><a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/What_is_Marketing_July_2023.pdf\">What  is Marketing?</a> (3 Pages PDF)</li>\n                              <li>Check out our Marketing Checklist  to help you get started:                              \n                                <ul style=\"margin-left: 20px\">\n                                  <li><a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/Local Marketing_Checklist_February_2024.pdf\">Local Marketing Checklist</a> (2 Pages PDF) </li>\n                                  <li><a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/Local_Marketing_Checklist_-_Secondary_Name.pdf\">Secondary Name Checklist</a> (1 Page PDF)  - designed to walk hotels through updating all digital marketing listings when they update to their secondary name. This document covers why this is important, and outlines the different channels that will need to be updated.</li>\n                                  \n                                </ul>\n                              </li>\n                              <li><a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/2026_-_How_Choice_Marketing_Supports_Your_Hotel.pdf\">How Choice Marketing Supports Your Hotel</a> (2 Pages PDF)\n                              </li>\n                                \n                              \n                              <li><a href=\"choice-accelerate/index.asp\">Choice Accelerate</a>  – Digital Demand Generation Program</li>\n                                \n                              <li>2026 National Campaign: Travel Values\n                                <ul id=\"content\">\n                                  <li>Travel Values continues to showcase the strength and versatility of the Choice Hotels portfolio, spotlighting brands that define value today. Keegan-Michael Key returns for a third year as a familiar presence, adding warmth and humor that help the message connect with guests. The campaign also spotlights Choice Privileges®, a powerful source of repeat stays for your hotel. To reach travelers where they are, the campaign will be seen across various entertainment and sports channels in the United States, including notable prime sports moments like college basketball. The campaign will also appear across Choice Hotels’ and Key’s social media channels, including Facebook, Instagram, Pinterest, Snap, and TikTok.</li>\n                                  <li>Check out our commercials on our <a href=\"https://www.youtube.com/channel/UC6l1ueILg3FX-EadNkfuu6g/videos\" target=\"_blank\">YouTube channel</a></li>\n                                  <li>Read the press release <a href=\"https://media.choicehotels.com/2026-01-20-Choice-Hotels-International-Launches-New-Global-Campaign-Centered-on-Travel-Values\" target=\"_blank\">here</a></li>\n                                </ul>\n                              </li>\n                                    <li><a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/2026_WorldCup_MessagingGuide.pdf\">Celebrate the World’s Biggest Soccer Event – 2026</a> (1 Page PDF)</li>      \n                              <li><a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/Choice_Hotels_Reaching_AARP_Members_September_2023.pdf\">Choice Hotels Reaching AARP Members</a> (2 Pages PDF)</li>\n                            </ul>\n</blockquote>\n\t\t\t\t\t\t\t\n                      </div>\n                    </div>\n                </div>\n\t\t\t\t<div class=\"col-lg-4\"><!--<div class=\"jumbotron\">\n                    <h1 class=\"display-6 mb-0\" style=\"font-size:40px\">NEW</h1><h1 class=\"display-6 mt-0 mb-0\" style=\"font-size:29px;\">LOCAL MARKETING</h1><h1 class=\"display-5 mt-0\" style=\"font-size:23pt; text-align: center\">Assessment Series</h1>\n  \n  \n  <p class=\"lead\">\n    \n\t  <button id=\"homepage\" class=\"btn btn-primary collapsed mt-auto\"  onclick=\"location.href='/choicebuys/brandstandards/LocalMarketing/assessment-series/index.asp'\"></button>\n  </p>-->\n</div></div>\n            </div>\n\t\t\t\n\t\t\t\n\t  \n\t  \n\t  \n    ",
+      "summary": "Local Marketing Support Suite. Choice wants to help you take local marketing into your own hands. The Local Marketing Support Suite is where you will find tools, resources, and educational materials on all areas of Marketing. To get started, select a topic below to learn What it is?, What does Ch...",
+      "category": [
+        "LocalMarketing"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/What_is_Marketing_July_2023.pdf",
+          "title": "What  is Marketing?",
+          "type": "pdf",
+          "filename": "what-is-marketing-d0bb81.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/what-is-marketing-d0bb81.pdf",
+          "size": 563301
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Local%20Marketing_Checklist_February_2024.pdf",
+          "title": "Local Marketing Checklist",
+          "type": "pdf",
+          "filename": "local-marketing-checklist-606f92.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/local-marketing-checklist-606f92.pdf",
+          "size": 601047
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Local_Marketing_Checklist_-_Secondary_Name.pdf",
+          "title": "Secondary Name Checklist",
+          "type": "pdf",
+          "filename": "secondary-name-checklist-73b682.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/secondary-name-checklist-73b682.pdf",
+          "size": 225245
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/2026_-_How_Choice_Marketing_Supports_Your_Hotel.pdf",
+          "title": "How Choice Marketing Supports Your Hotel",
+          "type": "pdf",
+          "filename": "how-choice-marketing-supports-your-hotel-c530b4.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/how-choice-marketing-supports-your-hotel-c530b4.pdf",
+          "size": 2039862
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/2026_WorldCup_MessagingGuide.pdf",
+          "title": "Celebrate the World’s Biggest Soccer Event – 2026",
+          "type": "pdf",
+          "filename": "celebrate-the-worlds-biggest-soccer-event-2026-1801a0.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/celebrate-the-worlds-biggest-soccer-event-2026-1801a0.pdf",
+          "size": 4397099
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Choice_Hotels_Reaching_AARP_Members_September_2023.pdf",
+          "title": "Choice Hotels Reaching AARP Members",
+          "type": "pdf",
+          "filename": "choice-hotels-reaching-aarp-members-a28a70.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-hotels-reaching-aarp-members-a28a70.pdf",
+          "size": 524477
+        }
+      ],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:44:27.958Z",
+        "wordCount": 352,
+        "hasVideo": false,
+        "hasDocuments": true,
+        "hasImages": true
+      },
+      "depth": 0,
+      "parent": null
+    },
+    {
+      "id": "indexasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp",
+      "title": "Digital Marketing",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Digital Marketing"
+        }
+      ],
+      "body": "Digital Marketing plays an important role within Marketing, helping to provide measurable results. This is a broad term that encompasses a variety of paid and organic activities to drive traffic to a website, increase bookings and to increase brand awareness and consideration among customers.\n\t\t\t\t\t\t\t\t\t\tFind out more about Digital Demand  Generation:\n                                        \n                                            Paid  Search (4 Pages PDF) \n                              Metasearch (3 Pages PDF)\n                                  RevUp\n                                    Help boost your hotel’s visibility and online bookings – get started today!\n                                            \n                                            Choice Accelerate\n                                            Tripadvisor\n                                          Localized Digital Marketing Programs:\n                                                RevUp\n\t\t\t\t\t\t\t  Help boost your hotel’s visibility and online bookings – get started today!Sojern’s Pay on the Stay Program\n\t\t\t\t\t\t\t\t  \nSojern offering hotels the ability to invest in hotel-level paid digital marketing \n\t\t\t\t\t\t\t\t    Pay on the Stay – Overview (1 Page PDF)Pay on the Stay – Getting Started (17 Pages PDF)\n                             \n                                        \nLearn more about Digital Marketing:\n                                      Your Guide to SEO and GEO (5 Page PDF)\n                                        Understanding  Search Engines (3 Pages PDF)\n                                        How to create ch.com links for specific rates / packages (3 Pages PDF)\n\t\t\t\t\t\t\t\tSearch  Engine Optimization (SEO)\n\t\t\t\t\t\t\t\t  Includes information on your Google Business ProfileSocial  Media\n\t\t\t\t\t\t\t\n                                        Hotel Secondary Names\n\t\t\t\t\t\t\t\tYour hotel’s secondary name is part of your official hotel name and helps to identify your property as being in a specific location and helps differentiate your hotel from other franchises of the same brand in the same market area. Please reach out to your Area Director for assistance in submitting a request for a secondary name.Secondary Name Guidelines (5 Pages PDF)Secondary Name Request Form (1 page Word doc)\n\t\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t\t\n                                      \n                              \n                              \n                              \n                              \n\t\t\t\t\t\t\t\t\n\n                              \n                             \n                              \n                              \n\t\t\t\t\t\t\t  Cambria® hotels please visit your Brand Page for additional marketing resources.",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n           \n\t\t\t<div class=\"row\">\n                <div class=\"col-lg-12\">\n                    \n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-lg-8 col-sm-8 padding_hub_1\">\n\t\t\t\t\t\t\t\t\t<div class=\"about_text_left\">\n\t\t\t\t\t\t\t\t\t\t<p id=\"regular-top\">Digital Marketing plays an important role within Marketing, helping to provide measurable results. This is a broad term that encompasses a variety of paid and organic activities to drive traffic to a website, increase bookings and to increase brand awareness and consideration among customers.</p>\n\t\t\t\t\t\t\t\t\t\t<p><strong>Find out more about Digital Demand  Generation:</strong></p>\n                                        <ul id=\"content\">\n                                            <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/What_Is_Paid_Search_April_2024.pdf\">Paid  Search</a> (4 Pages PDF) </li>\n                              <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/What_Is_Metasearch_July_2023.pdf\">Metasearch</a> (3 Pages PDF)<ul style=\"margin-left: 20px;\">\n                                  <li>RevUp<ul style=\"margin-left: 20px;\">\n                                    <li>Help boost your hotel’s visibility and online bookings – <a href=\"revup.asp\">get started today!</a></li></ul></li></ul></li>\n                                            \n                                            <li><a href=\"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/choice-accelerate/index.asp\">Choice Accelerate</a></li>\n                                            <li><a href=\"tripadvisor.asp\">Tripadvisor</a></li>\n                                          <li>Localized Digital Marketing Programs:\n                                                <ul style=\"margin-left: 20px;\"><li><a href=\"revup.asp\">RevUp</a>\n\t\t\t\t\t\t\t  <ul style=\"margin-left: 20px;\"><li>Help boost your hotel’s visibility and online bookings – get started today!</li></ul></li><li>Sojern’s <strong>Pay on the Stay</strong> Program\n\t\t\t\t\t\t\t\t  <ul style=\"margin-left: 20px\">\n<li><a href=\"/choicebuys/vendors/A_Z/index.asp?VendorID=SOJERN651350&amp;M=Sojern&amp;v=cb\">Sojern</a> offering hotels the ability to invest in hotel-level paid digital marketing \n\t\t\t\t\t\t\t\t    </li><li>Pay on the Stay – <a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Choice_and_Sojerns_Pay_on_the_Stay_-_US_-_April_2023.pdf\">Overview</a> (1 Page PDF)</li><li>Pay on the Stay – <a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Sojern_-_Pay_on_the_Stay_-_April_2022.pdf\">Getting Started</a> (17 Pages PDF)</li>\n                             </ul></li></ul></li>\n                                        </ul>\n<p><strong>Learn more about Digital Marketing:</strong></p>\n                                      <ul id=\"content\"><li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Your_Guide_to_SEO_and_AEO.pdf\">Your Guide to SEO and GEO</a> (5 Page PDF)</li>\n                                        <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Understanding_Search_Engines_-_July_2023.pdf\">Understanding  Search Engines</a> (3 Pages PDF)</li>\n                                        <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Creating_CH.com_Package_Links_-_Jan_2024.pdf\">How to create ch.com links for specific rates / packages</a> (3 Pages PDF)</li>\n\t\t\t\t\t\t\t\t<li><a href=\"seo.asp\">Search  Engine Optimization (SEO)</a>\n\t\t\t\t\t\t\t\t  <ul style=\"margin-left: 20px;\"><li>Includes information on your Google Business Profile</li></ul></li><li><a href=\"social-media.asp\">Social  Media</a></li></ul>\n\t\t\t\t\t\t\t\n                                        <p><strong>Hotel Secondary Names</strong></p>\n\t\t\t\t\t\t\t\t<ul id=\"content\"><li>Your hotel’s secondary name is part of your official hotel name and helps to identify your property as being in a specific location and helps differentiate your hotel from other franchises of the same brand in the same market area. <strong>Please reach out to your Area Director for assistance in submitting a request for a secondary name.</strong></li><li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Secondary-Name-Guidelines-Franchisees-08-2022.pdf\">Secondary Name Guidelines</a> (5 Pages PDF)</li><li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Secondary_Name_Request_Form.docx\">Secondary Name Request Form</a> (1 page Word doc)</li>\n\t\t\t\t\t\t\t\t  </ul>\n\t\t\t\t\t\t\t\t\n                                      \n                              \n                              \n                              \n                              \n\t\t\t\t\t\t\t\t\n\n                              \n                             \n                              \n                              \n\t\t\t\t\t\t\t  <p>Cambria® hotels please visit your Brand Page for <a href=\"https://apps.choicecentral.com/choicebuys/brandstandards/CA/SalesMarketing/index.asp?v=cb\" target=\"_blank\">additional marketing resources</a>.</p>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-sm-4\">\n\t\t\t\t\t\t\t\t\t<div class=\"about_text_right\">\n\t\t\t\t\t\t\t\t\t  \n\n\t\t\t\t\t\t\t\t\t</div>\n   \t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n                            </div>\n                            \n                        </div>\n                    </div>\n                    \n                    \n                    \n                   \n \n                </div>\n                           </div>\n        </div>\n    ",
+      "summary": "Digital Marketing plays an important role within Marketing, helping to provide measurable results. This is a broad term that encompasses a variety of paid and organic activities to drive traffic to a website, increase bookings and to increase brand awareness and consideration among customers.",
+      "category": [
+        "Home"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/What_Is_Paid_Search_April_2024.pdf",
+          "title": "Paid  Search",
+          "type": "pdf",
+          "filename": "paid-search-3c6bc2.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/paid-search-3c6bc2.pdf",
+          "size": 959368
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/What_Is_Metasearch_July_2023.pdf",
+          "title": "Metasearch",
+          "type": "pdf",
+          "filename": "metasearch-01ea51.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/metasearch-01ea51.pdf",
+          "size": 623037
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_and_Sojerns_Pay_on_the_Stay_-_US_-_April_2023.pdf",
+          "title": "Overview",
+          "type": "pdf",
+          "filename": "overview-59e84f.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/overview-59e84f.pdf",
+          "size": 184285
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Sojern_-_Pay_on_the_Stay_-_April_2022.pdf",
+          "title": "Getting Started",
+          "type": "pdf",
+          "filename": "getting-started-2932c8.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/getting-started-2932c8.pdf",
+          "size": 1555933
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Your_Guide_to_SEO_and_AEO.pdf",
+          "title": "Your Guide to SEO and GEO",
+          "type": "pdf",
+          "filename": "your-guide-to-seo-and-geo-993b7d.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/your-guide-to-seo-and-geo-993b7d.pdf",
+          "size": 197239
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Understanding_Search_Engines_-_July_2023.pdf",
+          "title": "Understanding  Search Engines",
+          "type": "pdf",
+          "filename": "understanding-search-engines-3ae5d6.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/understanding-search-engines-3ae5d6.pdf",
+          "size": 596332
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Creating_CH.com_Package_Links_-_Jan_2024.pdf",
+          "title": "How to create ch.com links for specific rates / packages",
+          "type": "pdf",
+          "filename": "how-to-create-chcom-links-for-specific-rates-packages-df1b43.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/how-to-create-chcom-links-for-specific-rates-packages-df1b43.pdf",
+          "size": 764192
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Secondary-Name-Guidelines-Franchisees-08-2022.pdf",
+          "title": "Secondary Name Guidelines",
+          "type": "pdf",
+          "filename": "secondary-name-guidelines-8964ad.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/secondary-name-guidelines-8964ad.pdf",
+          "size": 157982
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Secondary_Name_Request_Form.docx",
+          "title": "Secondary Name Request Form",
+          "type": "docx",
+          "filename": "secondary-name-request-form-95b482.docx",
+          "localPath": "output/choicecentral-local-marketing/downloads/secondary-name-request-form-95b482.docx",
+          "size": 63451
+        }
+      ],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:44:58.135Z",
+        "wordCount": 256,
+        "hasVideo": false,
+        "hasDocuments": true,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    },
+    {
+      "id": "revupasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp",
+      "title": "Digital Marketing",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Digital Marketing"
+        }
+      ],
+      "body": "Start Boosting Your Hotel’s Online Visibility to Help Drive More Bookings Today!\n                             As you have seen within the Local Marketing Support Suite, digital  marketing is an important area of focus within marketing. There are many different  tactics that Choice deploys and that you can leverage to help increase  visibility and drive bookings at your hotel. \n                              To make this even easier for you and your team, Choice is pleased  to provide RevUp. RevUp is a turnkey marketing program that makes  localized digital marketing easy.\n                              RevUp enables you to easily invest in marketing tactics, including: \n                            \n                               \n                                 Direct Channel: invest in metasearch, sponsored placements and paid search to help boost your hotel’s online visibility and drive more choicehotels.com bookings. \n                                 \n                                   What is metasearch, sponsored placements and paid search? These paid placements help position your hotel (with a link to ChoiceHotels.com) above the competition and OTAs in aggregators, such as Google Hotel Ads or in a search on Google.\n                                 \n                                 OTA: invest in Expedia Travel Ads and BNSA to help capture more visibility than your competitors.\n                               \n                               Click here to get started today\n                               \n                             \n                             Here’s some additional information about RevUp:\n                             \n    Choice - Funding Guide Direct Bill only (2 Page PDF)\n    Choice - Tactic Overview (1 Page PDF)\n    Choice RevUp - Live Chat Onesheet (1 Page PDF)\n    Choice RevUp - Program Overview FAQ (3 Page PDF)\n    Choice RevUp Reco Engine - How it Works (1 Page PDF)\n    Choice RevUp Reco Engine - Overview (3 Page PDF)\n    Choice RevUp Best Practices Guide (6 Page PDF)\n   RevUp Paid Social Guide (2 Page PDF)\n   RevUp Case Study - Economy (1 Page PDF)\n    RevUp Case Study - Extended Stay (1 Page PDF)\n   RevUp Case Study - Midscale (1 Page PDF)\n        RevUp Case Study - Upscale (1 Page PDF)",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    \n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-lg-8 col-sm-8 padding_hub_1\">\n\t\t\t\t\t\t\t\t\t<div class=\"about_text_left\">\n\t\t\t\t\t\t\t\t\t\t<h3><img src=\"../img/RevUp-Powered-by-Koddi-Logo.jpg\" alt=\"\"></h3>\n\t\t\t\t\t\t\t\t\t\t<p><strong>Start Boosting Your Hotel’s Online Visibility to Help Drive More Bookings Today!</strong></p>\n                             <p>As you have seen within the Local Marketing Support Suite, digital  marketing is an important area of focus within marketing. There are many different  tactics that Choice deploys and that you can leverage to help increase  visibility and drive bookings at your hotel. </p>\n                             <p> To make this even easier for you and your team, Choice is pleased  to provide <strong>RevUp</strong>. RevUp is a turnkey marketing program that makes  localized digital marketing easy.</p>\n                             <p> RevUp enables you to easily invest in marketing tactics, including: </p>\n                            \n                               <ul id=\"content\">\n                                 <li><strong>Direct Channel:</strong> invest in metasearch, sponsored placements and paid search to help boost your hotel’s online visibility and drive more choicehotels.com bookings. </li>\n                                 <ul id=\"content\">\n                                   <li>What is metasearch, sponsored placements and paid search? These paid placements help position your hotel (with a link to ChoiceHotels.com) above the competition and OTAs in aggregators, such as Google Hotel Ads or in a search on Google.</li>\n                                 </ul>\n                                 <li><strong>OTA:</strong> invest in Expedia Travel Ads and BNSA to help capture more visibility than your competitors.</li>\n                               </ul>\n                               <p><a href=\"http://revup.koddi.com/\" target=\"_blank\" class=\"btn_hub_1\">Click here to get started today</a></p>\n                               \n                             \n                             <p>Here’s some additional information about RevUp:</p>\n                             <ul id=\"content\">\n   <li> <a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Choice_-_Funding_Guide_Direct_Bill_only.pdf\">Choice - Funding Guide Direct Bill only</a> (2 Page PDF)</li>\n   <li> <a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Choice_-_Tactic_Overview.pdf\">Choice - Tactic Overview</a> (1 Page PDF)</li>\n   <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Choice_RevUp_-_Live_Chat_Onesheet.pdf\"> Choice RevUp - Live Chat Onesheet</a> (1 Page PDF)</li>\n   <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Choice_RevUp_-_Program_Overview_FAQ.pdf\"> Choice RevUp - Program Overview FAQ</a> (3 Page PDF)</li>\n   <li> <a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Choice_RevUp_Reco_Engine_-_How_it_Works.pdf\">Choice RevUp Reco Engine - How it Works</a> (1 Page PDF)</li>\n   <li> <a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Choice_RevUp_Reco_Engine_-_Overview.pdf\">Choice RevUp Reco Engine - Overview</a> (3 Page PDF)</li>\n   <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/choicerevup_bestpractices_guide.pdf\"> Choice RevUp Best Practices Guide</a> (6 Page PDF)</li>\n   <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/RevUp_Paid_Social_Guide.pdf\">RevUp Paid Social Guide</a> (2 Page PDF)</li>\n   <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/RevUp_Case_Study_-_Economy.pdf\">RevUp Case Study - Economy</a> (1 Page PDF)</li>\n   <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/RevUp_Case_Study_-_Extended_Stay.pdf\"> RevUp Case Study - Extended Stay</a> (1 Page PDF)</li>\n   <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/RevUp_Case_Study_-_Midscale.pdf\">RevUp Case Study - Midscale</a> (1 Page PDF)</li>\n   <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/RevUp_Case_Study_-_Upscale.pdf\">     RevUp Case Study - Upscale</a> (1 Page PDF)</li>\n                             </ul>\n                                    </div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-sm-4\">\n\t\t\t\t\t\t\t\t\t<div class=\"about_text_right\">\n\t\t\t\t\t\t\t\t\t  \n\n\t\t\t\t\t\t\t\t\t</div>\n   \t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n                            </div>\n                            \n                        </div>\n                    </div>\n\t\t\t\t\t\n                    \n                    \n                    \n                   \n \n                </div>\n            </div>\n        </div>\n    ",
+      "summary": "Start Boosting Your Hotel’s Online Visibility to Help Drive More Bookings Today!",
+      "category": [
+        "Home",
+        "Digital Marketing"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/RevUp-Powered-by-Koddi-Logo.jpg",
+          "alt": "",
+          "title": "",
+          "filename": "revup-powered-by-koddi-logojpg-2c2b28.jpg",
+          "localPath": "output/choicecentral-local-marketing/downloads/revup-powered-by-koddi-logojpg-2c2b28.jpg",
+          "size": 20239
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_-_Funding_Guide_Direct_Bill_only.pdf",
+          "title": "Choice - Funding Guide Direct Bill only",
+          "type": "pdf",
+          "filename": "choice-funding-guide-direct-bill-only-cf343a.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-funding-guide-direct-bill-only-cf343a.pdf",
+          "size": 518069
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_-_Tactic_Overview.pdf",
+          "title": "Choice - Tactic Overview",
+          "type": "pdf",
+          "filename": "choice-tactic-overview-58ac4a.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-tactic-overview-58ac4a.pdf",
+          "size": 850532
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_RevUp_-_Live_Chat_Onesheet.pdf",
+          "title": "Choice RevUp - Live Chat Onesheet",
+          "type": "pdf",
+          "filename": "choice-revup-live-chat-onesheet-842a7d.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-revup-live-chat-onesheet-842a7d.pdf",
+          "size": 605195
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_RevUp_-_Program_Overview_FAQ.pdf",
+          "title": "Choice RevUp - Program Overview FAQ",
+          "type": "pdf",
+          "filename": "choice-revup-program-overview-faq-8199a9.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-revup-program-overview-faq-8199a9.pdf",
+          "size": 105548
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_RevUp_Reco_Engine_-_How_it_Works.pdf",
+          "title": "Choice RevUp Reco Engine - How it Works",
+          "type": "pdf",
+          "filename": "choice-revup-reco-engine-how-it-works-5d3ae4.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-revup-reco-engine-how-it-works-5d3ae4.pdf",
+          "size": 480858
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_RevUp_Reco_Engine_-_Overview.pdf",
+          "title": "Choice RevUp Reco Engine - Overview",
+          "type": "pdf",
+          "filename": "choice-revup-reco-engine-overview-154e63.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-revup-reco-engine-overview-154e63.pdf",
+          "size": 642759
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/choicerevup_bestpractices_guide.pdf",
+          "title": "Choice RevUp Best Practices Guide",
+          "type": "pdf",
+          "filename": "choice-revup-best-practices-guide-4a0fc5.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-revup-best-practices-guide-4a0fc5.pdf",
+          "size": 6642132
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/RevUp_Paid_Social_Guide.pdf",
+          "title": "RevUp Paid Social Guide",
+          "type": "pdf",
+          "filename": "revup-paid-social-guide-19bf25.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/revup-paid-social-guide-19bf25.pdf",
+          "size": 645017
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/RevUp_Case_Study_-_Economy.pdf",
+          "title": "RevUp Case Study - Economy",
+          "type": "pdf",
+          "filename": "revup-case-study-economy-19d9e7.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/revup-case-study-economy-19d9e7.pdf",
+          "size": 502444
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/RevUp_Case_Study_-_Extended_Stay.pdf",
+          "title": "RevUp Case Study - Extended Stay",
+          "type": "pdf",
+          "filename": "revup-case-study-extended-stay-d4abc2.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/revup-case-study-extended-stay-d4abc2.pdf",
+          "size": 338608
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/RevUp_Case_Study_-_Midscale.pdf",
+          "title": "RevUp Case Study - Midscale",
+          "type": "pdf",
+          "filename": "revup-case-study-midscale-fb5e89.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/revup-case-study-midscale-fb5e89.pdf",
+          "size": 333609
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/RevUp_Case_Study_-_Upscale.pdf",
+          "title": "RevUp Case Study - Upscale",
+          "type": "pdf",
+          "filename": "revup-case-study-upscale-547e88.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/revup-case-study-upscale-547e88.pdf",
+          "size": 563823
+        }
+      ],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:45:28.448Z",
+        "wordCount": 284,
+        "hasVideo": false,
+        "hasDocuments": true,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    },
+    {
+      "id": "seoasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp",
+      "title": "Digital Marketing",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Digital Marketing"
+        },
+        {
+          "level": 3,
+          "text": "Search Engine Optimization (SEO)"
+        },
+        {
+          "level": 3,
+          "text": "Local Search"
+        },
+        {
+          "level": 3,
+          "text": "Google Business Profile"
+        },
+        {
+          "level": 3,
+          "text": "Check out these videos available on ChoiceU to hear more:"
+        }
+      ],
+      "body": "Search Engine Optimization (SEO)\n                             The resources below provide information and best practices on optimizing your local listings, Google Business Profile (GBP) listing as well as other external listings and reviews to ensure customers can find you when searching online.\n\t\t\t\t\t\t\t\t\t\t\nWhat is SEO? (9 Page PDF)\n                                            SEO and AI Search Overview - great information to know regarding AI-related search (1 Page PDF)\nYour Guide to SEO and GEO (5 Page PDF)                                           \nTop 5 Local SEO Action Items (1 Page PDF)\nOnline Reviews & Impact on Visibility (3 Page PDF)\n                                           \n                                      \nLocal Search\n\t\t\t\t\t\t\t\t\t\t\nGoogle Business Profile & Local Search (12 Page PDF)\nBacklinking: what is it and its importance? (ChoiceU link)\nBacklinking Tracker: use this to get started (1 Sheet XLSX)\n\t\t\t\t\t\t\t\t\t  \nGoogle Business Profile\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\nHow to Identify and Flag Google Photos (ChoiceU link)\nGoogle My Business 101 (11 Page PDF)\nAccessing Your Hotel's Google My Business Listing (3 Pages PDF)\nUpdating Your Hotel's Google My Business Listing - Sustainability Attributes (2 Page PDF)\n\t\t\t\t\t\t\t\t\t\t\nCheck out these videos available on ChoiceU to hear more: \n\n\t\nHow to Identify & Flag Google Photos (ChoiceU link)\nInfluencing Your Google Star Rating (ChoiceU link) \nBacklinking: What it is and its Importance (ChoiceU link)",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    \n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-lg-8 col-sm-8 padding_hub_1\">\n\t\t\t\t\t\t\t\t\t<div class=\"about_text_left\">\n\t\t\t\t\t\t\t\t\t  <h3>Search Engine Optimization (SEO)</h3>\n                             <p>The resources below provide information and best practices on optimizing your local listings, Google Business Profile (GBP) listing as well as other external listings and reviews to ensure customers can find you when searching online.</p>\n\t\t\t\t\t\t\t\t\t\t<ul id=\"content\">\n<li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/What_Is_SEO_April_2022.pdf\">What is SEO?</a> (9 Page PDF)</li>\n                                            <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/SEO_and_AI_Search_Overview_-_June_2026.pdf\">SEO and AI Search Overview - great information to know regarding AI-related search</a> (1 Page PDF)</li>\n<li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Your_Guide_to_SEO_and_AEO.pdf\">Your Guide to SEO and GEO</a> (5 Page PDF)</li>                                           \n<li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/SEO_Top_Activities_March2024.pdf\">Top 5 Local SEO Action Items</a> (1 Page PDF)</li>\n<li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Online_Reviews_and_Impact_on_Visibility_March_2024_v2.pdf\">Online Reviews &amp; Impact on Visibility</a> (3 Page PDF)</li>\n                                           \n                                      </ul>\n<h3>Local Search</h3>\n\t\t\t\t\t\t\t\t\t\t<ul id=\"content\">\n<li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Google_Business_Profile_-_Local_Search_-_August_2023.pdf\">Google Business Profile &amp; Local Search</a> (12 Page PDF)</li>\n<li><a href=\"https://choiceutv.com/novusiii/content/item/8144\" target=\"_blank\">Backlinking: what is it and its importance?</a> (ChoiceU link)</li>\n<li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/property-backlinking-tracker.xlsx\">Backlinking Tracker: use this to get started</a> (1 Sheet XLSX)</li>\n\t\t\t\t\t\t\t\t\t  </ul>\n<h3>Google Business Profile</h3>\n\t\t\t\t\t\t\t\t\t\t<ul id=\"content\">\n\t\t\t\t\t\t\t\t\t\t\t\n<li><a href=\"https://choiceutv.com/novusiii/content/item/8015\" target=\"_blank\">How to Identify and Flag Google Photos</a> (ChoiceU link)</li>\n<li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/digital-marketing-google-my-business-101.pdf\">Google My Business 101</a> (11 Page PDF)</li>\n<li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Accessing_Your_Google_Business_Profile_-_August_2023.pdf\">Accessing Your Hotel's Google My Business Listing</a> (3 Pages PDF)</li>\n<li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Google_Business_Profile_Sustainability_Attributes_March2024.pdf\">Updating Your Hotel's Google My Business Listing - Sustainability Attributes</a> (2 Page PDF)</li>\n\t\t\t\t\t\t\t\t\t\t</ul>\n<h3>Check out these videos available on ChoiceU to hear more: </h3>\n<ul id=\"content\">\n\t\n<li><a href=\"https://choiceutv.com/novusiii/content/item/8015\" target=\"_blank\">How to Identify &amp; Flag Google Photos</a> (ChoiceU link)</li>\n<li><a href=\"https://choiceutv.com/novusiii/content/item/8239\" target=\"_blank\">Influencing Your Google Star Rating</a> (ChoiceU link) </li>\n<li><a href=\"https://choiceutv.com/novusiii/content/item/8144\" target=\"_blank\">Backlinking: What it is and its Importance</a> (ChoiceU link) </li>\n\t</ul>\n\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-sm-4\">\n\t\t\t\t\t\t\t\t\t<div class=\"about_text_right\">\n\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t</div>\n   \t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n                            </div>\n                            \n                        </div>\n                    </div>\n\t\t\t\t\t\n                    \n                    \n                    \n                   \n \n                </div>\n            </div>\n        </div>\n    ",
+      "summary": "                             The resources below provide information and best practices on optimizing your local listings, Google Business Profile (GBP) listing as well as other external listings and reviews to ensure customers can find you when searching online.",
+      "category": [
+        "Home",
+        "Digital Marketing"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/What_Is_SEO_April_2022.pdf",
+          "title": "What is SEO?",
+          "type": "pdf",
+          "filename": "what-is-seo-241e21.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/what-is-seo-241e21.pdf",
+          "size": 648820
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/SEO_and_AI_Search_Overview_-_June_2026.pdf",
+          "title": "SEO and AI Search Overview - great information to know regarding AI-related search",
+          "type": "pdf",
+          "filename": "seo-and-ai-search-overview-great-information-to-know-regarding-ai-related-search-e2ea44.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/seo-and-ai-search-overview-great-information-to-know-regarding-ai-related-search-e2ea44.pdf",
+          "size": 61061
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/Your_Guide_to_SEO_and_AEO.pdf",
+          "title": "Your Guide to SEO and GEO",
+          "type": "pdf",
+          "filename": "your-guide-to-seo-and-geo-0a6062.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/your-guide-to-seo-and-geo-0a6062.pdf",
+          "size": 197239
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/SEO_Top_Activities_March2024.pdf",
+          "title": "Top 5 Local SEO Action Items",
+          "type": "pdf",
+          "filename": "top-5-local-seo-action-items-d20036.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/top-5-local-seo-action-items-d20036.pdf",
+          "size": 551674
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/Online_Reviews_and_Impact_on_Visibility_March_2024_v2.pdf",
+          "title": "Online Reviews & Impact on Visibility",
+          "type": "pdf",
+          "filename": "online-reviews-impact-on-visibility-c9e635.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/online-reviews-impact-on-visibility-c9e635.pdf",
+          "size": 601537
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/Google_Business_Profile_-_Local_Search_-_August_2023.pdf",
+          "title": "Google Business Profile & Local Search",
+          "type": "pdf",
+          "filename": "google-business-profile-local-search-686b3c.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/google-business-profile-local-search-686b3c.pdf",
+          "size": 947951
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/property-backlinking-tracker.xlsx",
+          "title": "Backlinking Tracker: use this to get started",
+          "type": "xlsx",
+          "filename": "backlinking-tracker-use-this-to-get-started-caca0c.xlsx",
+          "localPath": "output/choicecentral-local-marketing/downloads/backlinking-tracker-use-this-to-get-started-caca0c.xlsx",
+          "size": 909329
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/digital-marketing-google-my-business-101.pdf",
+          "title": "Google My Business 101",
+          "type": "pdf",
+          "filename": "google-my-business-101-56ab90.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/google-my-business-101-56ab90.pdf",
+          "size": 886070
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/Accessing_Your_Google_Business_Profile_-_August_2023.pdf",
+          "title": "Accessing Your Hotel's Google My Business Listing",
+          "type": "pdf",
+          "filename": "accessing-your-hotels-google-my-business-listing-34b5c8.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/accessing-your-hotels-google-my-business-listing-34b5c8.pdf",
+          "size": 705429
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/Google_Business_Profile_Sustainability_Attributes_March2024.pdf",
+          "title": "Updating Your Hotel's Google My Business Listing - Sustainability Attributes",
+          "type": "pdf",
+          "filename": "updating-your-hotels-google-my-business-listing-sustainability-attributes-c6c8c6.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/updating-your-hotels-google-my-business-listing-sustainability-attributes-c6c8c6.pdf",
+          "size": 656587
+        }
+      ],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:45:59.479Z",
+        "wordCount": 195,
+        "hasVideo": false,
+        "hasDocuments": true,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    },
+    {
+      "id": "social-mediaasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/social-media.asp",
+      "title": "Digital Marketing",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Digital Marketing"
+        },
+        {
+          "level": 3,
+          "text": "Social Media"
+        }
+      ],
+      "body": "Social Media\n                             Social Media is low-cost way to connect and engage with customers by creating compelling content that showcases your hotel and the local area. Activating your hotel properly on Social Media does take a dedicated resources and the information and tips below can help you determine if Social Media is right for you, and how to get started. \n\n\nChoice Hotels’ Social Media Guidelines for Hotels (22 Pages PDF)\nSocial Media Content Ideas (2 Pages PDF)\nContent Calendar Template (1 Sheet XLSX)\nOrganic Social Media Guide (1 Page PDF)",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    \n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-lg-8 col-sm-8 padding_hub_1\">\n\t\t\t\t\t\t\t\t\t<div class=\"about_text_left\">\n\t\t\t\t\t\t\t\t\t\t<h3>Social Media</h3>\n                             <p>Social Media is low-cost way to connect and engage with customers by creating compelling content that showcases your hotel and the local area. Activating your hotel properly on Social Media does take a dedicated resources and the information and tips below can help you determine if Social Media is right for you, and how to get started.</p> \n<ul id=\"content\">\n\n<li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Social_Media_Guidelines_2026.pdf\">Choice Hotels’ Social Media Guidelines for Hotels</a> (22 Pages PDF)</li>\n<li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Social_Media_Content_September_2023.pdf\">Social Media Content Ideas</a> (2 Pages PDF)</li>\n<li><a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/Social_Media_Calendar_Template_June_2023.xlsx\">Content Calendar Template</a> (1 Sheet XLSX)</li>\n<li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Organic_Social_Media_Guide.pdf\">Organic Social Media Guide</a> (1 Page PDF)</li>\n</ul>\n \n                             \n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-lg-4 col-sm-4\">\n\t\t\t\t\t\t\t\t\t<div class=\"about_text_right\">\n\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t</div>\n   \t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n                            </div>\n                            \n                        </div>\n                    </div>\n\t\t\t\t\t\n                    \n                    \n                    \n                   \n \n                </div>\n            </div>\n        </div>\n    ",
+      "summary": "                             Social Media is low-cost way to connect and engage with customers by creating compelling content that showcases your hotel and the local area. Activating your hotel properly on Social Media does take a dedicated resources and the information and tips below can help yo...",
+      "category": [
+        "Home",
+        "Digital Marketing"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/social-media.asp?Action=GET&ID=brandstandards/localmarketing/files/Social_Media_Guidelines_2026.pdf",
+          "title": "Choice Hotels’ Social Media Guidelines for Hotels",
+          "type": "pdf",
+          "filename": "choice-hotels-social-media-guidelines-for-hotels-0b5d30.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-hotels-social-media-guidelines-for-hotels-0b5d30.pdf",
+          "size": 1697680
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/social-media.asp?Action=GET&ID=brandstandards/localmarketing/files/Social_Media_Content_September_2023.pdf",
+          "title": "Social Media Content Ideas",
+          "type": "pdf",
+          "filename": "social-media-content-ideas-10caf0.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/social-media-content-ideas-10caf0.pdf",
+          "size": 492366
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/social-media.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Social_Media_Calendar_Template_June_2023.xlsx",
+          "title": "Content Calendar Template",
+          "type": "xlsx",
+          "filename": "content-calendar-template-e19ccb.xlsx",
+          "localPath": "output/choicecentral-local-marketing/downloads/content-calendar-template-e19ccb.xlsx",
+          "size": 12483
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/social-media.asp?Action=GET&ID=brandstandards/localmarketing/files/Organic_Social_Media_Guide.pdf",
+          "title": "Organic Social Media Guide",
+          "type": "pdf",
+          "filename": "organic-social-media-guide-1c808e.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/organic-social-media-guide-1c808e.pdf",
+          "size": 249440
+        }
+      ],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:46:29.423Z",
+        "wordCount": 89,
+        "hasVideo": false,
+        "hasDocuments": true,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    },
+    {
+      "id": "tripadvisorasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/tripadvisor.asp",
+      "title": "Digital Marketing",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Digital Marketing"
+        },
+        {
+          "level": 3,
+          "text": "Tripadvisor"
+        },
+        {
+          "level": 3,
+          "text": "What does Choice do?"
+        },
+        {
+          "level": 3,
+          "text": "What can I do?"
+        },
+        {
+          "level": 3,
+          "text": "Tripadvisor Visual Examples"
+        },
+        {
+          "level": 3,
+          "text": "Tripadvisor Business Advantage Education Webinar"
+        },
+        {
+          "level": 3,
+          "text": "Tripadvisor FAQs"
+        },
+        {
+          "level": 4,
+          "text": "How do I make a change  to my Tripadvisor listing?"
+        },
+        {
+          "level": 4,
+          "text": "How do I report a major  renovation?"
+        },
+        {
+          "level": 4,
+          "text": "How do I update  my hotel star rating?"
+        },
+        {
+          "level": 4,
+          "text": "Why  am I unable to delete the Management Photos?"
+        },
+        {
+          "level": 4,
+          "text": "How do I report  a review?"
+        },
+        {
+          "level": 4,
+          "text": "Tripadvisor Business Advantage"
+        },
+        {
+          "level": 3,
+          "text": "What is Tripadvisor"
+        }
+      ],
+      "body": "Tripadvisor\n                                            \n                                              Tripadvisor, one of the world's largest travel guidance platforms*, helps travelers with travel – from planning to booking to taking a trip. Travelers across the globe use the Tripadvisor site and app to discover where to stay, what to do and where to eat based on guidance from those who have been there before. With more than 1 billion reviews and opinions of nearly 8 million businesses, travelers turn to Tripadvisor to find deals on accommodations, book experiences, reserve tables at delicious restaurants, and discover great places nearby.\n                                              \n                                              * Source: SimilarWeb, unique users de-duplicated monthly, June 2022\n** Source: Tripadvisor internal log files \n                                          \n                                        \n\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t\tWhat does Choice do?\n                                      Choice is proud to work with Tripadvisor to reach customers  who are looking  to explore travel  destinations, discover a hotel, and to read customer reviews. The following are some ways that Choice works with Tripadvisor to help drive business to your hotel: \n                                      \n                                          National advertising campaigns \n                                          Tripadvisor Business Advantage (TABA) \n                                          \n                                            Enhanced listings for individual hotels \n                                          \n                                          Regional advertising campaigns  (as part of the Co-op Marketing Program) \n                                        Meta Search and Sponsored Placements \n                                          \n                                            To support chiocehotels.com bookings over Online Travel Agencies  (OTAs) \n                                          \n\n                                        \n                                        What can I do?\n                                      \n                                          Review Tripadvisor Business Advantage  Overview\n                                          Work with Revenue Management to ensure your hotel is in parity  with Online Travel Agencies  (OTA)\n                                          Refer to the Reputation Management Success Toolkit for tips on responding to guest  reviews.\n                                          Explore Sojern’s Pay on the Stay program to run your own paid digital media campaigns.                                      \n                                        \n                                         \n                                        Tripadvisor Visual Examples\n                                      \n                                          \n                                            \n                                              Business Advantage:\n                                              National Ad Sample  Banner Ad:\n                                            \n                                            \n                                              \n                                              Desktop View \n                                              \n                                            \n                                          \n                                      \n                                       \n                                        Tripadvisor Business Advantage Education Webinar\n                                        \n\n\t\t\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t\t\tTripadvisor FAQs\n                                        This section  highlights some of the key questions that may arise.\n                                         \n                                        How do I make a change  to my Tripadvisor listing?\n                                      \n                                          To control  your Tripadvisor listing,  simply log into the Tripadvisor Management Center and  to change photos, update information  and more. \n                                          If you have a question or an issue, please submit a request here and Choice will assist you. \n                                      \n                                       \n                                        How do I report a major  renovation?\n                                        If you have completely refurbished your property and want to update your listing, you can update your TripAdvisor listing by  following these steps:\n                                      Visit the owner support page.\n                                      \n                                          Fill out the form with the required information. \n                                          Attach the relative documentation. Tripadvisor requires official proof that  a top-to-bottom renovation took  place. On this webpage, you’ll see the list of accepted documents in this form. \n                                          Click Submit. \n                                          Upon verifying the documentation provided, Tripadvisor will get in touch  via email within  3- 5 business days. If your property’s renovation meets the criteria,  and substantially changes the traveler’s experience,  Tripadvisor will delete the old reviews and photos that were written prior to the renovation. Please  note that this removal is irreversible and may affect  your ranking. \n                                        \n                                       \n                                      How do I update  my hotel star rating?\n                                        The Hotel Class star ratings are provided to us from  third parties, such as Giata, and national  ratings organizations. These are  found on the hotel's listing  page in the “About” section. More information here\n                                        \n                                      \n                                          Log in to the Management Center\n                                            Hover over the Manage  Listing tab \n                                            Click Amenities (Cuisines & Amenities for Restaurants) \n                                            Select the amenities you wish to appear on your listing \n                                            Click Submit \n                                      \n                                       \n                                          Why  am I unable to delete the Management Photos?\n                                          Tripadvisor receives a direct feed of updates  from Choice. Because these photos are provided to us via a direct feed, Tripadvisor is not able to change  them. Click here to add  photos or click here to delete photos.\n                                       \n                                          How do I report  a review?\n                                          To report  a review:\n                                      \n                                            Log in to the Management Center.\n                                            Click the Reviews tab in the top navigation bar. \n                                            Select Report a Review. \n                                            Under What is the problem with the review?  select the most appropriate reason. \n                                            Select the title of the review in question. \n                                            Leave your comment and click Submit. \n                                            TripAdvisor’s moderation team will have a closer  look at the review and will get back to you  via email in the next 3-5 business days. \n                                          \n                                          Please note that TripAdvisor only removes reviews  that violate their review guidelines, are suspicious, or are posted in the  wrong location.\n                                       \n                                          Tripadvisor Business Advantage\n                                           I used to have my own Tripadvisor Business Advantage subscription, now Choice funds these,  what do I do?\n                                      \n                                            Choice funded Business Advantage  prior to the pandemic and has brought  back this marketing tactic  again to enhance your hotel’s visibility on Tripadvisor. \n                                            When your subscription  ends, your hotel will rotate into  the Choice Subscription.\n                                            There’s NO upfront cost to you, Choice has it  covered! It’s a pay-for-performance model, meaning Choice is covering the  upfront costs and you simply pay  10% on consumed stays that result from the Business  Advantage enhanced listing.\n                                      \n                                       \n\t\t\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t\t\tWhat is Tripadvisor\n                             Tripadvisor,  one of the world's largest travel guidance platforms*, helps people become  better travelers, from planning to booking to taking a trip. Travelers across  the globe use the Tripadvisor site and app to discover where to stay,  what to do and where to eat based on guidance from those who have been there  before. With more than 1 billion reviews and opinions of nearly  8 million businesses, travelers turn to Tripadvisor to find  deals on accommodations, book experiences, reserve tables at delicious  restaurants and discover great places nearby.\n                             \n                             \n                               What  is Tripadvisor? (5 Pages PDF)\n                               Tripadvisor  Business Advantage Overview  (2 Pages PDF)\n                               I  have a question on Tripadvisor or Tripadvisor Business Advantage\n                               \n                                 Be  sure to visit the Tripadvisor Management Center\n                                 Have  another question? Click here\n                               \n                               \n                             \n                             Here are some additional tips from Tripadvisor:\n                             \n                               New Management Center\n                               Telling Your Accommodations' Story Through Photos\n                                Special Offers\n                               Storyboard: Tell your hotel’s story, your way\n                               Bring Your Business to Life with Property Videos\n                               Management Center Guide\n                               \n                             Note: be sure that your hotel's visuals follow your brands visual identity standards.\n                                        \n                                         * Source:  SimilarWeb, unique users de-duplicated monthly, June 2022 \n                               **  Source: Tripadvisor internal log files",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    \n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-lg-12 col-sm-12 padding_hub_1\">\n                                    <div class=\"row\" id=\"regular-top\">\n                                        <div class=\"col-lg-3 col-sm-3\" style=\"background-color: #03558b;\"><h3 style=\"color:#fff; text-align: center\">Tripadvisor</h3></div>\n                                            <div class=\"col-lg-9 col-sm-9 p-4\" style=\"background-color: #f5f8eb\">\n                                              <p>Tripadvisor, one of the world's largest travel guidance platforms*, helps travelers with travel – from planning to booking to taking a trip. Travelers across the globe use the Tripadvisor site and app to discover where to stay, what to do and where to eat based on guidance from those who have been there before. With more than 1 billion reviews and opinions of nearly 8 million businesses, travelers turn to Tripadvisor to find deals on accommodations, book experiences, reserve tables at delicious restaurants, and discover great places nearby.\n                                              </p>\n                                              <p class=\"footnote\"><em>* Source: SimilarWeb, unique users de-duplicated monthly, June 2022<br>\n** Source: Tripadvisor internal log files </em></p>\n                                          </div>\n                                        </div>\n\t\t\t\t\t\t\t\t\t<div class=\"about_text_left\">\n\n\t\t\t\t\t\t\t\t\t\t<h3>What does Choice do?</h3>\n                                      <p>Choice is proud to work with Tripadvisor to reach customers  who are looking  to explore travel  destinations, discover a hotel, and to read customer reviews. The following are some ways that Choice works with Tripadvisor to help drive business to your hotel: </p>\n                                      <ul id=\"content\">\n                                          <li>National advertising campaigns </li>\n                                          <li>Tripadvisor Business Advantage (TABA) </li>\n                                          <ul id=\"content2\">\n                                            <li>Enhanced listings for individual hotels </li>\n                                          </ul>\n                                          <li>Regional advertising campaigns  (as part of the Co-op Marketing Program) </li>\n                                        <li>Meta Search and Sponsored Placements </li>\n                                          <ul id=\"content2\">\n                                            <li>To support chiocehotels.com bookings over Online Travel Agencies  (OTAs) </li>\n                                          </ul>\n\n                                        </ul>\n                                        <h3>What can I do?</h3>\n                                      <ul id=\"content\">\n                                          <li>Review <a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/Business_Advantage_Enterprise_One-Pager.pdf\">Tripadvisor Business Advantage  Overview</a></li>\n                                          <li>Work with Revenue Management to ensure your hotel is in parity  with Online Travel Agencies  (OTA)</li>\n                                          <li>Refer to the <a href=\"https://apps.choicecentral.com/ccweb/content/resources/ReputationManagement/Toolkit/Success_toolkit.html\" target=\"_blank\">Reputation Management Success Toolkit</a> for tips on responding to guest  reviews.</li>\n                                          <li>Explore <a href=\"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&amp;ID=brandstandards/localmarketing/files/One_Sheet_Choice_Hotels_and_Sojern_Pay_on_the_Stay_-_April_2022.pdf\">Sojern’s Pay on the Stay</a> program to run your own paid digital media campaigns.                                      </li>\n                                        </ul>\n                                        <p>&nbsp;</p>\n                                        <h3>Tripadvisor Visual Examples</h3>\n                                      <table width=\"100%\" border=\"0\" cellspacing=\"4\" cellpadding=\"4\">\n                                          <tbody>\n                                            <tr>\n                                              <th align=\"center\"><p align=\"center\">Business Advantage:</p></th>\n                                              <th align=\"center\"><p align=\"center\">National Ad Sample  Banner Ad:</p></th>\n                                            </tr>\n                                            <tr>\n                                              <td align=\"center\"><p><img src=\"../images/tripadvisor-desktop-view.jpg\" width=\"455\" height=\"366\" alt=\"\"></p>\n                                              <p>Desktop View </p></td>\n                                              <td align=\"center\"><img src=\"../images/national-ad-sample-banner-ad.jpg\" width=\"87\" height=\"364\" alt=\"\"></td>\n                                            </tr>\n                                          </tbody>\n                                      </table>\n                                      <p>&nbsp;</p>\n                                        <h3>Tripadvisor Business Advantage Education Webinar</h3>\n                                        <p>\n<a href=\"https://p.allego.com/kCl4Vr-HO5JHK4k?ct=4x4GkwVpkx4\" target=\"_blank\"><img src=\"../images/Screenshot_2024-07-11_165209.jpg\" width=\"475\" height=\"244\" alt=\"\"></a></p>\n\t\t\t\t\t\t\t\t\t\t<p>&nbsp;</p>\n\t\t\t\t\t\t\t\t\t\t<h3>Tripadvisor FAQs</h3>\n                                        <p>This section  highlights some of the key questions that may arise.</p>\n                                        <p>&nbsp;</p>\n                                        <h4>How do I make a change  to my Tripadvisor listing?</h4>\n                                      <ul id=\"content\">\n                                          <li>To control  your Tripadvisor listing,  simply log into the Tripadvisor <a href=\"https://www.tripadvisor.com/Owners\" target=\"_blank\">Management</a> Center and  to change photos, update information  and more. </li>\n                                          <li>If you have a question or an issue, please submit a <a href=\"https://choicehotels.service-now.com/hp?id=sc_cat_item&amp;sys_id=95903fd2db67f4909eef2ebb139619c4&amp;sysparm_category=b2149035dbb09b88cee238ff9d9619ce\" target=\"_blank\">request here</a> and Choice will assist you. </li>\n                                      </ul>\n                                      <p>&nbsp;</p>\n                                        <h4>How do I report a major  renovation?</h4>\n                                        <p>If you have completely refurbished your property and want to update your listing, you can update your TripAdvisor listing by  following these steps:</p>\n                                      <p>Visit the <a href=\"https://www.tripadvisor.com/OwnerSupport-a_category.4-a_topic.45\" target=\"_blank\">owner support page.</a></p>\n                                      <ul id=\"content\">\n                                          <li>Fill out the form with the required information. </li>\n                                          <li>Attach the relative documentation. Tripadvisor requires official proof that  a top-to-bottom renovation took  place. On this webpage, you’ll see the list of accepted documents in this form. </li>\n                                          <li>Click Submit. </li>\n                                          <li>Upon verifying the documentation provided, Tripadvisor will get in touch  via email within  3- 5 business days. If your property’s renovation meets the criteria,  and substantially changes the traveler’s experience,  Tripadvisor will delete the old reviews and photos that were written prior to the renovation. Please  note that this removal is irreversible and may affect  your ranking. </li>\n                                        </ul>\n                                      <p>&nbsp;</p>\n                                      <h4>How do I update  my hotel star rating?</h4>\n                                        <p>The Hotel Class star ratings are provided to us from  third parties, such as Giata, and national  ratings organizations. These are  found on the hotel's listing  page in the “About” section. More information <a href=\"https://www.tripadvisorsupport.com/en-US/hc/owner/articles/468\" target=\"_blank\">here</a><br clear=\"all\">\n                                        </p>\n                                      <ul id=\"content\">\n                                          <li>Log in to the <a href=\"https://www.tripadvisor.com/Owners\" target=\"_blank\">Management Center</a></li>\n                                            <li>Hover over the Manage  Listing tab </li>\n                                            <li>Click Amenities (Cuisines &amp; Amenities for Restaurants) </li>\n                                            <li>Select the amenities you wish to appear on your listing </li>\n                                            <li>Click Submit </li>\n                                      </ul>\n                                      <p>&nbsp;</p>\n                                          <h4>Why  am I unable to delete the Management Photos?</h4>\n                                          <p>Tripadvisor receives a direct feed of updates  from Choice. Because these photos are provided to us via a direct feed, Tripadvisor is not able to change  them. Click here to <a href=\"https://choicehotels.service-now.com/hp?id=sc_cat_item&amp;sys_id=2a7bb4ecdb08b0949eef2ebb139619c2\" target=\"_blank\">add  photos</a> or click here to <a href=\"https://choicehotels.service-now.com/hp?id=sc_cat_item&amp;sys_id=2c063ba0db60ff007d3c751c8c961987\" target=\"_blank\">delete photos.</a></p>\n                                      <p>&nbsp;</p>\n                                          <h4>How do I report  a review?</h4>\n                                          <p>To report  a review:</p>\n                                      <ul id=\"content\">\n                                            <li>Log in to the<a href=\"https://www.tripadvisor.com/Owners\" target=\"_blank\"> Management Center.</a></li>\n                                            <li>Click the Reviews tab in the top navigation bar. </li>\n                                            <li>Select Report a Review. </li>\n                                            <li>Under What is the problem with the review?  select the most appropriate reason. </li>\n                                            <li>Select the title of the review in question. </li>\n                                            <li>Leave your comment and click Submit. </li>\n                                            <li>TripAdvisor’s moderation team will have a closer  look at the review and will get back to you  via email in the next 3-5 business days. </li>\n                                          </ul>\n                                          <p>Please note that TripAdvisor only removes reviews  that violate their <a href=\"https://www.tripadvisorsupport.com/hc/articles/200614797\" target=\"_blank\">review guidelines,</a> are suspicious, or are posted in the  wrong location.</p>\n                                      <p>&nbsp;</p>\n                                          <h4>Tripadvisor Business Advantage</h4>\n                                          <p><strong>&nbsp;</strong><strong>I used to have my own Tripadvisor Business Advantage subscription, now Choice funds these,  what do I do?</strong></p>\n                                      <ul id=\"content\">\n                                            <li>Choice funded Business Advantage  prior to the pandemic and has brought  back this marketing tactic  again to enhance your hotel’s visibility on Tripadvisor. </li>\n                                            <li>When your subscription  ends, your hotel will rotate into  the Choice Subscription.</li>\n                                            <li>There’s NO upfront cost to you, Choice has it  covered! It’s a pay-for-performance model, meaning Choice is covering the  upfront costs and you simply <a href=\"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&amp;ID=brandstandards/localmarketing/files/CHERP_FAQs_September_2023.pdf\">pay  10% on consumed stays</a> that result from the Business  Advantage enhanced listing.</li>\n                                      </ul>\n                                      <p>&nbsp;</p>\n\t\t\t\t\t\t\t\t\t\t<p>&nbsp;</p>\n\t\t\t\t\t\t\t\t\t\t<h3>What is Tripadvisor</h3>\n                             <p>Tripadvisor,  one of the world's largest travel guidance platforms*, helps people become  better travelers, from planning to booking to taking a trip. Travelers across  the globe use the&nbsp;Tripadvisor&nbsp;site and app to discover where to stay,  what to do and where to eat based on guidance from those who have been there  before. With more than&nbsp;1 billion reviews and opinions of&nbsp;nearly  8&nbsp;million&nbsp;businesses, travelers turn to&nbsp;Tripadvisor&nbsp;to find  deals on accommodations, book experiences, reserve tables at delicious  restaurants and discover great places nearby.</p>\n                             \n                             <ul id=\"content\">\n                               <li><a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/Tripadvisor_-_Overview_-_July_2024.pdf\">What  is Tripadvisor?</a> (5 Pages PDF)</li>\n                               <li><a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/Business_Advantage_Enterprise_One-Pager.pdf\">Tripadvisor  Business Advantage Overview </a> (2 Pages PDF)</li>\n                               <li>I  have a question on Tripadvisor or Tripadvisor Business Advantage</li>\n                               <ul id=\"content\">\n                                 <li>Be  sure to visit the <a href=\"https://www.tripadvisor.com/Owners\" target=\"_blank\">Tripadvisor Management Center</a></li>\n                                 <li>Have  another question? <a href=\"https://choicehotels.service-now.com/hp?id=sc_cat_item&amp;sys_id=95903fd2db67f4909eef2ebb139619c4&amp;sysparm_category=b2149035dbb09b88cee238ff9d9619ce\" target=\"_blank\">Click here</a></li>\n                               </ul>\n                               \n                             </ul>\n                             <p>Here are some additional tips from Tripadvisor:</p>\n                             <ul id=\"content\">\n                               <li><a href=\"https://www.tripadvisor.com/business/insights/hotels/resources/welcome-to-your-new-management-center-for-hoteliers/\" target=\"_blank\">New Management Center</a></li>\n                               <li><a href=\"https://www.tripadvisor.com/business/insights/hotels/resources/telling-your-accommodations-story-through-photos\" target=\"_blank\">Telling Your Accommodations' Story Through Photos</a></li>\n                               <li> <a href=\"https://www.tripadvisor.com/business/insights/hotels/resources/how-hoteliers-can-use-special-offers-to-drive-more-direct-bookings\" target=\"_blank\">Special Offers</a></li>\n                               <li><a href=\"https://www.tripadvisor.com/business/insights/hotels/resources/storyboard-tell-your-hotels-story-your-way\" target=\"_blank\">Storyboard: Tell your hotel’s story, your way</a></li>\n                               <li><a href=\"https://www.tripadvisor.com/business/insights/hotels/resources/bring-your-business-to-life-with-property-videos\" target=\"_blank\">Bring Your Business to Life with Property Videos</a></li>\n                               <li><a href=\"https://www.tripadvisor.com/TripAdvisorInsights/w746\" target=\"_blank\">Management Center Guide</a></li>\n                               </ul>\n                             <p>Note: be sure that your hotel's visuals follow your brands visual identity standards.</p>\n                                        \n                                        <p class=\"footnote\"> *&nbsp;Source:  SimilarWeb,&nbsp;unique users de-duplicated monthly,&nbsp;June 2022 <br>\n                               **  Source: Tripadvisor internal log files</p>\n                                    </div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</div>\n                            </div>\n                            \n                        </div>\n                    </div>\n\t\t\t\t\t\n                    \n                    \n                    \n                   \n \n                </div>\n            </div>\n        </div>\n    ",
+      "summary": "                                              Tripadvisor, one of the world's largest travel guidance platforms*, helps travelers with travel – from planning to booking to taking a trip. Travelers across the globe use the Tripadvisor site and app to discover where to stay, what to do and where to...",
+      "category": [
+        "Home",
+        "Digital Marketing"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/images/tripadvisor-desktop-view.jpg",
+          "alt": "",
+          "title": "",
+          "filename": "tripadvisor-desktop-viewjpg-1c6f99.jpg",
+          "localPath": "output/choicecentral-local-marketing/downloads/tripadvisor-desktop-viewjpg-1c6f99.jpg",
+          "size": 127205
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/images/national-ad-sample-banner-ad.jpg",
+          "alt": "",
+          "title": "",
+          "filename": "national-ad-sample-banner-adjpg-46bdd6.jpg",
+          "localPath": "output/choicecentral-local-marketing/downloads/national-ad-sample-banner-adjpg-46bdd6.jpg",
+          "size": 11741
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/images/Screenshot_2024-07-11_165209.jpg",
+          "alt": "",
+          "title": "",
+          "filename": "screenshot_2024-07-11_165209jpg-c0d40a.jpg",
+          "localPath": "output/choicecentral-local-marketing/downloads/screenshot_2024-07-11_165209jpg-c0d40a.jpg",
+          "size": 29891
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/tripadvisor.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Business_Advantage_Enterprise_One-Pager.pdf",
+          "title": "Tripadvisor Business Advantage  Overview",
+          "type": "pdf",
+          "filename": "tripadvisor-business-advantage-overview-bceba3.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/tripadvisor-business-advantage-overview-bceba3.pdf",
+          "size": 544545
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/One_Sheet_Choice_Hotels_and_Sojern_Pay_on_the_Stay_-_April_2022.pdf",
+          "title": "Sojern’s Pay on the Stay",
+          "type": "pdf",
+          "filename": "sojerns-pay-on-the-stay-f689fb.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/sojerns-pay-on-the-stay-f689fb.pdf",
+          "size": 1435086
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/CHERP_FAQs_September_2023.pdf",
+          "title": "pay  10% on consumed stays",
+          "type": "pdf",
+          "filename": "pay-10-on-consumed-stays-8ff2be.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/pay-10-on-consumed-stays-8ff2be.pdf",
+          "size": 358902
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/tripadvisor.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Tripadvisor_-_Overview_-_July_2024.pdf",
+          "title": "What  is Tripadvisor?",
+          "type": "pdf",
+          "filename": "what-is-tripadvisor-2753da.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/what-is-tripadvisor-2753da.pdf",
+          "size": 526055
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/tripadvisor.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Business_Advantage_Enterprise_One-Pager.pdf",
+          "title": "Tripadvisor  Business Advantage Overview",
+          "type": "pdf",
+          "filename": "tripadvisor-business-advantage-overview-bceba3.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/tripadvisor-business-advantage-overview-bceba3.pdf",
+          "size": 544545
+        }
+      ],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:46:59.001Z",
+        "wordCount": 953,
+        "hasVideo": false,
+        "hasDocuments": true,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    },
+    {
+      "id": "indexasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/website/index.asp",
+      "title": "Website",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Website"
+        }
+      ],
+      "body": "A website is an important tool  for any company to provide more information to customers, helps ensure credibility  and is key in generating revenue. Every  hotel within Choice has a property page that showcases key information, photos  and provides an easy way for guests to book your hotel. \n                             \n                               ChoiceHotels.com  Property Page \n                               \n                                 Property  Page Overview\n                                 Property  Page Checklist\n                                 Property Page FAQs\n\t\t\t\t\t\t\t     Your  Property Page URL:                                 \n                                   \n                                     Every hotel on choicehotels.com  has its own URL. This allows you to drive business directly to your property  page on choicehotels.com. Remember to display your marketable URL on all your  hotel materials: guest folios, business cards, rack cards, brochures and so on.  The format for each hotel URL is: choicehotels.com/xxxxx, with the last five  characters being your property code.\n                                   \n                                 \n                               \n                               Vanity  Website",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    \n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n                             <!--<h3>Website</h3>-->\n                             <p id=\"regular-top\">A website is an important tool  for any company to provide more information to customers, helps ensure credibility  and is key in generating revenue. Every  hotel within Choice has a property page that showcases key information, photos  and provides an easy way for guests to book your hotel. </p>\n                             <ul id=\"content\">\n                               <li>ChoiceHotels.com  Property Page </li>\n                               <ul id=\"content\">\n                                 <li><a href=\"https://apps.choicecentral.com/ccweb/content/resources/ecomm/chcom/property-page-overview.html\" target=\"_blank\">Property  Page Overview</a></li>\n                                 <li><a href=\"https://apps.choicecentral.com/ccweb/content/resources/ecomm/chcom/eBrochChecklist.html\" target=\"_blank\">Property  Page Checklist</a></li>\n                                 <li><a href=\"https://apps.choicecentral.com/ccweb/content/resources/ecomm/choicehotels-dotcom-faqs.html\">Property Page FAQs</a></li>\n\t\t\t\t\t\t\t     <li>Your  Property Page URL:                                 \n                                   <blockquote>\n                                     <p>Every hotel on choicehotels.com  has its own URL. This allows you to drive business directly to your property  page on choicehotels.com. Remember to display your marketable URL on all your  hotel materials: guest folios, business cards, rack cards, brochures and so on.  The format for each hotel URL is: choicehotels.com/xxxxx, with the last five  characters being your property code.</p>\n                                   </blockquote>\n                                 </li>\n                               </ul>\n                               <li><a href=\"vanity.asp\">Vanity  Website</a></li>\n                             </ul>\n                         \n                            </div>\n                            \n                        </div>\n                    </div>\n                    \n                    \n                    \n                   \n \n                </div>\n            </div>\n        </div>\n    ",
+      "summary": "A website is an important tool  for any company to provide more information to customers, helps ensure credibility  and is key in generating revenue. Every  hotel within Choice has a property page that showcases key information, photos  and provides an easy way for guests to book your hotel. ",
+      "category": [
+        "Home"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        }
+      ],
+      "documents": [],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:47:28.897Z",
+        "wordCount": 125,
+        "hasVideo": false,
+        "hasDocuments": false,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    },
+    {
+      "id": "vanityasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/website/vanity.asp",
+      "title": "Website",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Website"
+        },
+        {
+          "level": 3,
+          "text": "Vanity Site"
+        },
+        {
+          "level": 4,
+          "text": "Frequently Asked Questions (FAQs):"
+        }
+      ],
+      "body": "Vanity Site\n                              Choice allows licensees to  create vanity websites when following the guidelines provided. \n                              Frequently Asked Questions (FAQs):\n                             Am I required to have a vanity site?\n                               No, a vanity site is not  required, but it is worth considering depending on the location of the hotel,  among other factors.  Other items to consider should include but not be limited  to: the financial investments on site development; time commitment on  maintaining the site; and whether there is information you want to share that  otherwise cannot be added on your ChoiceHotels.com property page.\n  \n  Do I have to use a  Choice Qualified Vendor to build the vanity site?\n                               Yes, all new vanity sites must  be developed by one of Choice’s Qualified Vendors.  Any existing vanity  sites must be switched to sites developed by a qualified vendor when an existing  contract expires. \n  *Not applicable to Ascend Hotel  Collection members or international properties.\n                             Who are the Choice Qualified  Vendors for developing a vanity site: \n                               There are two: \n                             \n                               Milestone\n                               Milestone\n                             \n                             How can I track the performance of my vanity site?\n                               Contact your vanity site  provider Account Manager for information or see the eCommerce and Reservations Dashboard  (Choice Central Property Info Manager > Reports > eCommerce and  Reservations Dashboard)\n  \n  Who should I contact  if I want to make changes? \n                               A: Please contact your vanity  site provider Account Manager.\n                             Other important items to know  about creating a Vanity Website that we suggest you review:\n                             \n                               Vanity  Website Requirements\n                               Domain  Name Policy\n                               \n                                 Domain  Name Request Form \n\n\n                            US Domain Name Q&A",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    \n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n\t\t\t\t\t\t\t\t<h3>Vanity Site</h3>\n                              <p>Choice allows licensees to  create vanity websites when following the guidelines provided. </p>\n                              <h4>Frequently Asked Questions (FAQs):</h4>\n                             <p><strong>Am I required to have a vanity site?</strong><br>\n                               No, a vanity site is not  required, but it is worth considering depending on the location of the hotel,  among other factors.&nbsp; Other items to consider should include but not be limited  to: the financial investments on site development; time commitment on  maintaining the site; and whether there is information you want to share that  otherwise cannot be added on your ChoiceHotels.com property page.<br>\n  <br>\n  <strong>Do I have to use a  Choice Qualified Vendor to build the vanity site?</strong><br>\n                               Yes, all new vanity sites must  be developed by one of Choice’s Qualified Vendors.&nbsp; Any existing vanity  sites must be switched to sites developed by a qualified vendor when an existing  contract expires.&nbsp;<br>\n  <em>*Not applicable to Ascend Hotel  Collection members or international properties.</em></p>\n                             <p><strong>Who are the Choice Qualified  Vendors for developing a vanity site: </strong><br>\n                               There are two: </p>\n                             <ul id=\"content\">\n                               <li><a href=\"/choicebuys/vendors/A_Z/index.asp?VendorID=MILESTONE888&amp;M=Milestone&amp;v=cb\">Milestone</a></li>\n                               <li><a href=\"/choicebuys/vendors/A_Z/index.asp?VendorID=MILESTONE888&amp;M=Milestone&amp;v=cb\">Milestone</a></li>\n                             </ul>\n                             <p><strong>How can I track the performance of my vanity site?</strong><br>\n                               Contact your vanity site  provider Account Manager for information or see the eCommerce and Reservations Dashboard  (Choice Central Property Info Manager &gt; Reports &gt; eCommerce and  Reservations Dashboard)<br>\n  <br>\n  <strong>Who should I contact  if I want to make changes?</strong> <br>\n                               A: Please contact your vanity  site provider Account Manager.</p>\n                             <p><strong>Other important items to know  about creating a Vanity Website that we suggest you review:</strong></p>\n                             <ul id=\"content\">\n                               <li><a href=\"https://apps.choicecentral.com/ccweb/content/resources/ecomm/digital-marketing-vanity-requirements.pdf\" target=\"_blank\">Vanity  Website Requirements</a></li>\n                               <li><a href=\"https://apps.choicecentral.com/ccweb/content/resources/ecomm/digital-marketing-domain-name-policy.pdf\">Domain  Name Policy</a></li>\n                               \n                                 <li><a href=\"https://apps.choicecentral.com/ccweb/content/resources/ecomm/domname/DomNameAppForm.html\">Domain  Name Request Form</a> </li>\n\n\n                            <li><a href=\"https://apps.choicecentral.com/ccweb/content/resources/ecomm/digital-marketing-domain-policy-q-and-a.pdf\">US Domain Name Q&amp;A </a></li>     \n\t\t\t\t\t\t\t  </ul></div>\n                            \n                        </div>\n                    </div>\n                    \n                    \n                    \n                   \n \n                </div>\n            </div>\n        </div>\n    ",
+      "summary": "                              Choice allows licensees to  create vanity websites when following the guidelines provided. ",
+      "category": [
+        "Home",
+        "Website"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/ccweb/content/resources/ecomm/digital-marketing-vanity-requirements.pdf",
+          "title": "Vanity  Website Requirements",
+          "type": "pdf",
+          "filename": "vanity-website-requirements-57789e.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/vanity-website-requirements-57789e.pdf",
+          "size": 171918
+        },
+        {
+          "url": "https://apps.choicecentral.com/ccweb/content/resources/ecomm/digital-marketing-domain-name-policy.pdf",
+          "title": "Domain  Name Policy",
+          "type": "pdf",
+          "filename": "domain-name-policy-408979.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/domain-name-policy-408979.pdf",
+          "size": 577912
+        },
+        {
+          "url": "https://apps.choicecentral.com/ccweb/content/resources/ecomm/digital-marketing-domain-policy-q-and-a.pdf",
+          "title": "US Domain Name Q&A",
+          "type": "pdf",
+          "filename": "us-domain-name-qa-05cb58.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/us-domain-name-qa-05cb58.pdf",
+          "size": 457876
+        }
+      ],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:47:56.741Z",
+        "wordCount": 249,
+        "hasVideo": false,
+        "hasDocuments": true,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    },
+    {
+      "id": "indexasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/collateral-photography/index.asp",
+      "title": "Collateral & Photography",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Collateral & Photography"
+        }
+      ],
+      "body": "Showcasing your hotel through strong, up-to-date photography and professional, on-brand collateral is an important part of your local marketing efforts. Be sure to take advantage of the tools and Qualified Vendors that Choice Hotels makes available to you: \n\nCreate On-Brand Collateral for FREE with SmartMarketing (legacy Choice Brands) and DataSource (legacy Radisson Brands)\nLearn More About Photography",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    \n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n\t\t\t\t\t\t\t\t<p id=\"regular-top\">Showcasing your hotel through strong, up-to-date photography and professional, on-brand collateral is an important part of your local marketing efforts. Be sure to take advantage of the tools and Qualified Vendors that Choice Hotels makes available to you: </p>\n<ul id=\"content\">\n<li><a href=\"collateral.asp\">Create On-Brand Collateral for FREE with SmartMarketing (legacy Choice Brands) and DataSource (legacy Radisson Brands)</a></li>\n<li><a href=\"https://apps.choicecentral.com/ccweb/content/resources/ecomm/chcom/EbrochPhoto.html\" target=\"_blank\">Learn More About Photography</a></li>\n\t</ul>\n                             \n                          </div>\n                            \n                        </div>\n                    </div>\n                    \n                    \n                    \n                   \n \n                </div>\n            </div>\n        </div>\n    ",
+      "summary": "Showcasing your hotel through strong, up-to-date photography and professional, on-brand collateral is an important part of your local marketing efforts. Be sure to take advantage of the tools and Qualified Vendors that Choice Hotels makes available to you: ",
+      "category": [
+        "Home"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        }
+      ],
+      "documents": [],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:48:25.444Z",
+        "wordCount": 57,
+        "hasVideo": false,
+        "hasDocuments": false,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    },
+    {
+      "id": "collateralasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/collateral-photography/collateral.asp",
+      "title": "Collateral & Photography",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Collateral & Photography"
+        },
+        {
+          "level": 4,
+          "text": "SmartMarketing is available on your Okta homepage (choicehotels.okta.com)"
+        }
+      ],
+      "body": "SmartMarketing is a quick and convenient way for you and your team to ensure you’re following your brand’s visual and identity standards in your local sales and marketing efforts, and on property.\n\tSmartMarketing is available on your Okta homepage (choicehotels.okta.com)\n\tIn SmartMarketing, you can: \nCustomize templates including business cards, sales flyers, digital ads, billboards and more to use in your local sales and marketing efforts.\n\t\nAccess Choice Privileges materials to showcase our loyalty program on property and in your local sales and marketing activities. \nOrder logoed merchandise for in-hotel use, handing out at tradeshows or gifting to employees.\nKick off a custom request project to ensure you have what you need for an upcoming event. \nClick here (6 Page PDF) to view a SmartMarketing overview including FAQs.Click here if you need to request (or remove) SmartMarketing access for a hotel team member. (link to ChoiceNow form) \nIf you are experiencing technical issues with SmartMarketing, please contact the SmartMarketing support team provided by SupplyLogic (SLWM) by dialing 1.800.891.8501 or emailing ChoiceHotels@slwmco.com.\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n                                      The SmartMarketing site has relaunched and is available for use. As we continue the refresh, you will see new templates and items added regularly, thanks for your patience as we move all 22 of our brands on to one system. \nA few notes: \nFor legacy Radisson hotels, you will recognize the site, as DataSource (DAT) is now called SmartMarketing! \n  For legacy Choice hotels, this is a new platform under the same known name of SmartMarketing. \nFor US hotels, Choice Privileges materials formerly provided by Valo are now in SmartMarketing. \n\nAccess to the refreshed SmartMarketing site is available via Okta.\n  \n    If you do not have access, it can be requested via ChoiceNow. \n    \n  \n    Legacy Radisson if you have not updated your QR Code  Piece / Guest Service Directory since January 2024, please do so today to remove dated information (ie Radisson Rewards Americas information). Click here (2 Page PDF) for instructions on how to do this.",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-lg-7 col-sm-7 padding_hub_1\">\n\t\t\t\t\t\t\t\t\t<div class=\"about_text_left\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/choicebuys/brandstandards/LocalMarketing/img/smart_marketing_logo.jpg\" id=\"regular-top\" alt=\"logo\" title=\"Smart Marketing\" width=\"300\">\n  <p>SmartMarketing is a quick and convenient way for you and your team to ensure you’re following your brand’s visual and identity standards in your local sales and marketing efforts, and on property.</p>\n\t<h4 class=\"rounded-pill bg-primary\" style=\"padding-top:.65em; padding-bottom:.65em;margin-bottom:30px;\" align=\"center\">SmartMarketing is available on your Okta homepage (<a href=\"https://choicehotels.okta.com\" target=\"_blank\" style=\"color:#00558C\">choicehotels.okta.com</a>)</h4>\n\t<p>In SmartMarketing, you can: </p>\n<ul id=\"content\"><li>Customize templates including business cards, sales flyers, digital ads, billboards and more to use in your local sales and marketing efforts.\n\t</li>\n<li>Access Choice Privileges materials to showcase our loyalty program on property and in your local sales and marketing activities. \n</li><li>Order logoed merchandise for in-hotel use, handing out at tradeshows or gifting to employees.\n</li><li>Kick off a custom request project to ensure you have what you need for an upcoming event. \n</li><li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/SmartMarketing_Overview_and_FAQ.pdf\">Click here</a> (6 Page PDF) to view a SmartMarketing overview including FAQs.</li><li><a href=\"https://choicehotels.service-now.com/hp?id=sc_cat_item&amp;sys_id=6444611b872bb51053e0ed3e8bbb35ad\" target=\"_blank\">Click here</a> if you need to request (or remove) SmartMarketing access for a hotel team member. (link to ChoiceNow form) </li></ul>\n<p>If you are experiencing technical issues with SmartMarketing, please contact the SmartMarketing support team provided by SupplyLogic (SLWM) by dialing 1.800.891.8501 or emailing <a href=\"mailto:ChoiceHotels@slwmco.com\">ChoiceHotels@slwmco.com</a>.</p>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-lg-5 col-sm-5\">\n\t\t\t\t\t\t\t\t\t<div class=\"about_text_right\">\n\t\t\t\t\t\t\t\t\t\n                                      <div style=\"border: red 2px solid; padding: 20px 20px 10px; margin-top:60px;\"><p>The SmartMarketing site has relaunched and is available for use. As we continue the refresh, you will see new templates and items added regularly, thanks for your patience as we move all 22 of our brands on to one system. </p>\n<p>A few notes: </p>\n<ul id=\"content\"><li>For legacy Radisson hotels, you will recognize the site, as DataSource (DAT) is now called SmartMarketing! \n  </li><li>For legacy Choice hotels, this is a new platform under the same known name of SmartMarketing. \n</li><li>For US hotels, Choice Privileges materials formerly provided by Valo are now in SmartMarketing. \n</li>\n<li>Access to the refreshed SmartMarketing site is available via Okta.\n  <ul id=\"content\">\n    <li>If you do not have access, it can be requested via <a href=\"https://choicehotels.service-now.com/hp?id=sc_cat_item&amp;sys_id=6444611b872bb51053e0ed3e8bbb35ad\" target=\"_blank\">ChoiceNow</a>. </li>\n    \n  </ul>\n    </li><li>Legacy Radisson if you have not updated your QR Code  Piece / Guest Service Directory since January 2024, please do so today to remove dated information (ie Radisson Rewards Americas information). <a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Updating_your_QR_Code_Piece_-_Online_GDS.pdf\">Click here</a> (2 Page PDF) for instructions on how to do this.</li>\n\n</ul>\n</div>\n\t\t\t\t\t\t\t\t\t</div>\n   \t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n                            </div>\n                            \n                        </div>\n                    </div>\n\n                </div>\n               \n            </div>\n        </div>\n    ",
+      "summary": "SmartMarketing is a quick and convenient way for you and your team to ensure you’re following your brand’s visual and identity standards in your local sales and marketing efforts, and on property.",
+      "category": [
+        "Home",
+        "Collateral & Photography"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/smart_marketing_logo.jpg",
+          "alt": "logo",
+          "title": "Smart Marketing",
+          "filename": "smart-marketing-9ff8f9.jpg",
+          "localPath": "output/choicecentral-local-marketing/downloads/smart-marketing-9ff8f9.jpg",
+          "size": 18219
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/collateral-photography/collateral.asp?Action=GET&ID=brandstandards/localmarketing/files/SmartMarketing_Overview_and_FAQ.pdf",
+          "title": "Click here",
+          "type": "pdf",
+          "filename": "click-here-a34884.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/click-here-a34884.pdf",
+          "size": 556529
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/collateral-photography/collateral.asp?Action=GET&ID=brandstandards/localmarketing/files/Updating_your_QR_Code_Piece_-_Online_GDS.pdf",
+          "title": "Click here",
+          "type": "pdf",
+          "filename": "click-here-ce5d5d.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/click-here-ce5d5d.pdf",
+          "size": 202216
+        }
+      ],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:48:53.141Z",
+        "wordCount": 324,
+        "hasVideo": false,
+        "hasDocuments": true,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    },
+    {
+      "id": "indexasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/co-op-marketing/index.asp",
+      "title": "CO-OP Marketing Program",
+      "headings": [
+        {
+          "level": 2,
+          "text": "CO-OP Marketing Program"
+        },
+        {
+          "level": 3,
+          "text": "What is the Co-op Marketing Program?"
+        }
+      ],
+      "body": "What is the Co-op Marketing Program?\n                             Franchisee  leaders, in collaboration with Choice, have developed a powerful program to  promote Co-op member hotels in the U.S. and help drive revenue and bookings at  regional, state and local levels. Eligible Brands can benefit from national  marketing initiatives, and this enhanced strategy is amplified significantly by  joining efforts with other participating Choice properties for a more  regionalized and targeted approach.\n                                                            Learn more and join the  Co-op Marketing Programs today:\n                             \n                               CHOC Co-op Marketing  Program\n                               \n                                 Eligible Brands include:  Ascend®, Comfort®, Sleep Inn®, Quality Inn®, Clarion®, Clarion Pointe®\n                                 CHOC Co-op Marketing  Program One Pager (1 Page PDF)\n                                 Join here\n                               \n                             \n                               Economy Co-op Marketing  Program\n                               \n                                 Eligible Brands include:  Econo Lodge®, Rodeway Inn® and Park Inn by Radisson\n                                 Economy Co-op Marketing  Program One Pager (1 Page PDF)\n                                 Join here\n                               \n                                 Extended Stay Co-op Marketing Program (NEW for 2026!)\n\n  Eligible Brands include: Everhome Suites®, MainStay Suites® and Suburban Studios®\n    Extended Stay Co-op Marketing Program One Pager (1 Page PDF)\n                                 \n\n                               Co-op Marketing Program  – Costs and How to Join (2 Pages PDF) \n                             \n                             \n                             \n                               How can I see how the  Co-op Marketing Program is benefiting my hotel?\n                             Co-op Participating hotels can view a report each month. Access your Co-op Online Banner Ad Report on ChoiceCONNECT › Properties › Reports › Co-op Marketing Program\n\n                             \n\n\t\t        Through 2026 - Join the Co-op  Marketing Program Today!Join the Co-op Marketing Program today and we will provide a money back guarantee by refunding your annual dues if you do not generate room revenue equal to, or greater than, your annual dues.\n\t\t        Terms & Conditions Apply",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    \n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n\t\t\t\t\t\t\t\t<h3>What is the Co-op Marketing Program?</h3>\n                             <p>Franchisee  leaders, in collaboration with Choice, have developed a powerful program to  promote Co-op member hotels in the U.S. and help drive revenue and bookings at  regional, state and local levels. Eligible Brands can benefit from national  marketing initiatives, and this enhanced strategy is amplified significantly by  joining efforts with other participating Choice properties for a more  regionalized and targeted approach.</p>\n                             <p>                               Learn more and join the  Co-op Marketing Programs today:</p>\n                             <ul id=\"content\">\n                               <li><a href=\"https://snapt.io/UZNFG\" target=\"_blank\">CHOC Co-op Marketing  Program</a></li>\n                               <ul id=\"content\">\n                                 <li>Eligible Brands include:  Ascend®, Comfort®, Sleep Inn®, Quality Inn®, Clarion®, Clarion Pointe®</li>\n                                 <li><a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/CHOC_Co-op_Marketing_Program_2026.pdf\">CHOC Co-op Marketing  Program One Pager </a>(1 Page PDF)</li>\n                                 <li><a href=\"https://form.jotform.com/220766259491060\" target=\"_blank\">Join here</a></li>\n                               </ul>\n                             \n                               <li>Economy Co-op Marketing  Program</li>\n                               <ul id=\"content\">\n                                 <li>Eligible Brands include:  Econo Lodge®, Rodeway Inn® and Park Inn by Radisson</li>\n                                 <li><a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/Economy_Co-op_Marketing_Program_2026.pdf\">Economy Co-op Marketing  Program One Pager</a> (1 Page PDF)</li>\n                                 <li><a href=\"https://choicehotels.service-now.com/hp?id=hp24_form&amp;table=sn_customerservice_case&amp;sys_id=73660a3edb4c01d09eef2ebb13961945\" target=\"_blank\">Join here</a></li>\n                               </ul>\n                                 <li><a href=\"https://choicehotels.service-now.com/hp?id=hp24_form&amp;table=sn_customerservice_case&amp;sys_id=eae75e571b7baa10923a1132b24bcb94\" target=\"_blank\">Extended Stay Co-op Marketing Program</a> (NEW for 2026!)</li>\n<ul id=\"content\">\n  <li>Eligible Brands include: Everhome Suites®, MainStay Suites® and Suburban Studios®</li>\n    <li><a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/Extended_Stay_Collateral_Refresh.pdf\">Extended Stay Co-op Marketing Program One Pager</a> (1 Page PDF)</li>\n                                 </ul>\n\n                               <li>Co-op Marketing Program  –&nbsp;<a href=\"?Action=GET&amp;ID=brandstandards/LocalMarketing/files/How_to_Join_the_Co-op_Marketing_Program_-_September_2025.pdf\">Costs and How to Join</a>&nbsp;(2 Pages PDF) </li>\n                             </ul>\n                             \n                             <p><br>\n                               <strong>How can I see how the  Co-op Marketing Program is benefiting my hotel?</strong></p>\n                             <p>Co-op Participating hotels can view a report each month. Access your Co-op Online Banner Ad Report on ChoiceCONNECT › Properties › Reports › Co-op Marketing Program\n</p>\n                             \n<div style=\"border: red 2px solid; padding: 20px 20px 10px\">\n\t\t        <p><strong>Through 2026 - Join the Co-op  Marketing Program Today!</strong></p><p>Join the Co-op Marketing Program today and we will provide a money back guarantee by refunding your annual dues if you do not generate room revenue equal to, or greater than, your annual dues.</p>\n\t\t        <p><a href=\"co-op-terms-conditions.asp\">Terms &amp; Conditions Apply</a></p>\n</div>\n\t\t\t\t\t\t\t\t<p id=\"legal\">&nbsp;</p>\n                                \n\n                          </div>\n                            \n                        </div>\n                    </div>\n                    \n                    \n                    \n                   \n \n                </div>\n            </div>\n        </div>\n    ",
+      "summary": "                             Franchisee  leaders, in collaboration with Choice, have developed a powerful program to  promote Co-op member hotels in the U.S. and help drive revenue and bookings at  regional, state and local levels. Eligible Brands can benefit from national  marketing initiatives,...",
+      "category": [
+        "Home"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/co-op-marketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/CHOC_Co-op_Marketing_Program_2026.pdf",
+          "title": "CHOC Co-op Marketing  Program One Pager",
+          "type": "pdf",
+          "filename": "choc-co-op-marketing-program-one-pager-a0d2ec.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choc-co-op-marketing-program-one-pager-a0d2ec.pdf",
+          "size": 259928
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/co-op-marketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Economy_Co-op_Marketing_Program_2026.pdf",
+          "title": "Economy Co-op Marketing  Program One Pager",
+          "type": "pdf",
+          "filename": "economy-co-op-marketing-program-one-pager-6b48ab.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/economy-co-op-marketing-program-one-pager-6b48ab.pdf",
+          "size": 237287
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/co-op-marketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Extended_Stay_Collateral_Refresh.pdf",
+          "title": "Extended Stay Co-op Marketing Program One Pager",
+          "type": "pdf",
+          "filename": "extended-stay-co-op-marketing-program-one-pager-535c8e.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/extended-stay-co-op-marketing-program-one-pager-535c8e.pdf",
+          "size": 80234
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/co-op-marketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/How_to_Join_the_Co-op_Marketing_Program_-_September_2025.pdf",
+          "title": "Costs and How to Join",
+          "type": "pdf",
+          "filename": "costs-and-how-to-join-53836b.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/costs-and-how-to-join-53836b.pdf",
+          "size": 282553
+        }
+      ],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:49:21.976Z",
+        "wordCount": 255,
+        "hasVideo": false,
+        "hasDocuments": true,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    },
+    {
+      "id": "indexasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/new-hotels/index.asp",
+      "title": "New Hotels",
+      "headings": [
+        {
+          "level": 2,
+          "text": "New Hotels"
+        },
+        {
+          "level": 3,
+          "text": "New to Choice? Welcome!"
+        }
+      ],
+      "body": "New to Choice? Welcome!\n                             Choice wants to help you along your opening journey.  For new hotels, Choice has developed these checklists to get you started with  key local marketing activities to fit your hotel’s opening. Simply choose the  right checklist, and get started: \n                             \n                               Local Marketing Checklist – New Build Hotels (2 Pages PDF)\n                               Local Marketing Checklist – Conversion Hotels (2 Pages PDF)\n                               Local Marketing Checklist – Choice to Choice Repositioning Hotels (2 Pages PDF)\n                              \n                                Openings Press Release Templates are available on SmartMarketing in the Public Relations Catalog (folder).\n                                  SmartMarketing is available on your Okta homepage (choicehotels.okta.com)\nIf you do not have access, it can be requested via ChoiceNow.\n                             Click here to find a Marketing Overview (19 Pages PDF) for new hotels within the Choice family of brands.\n                             You also  have access to the Openings Website; this site provides  additional information and resources to help open your hotel.  To access  this resource you will need to log into ChoiceU.com. If you have any questions, please contact Choice  Openings",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    \n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n\t\t\t\t\t\t\t\t<h3>New to Choice? Welcome!</h3>\n                             <p>Choice wants to help you along your opening journey.  For new hotels, Choice has developed these checklists to get you started with  key local marketing activities to fit your hotel’s opening. Simply choose the  right checklist, and get started: </p>\n                             <ul id=\"content\">\n                               <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Local_Marketing_Checklist_-_NEW_Hotels_January_2024.pdf\">Local Marketing Checklist – New Build Hotels</a> (2 Pages PDF)</li>\n                               <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Local_Marketing_Checklist_-_Conversion_Hotels_-_February_2024.pdf\">Local Marketing Checklist – Conversion Hotels</a> (2 Pages PDF)</li>\n                               <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Local_Marketing_Checklist_-_Repositioning_Hotels_February_2024.pdf\">Local Marketing Checklist – Choice to Choice Repositioning Hotels</a> (2 Pages PDF)</li>\n                              </ul>\n                                <p>Openings Press Release Templates are available on SmartMarketing in the Public Relations Catalog (folder).<br>\n                                  SmartMarketing is available on your Okta homepage (choicehotels.okta.com)\nIf you do not have access, it can be requested via <a href=\"https://choicehotels.service-now.com/hp?id=sc_cat_item&amp;sys_id=6444611b872bb51053e0ed3e8bbb35ad\" target=\"_blank\">ChoiceNow</a>.</p>\n                             <p>Click here to find a <a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Welcome_to_the_Choice_Hotels_Family_of_Brands_-_Marketing_Overview_and_Actions_for_NEW_Hotels.pdf\">Marketing Overview</a> (19 Pages PDF) for new hotels within the Choice family of brands.</p>\n                             <p>You also  have access to the <a href=\"https://openings.choiceuniversity.net/\" target=\"_blank\">Openings Website</a>; this site provides  additional information and resources to help open your hotel.&nbsp; To access  this resource you will need to log into&nbsp;<a href=\"https://www.choiceuniversity.net/\" target=\"_blank\">ChoiceU.com</a>. If you have any questions, please contact&nbsp;<a href=\"mailto:openingservices@choicehotels.com\">Choice  Openings</a></p>\n                            </div>\n                            \n                        </div>\n                    </div>\n                    \n                    \n                    \n                   \n \n                </div>\n            </div>\n        </div>\n    ",
+      "summary": "                             Choice wants to help you along your opening journey.  For new hotels, Choice has developed these checklists to get you started with  key local marketing activities to fit your hotel’s opening. Simply choose the  right checklist, and get started: ",
+      "category": [
+        "Home"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/new-hotels/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Local_Marketing_Checklist_-_NEW_Hotels_January_2024.pdf",
+          "title": "Local Marketing Checklist – New Build Hotels",
+          "type": "pdf",
+          "filename": "local-marketing-checklist-new-build-hotels-ddc23a.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/local-marketing-checklist-new-build-hotels-ddc23a.pdf",
+          "size": 635015
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/new-hotels/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Local_Marketing_Checklist_-_Conversion_Hotels_-_February_2024.pdf",
+          "title": "Local Marketing Checklist – Conversion Hotels",
+          "type": "pdf",
+          "filename": "local-marketing-checklist-conversion-hotels-4914ac.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/local-marketing-checklist-conversion-hotels-4914ac.pdf",
+          "size": 633785
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/new-hotels/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Local_Marketing_Checklist_-_Repositioning_Hotels_February_2024.pdf",
+          "title": "Local Marketing Checklist – Choice to Choice Repositioning Hotels",
+          "type": "pdf",
+          "filename": "local-marketing-checklist-choice-to-choice-repositioning-hotels-c0ef0c.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/local-marketing-checklist-choice-to-choice-repositioning-hotels-c0ef0c.pdf",
+          "size": 632523
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/new-hotels/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Welcome_to_the_Choice_Hotels_Family_of_Brands_-_Marketing_Overview_and_Actions_for_NEW_Hotels.pdf",
+          "title": "Marketing Overview",
+          "type": "pdf",
+          "filename": "marketing-overview-f76642.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/marketing-overview-f76642.pdf",
+          "size": 7098068
+        }
+      ],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:49:50.923Z",
+        "wordCount": 167,
+        "hasVideo": false,
+        "hasDocuments": true,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    },
+    {
+      "id": "b2b-marketing-opportunitiesasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/B2B-Marketing-Opportunities.asp",
+      "title": "B2B Marketing",
+      "headings": [
+        {
+          "level": 2,
+          "text": "B2B Marketing"
+        },
+        {
+          "level": 3,
+          "text": "B2B Marketing Opportunities"
+        },
+        {
+          "level": 4,
+          "text": "CVENT"
+        },
+        {
+          "level": 4,
+          "text": "Travel Management Companies (TMC) &  Consortia"
+        }
+      ],
+      "body": "B2B Marketing Opportunities\n\t\t\t\t\t\t\t\t  Choice has  over 100 sellers across the U.S., Canada, and CALA, representing all brands to more  than1,600 national and globally managed accounts. Choice also has a specialized  team dedicated to fostering local demand among more than 28,000 small- to  mid-size accounts.\n\t\t\t\t\t\t\t\t  While Choice  drives awareness and demand through national sales efforts, hotels play a  critical role in converting opportunities and building relationships within  their local markets. Active participation in meetings, group sales, travel  management company (TMC), and consortia programs helps maximize visibility and  capture valuable business travel and group revenue opportunities.\n\t\t\t\t\t\t\t\t  The  following property-level marketing opportunities can help increase visibility  among meeting planners, travel managers, travel advisors, and local business  decision-makers while driving incremental group and transient business.\n\t\t\t\t\t\t\t\t   \n\t\t\t\t\t\t\t\t  CVENT\n\t\t\t\t\t\t\t\t  CVENT is the  leading venue-sourcing platform used by more than 160,000 meeting and event  planners worldwide. Maintaining a strong presence on CVENT helps increase  visibility, generate qualified leads, and position your hotel as a preferred  venue for meetings, events, and group business.                                  \n\t\t\t\t\t\t\t\t  CVENT offers  a variety of marketing opportunities, with pricing and availability varying by  market and demand.\n\t\t\t\t\t\t\t\t   Marketing  Opportunities:                                  \n\t\t\t\t\t\t\t\t  Check with  your CVENT rep for up-to-date pricing and availability.                                  \n\t\t\t\t\t\t\t\t  Diamond  Listing (1-4 Diamond Listing Options)\n\t\t\t\t\t\t\t      With CVENT Diamond Listings,  you can further enhance your venue’s advertising content to highlight key information  up front, secure heightened visibility in the CSN search results, and strengthen  your presence in AI sourcing tools such as Cvent Venue Recommendations (coming  soon). Availability is limited in each market. Check with your CVENT rep for  pricing and availability.                                  \n\t\t\t\t\t\t\t\t   Smart Ads\n\t\t\t\t\t\t\t      Target event planners while  they are actively researching venues across the CVENT network, helping keep  your property top of mind throughout the planning journey.                                  \n\t\t\t\t\t\t\t\t   CVENT  Planner Sourcing Report\n\t\t\t\t\t\t\t      Gain valuable insights into  planner activity, market demand trends, and sourcing behavior to better inform  your sales strategy.                                  \n\t\t\t\t\t\t\t\t   Planner  Navigator\n\t\t\t\t\t\t          Identify and engage  planners who are actively sourcing events in your market, allowing your team to  focus outreach efforts on high-potential opportunities. Learn More                                  \n\t\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t\t    Claim  Wedding Spot\n\t\t\t\t\t\t          Increase visibility  among couples searching for wedding venues by claiming and optimizing your  Wedding Spot profile. Learn More                                  \n\t\t\t\t\t\t\t\t  Audit  Full Listing & Update photos\n\t\t\t\t\t\t\t      Review your CVENT profile every  3–6 months to ensure photos, amenities, meeting space details, and property  descriptions accurately reflect your hotel and current offerings.\n\t\t\t\t\t\t\t\t   \n\t\t\t\t\t\t\t\t  Travel Management Companies (TMC) &  Consortia\n                                  Why It  Matters:\n                                  Travel Management Companies  (TMCs) and consortia networks influence millions of corporate and leisure  travel bookings annually. Through Choice Hotels’ preferred partnerships and  Pay-for-Performance (PFP) programs, participating hotels gain enhanced  visibility with some of the most influential travel advisors and agencies  worldwide.\n                                   Market  Reach:\n                                  Travel agents primarily use the Global Distribution Systems* (GDS) as their  channel of choice to make real-time reservations for both corporate and leisure  travelers and are doing so in record numbers. GDSs help hotels access nearly  100,000 portals and more than 600,000 travel agents worldwide.**\n                                   *Global  Distribution Systems (GDS): Amadeus, Sabre, Travelport (Worldspan, Apollo,  Galileo)\n                                                                      Learn more  about TMC & Consortia Market.\n                                   Hotel  Responsibility\n                                    To maximize opportunities generated through Choice’s TMC and Consortia  partnerships, hotels should maintain accurate GDS content, competitive rate  availability, current amenities, and timely responses to travel advisor  inquiries. Active participation helps improve visibility and conversion within  these channels.\n                                   Marketing Opportunities:\n                                    TMC Property Level Marketing  Opportunities (1 Page PDF)\n                                    Search the National Account List (3 Page PDF)",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n           \n\t\t\t<div class=\"row\">\n                <div class=\"col-lg-12\">\n                    \n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-lg-12 col-sm-12 padding_hub_1\">\n\t\t\t\t\t\t\t\t  <h3>B2B Marketing Opportunities</h3>\n\t\t\t\t\t\t\t\t  <p>Choice has  over 100 sellers across the U.S., Canada, and CALA, representing all brands to more  than1,600 national and globally managed accounts. Choice also has a specialized  team dedicated to fostering local demand among more than 28,000 small- to  mid-size accounts.</p>\n\t\t\t\t\t\t\t\t  <p>While Choice  drives awareness and demand through national sales efforts, hotels play a  critical role in converting opportunities and building relationships within  their local markets. Active participation in meetings, group sales, travel  management company (TMC), and consortia programs helps maximize visibility and  capture valuable business travel and group revenue opportunities.</p>\n\t\t\t\t\t\t\t\t  <p>The  following property-level marketing opportunities can help increase visibility  among meeting planners, travel managers, travel advisors, and local business  decision-makers while driving incremental group and transient business.</p>\n\t\t\t\t\t\t\t\t  <p>&nbsp;</p>\n\t\t\t\t\t\t\t\t  <h4><strong>CVENT</strong></h4>\n\t\t\t\t\t\t\t\t  <p>CVENT is the  leading venue-sourcing platform used by more than 160,000 meeting and event  planners worldwide. Maintaining a strong presence on CVENT helps increase  visibility, generate qualified leads, and position your hotel as a preferred  venue for meetings, events, and group business.                                  \n\t\t\t\t\t\t\t\t  </p><p>CVENT offers  a variety of marketing opportunities, with pricing and availability varying by  market and demand.\n\t\t\t\t\t\t\t\t  </p><p> <strong>Marketing  Opportunities:</strong>                                  \n\t\t\t\t\t\t\t\t  </p><p>Check with  your CVENT rep for up-to-date pricing and availability.                                  \n\t\t\t\t\t\t\t\t  </p><p><u>Diamond  Listing (1-4 Diamond Listing Options)</u><br>\n\t\t\t\t\t\t\t      With CVENT Diamond Listings,  you can further enhance your venue’s advertising content to highlight key information  up front, secure heightened visibility in the CSN search results, and strengthen  your presence in AI sourcing tools such as Cvent Venue Recommendations (coming  soon). Availability is limited in each market. Check with your CVENT rep for  pricing and availability.                                  \n\t\t\t\t\t\t\t\t  </p><p> <u>Smart Ads</u><br>\n\t\t\t\t\t\t\t      Target event planners while  they are actively researching venues across the CVENT network, helping keep  your property top of mind throughout the planning journey.                                  \n\t\t\t\t\t\t\t\t  </p><p> <u>CVENT  Planner Sourcing Report</u><br>\n\t\t\t\t\t\t\t      Gain valuable insights into  planner activity, market demand trends, and sourcing behavior to better inform  your sales strategy.                                  \n\t\t\t\t\t\t\t\t  </p><p> <u>Planner  Navigator<br>\n\t\t\t\t\t\t          </u>Identify and engage  planners who are actively sourcing events in your market, allowing your team to  focus outreach efforts on high-potential opportunities. <a href=\"https://www.cvent.com/en/supplier-venue/planner-navigator\">Learn More</a>                                  \n\t\t\t\t\t\t\t\t  </p><p>\n\t\t\t\t\t\t\t\t    <u>Claim  Wedding Spot<br>\n\t\t\t\t\t\t          </u>Increase visibility  among couples searching for wedding venues by claiming and optimizing your  Wedding Spot profile. <a href=\"https://www.cvent.com/en/cvent-wedding-spot\">Learn More</a>                                  \n\t\t\t\t\t\t\t\t  </p><p><u>Audit  Full Listing &amp; Update photos</u><br>\n\t\t\t\t\t\t\t      Review your CVENT profile every  3–6 months to ensure photos, amenities, meeting space details, and property  descriptions accurately reflect your hotel and current offerings.</p>\n\t\t\t\t\t\t\t\t  <p>&nbsp;</p>\n\t\t\t\t\t\t\t\t  <h4><strong>Travel Management Companies (TMC) &amp;  Consortia</strong></h4>\n                                  <p><strong>Why It  Matters:</strong><br>\n                                  Travel Management Companies  (TMCs) and consortia networks influence millions of corporate and leisure  travel bookings annually. Through Choice Hotels’ preferred partnerships and  Pay-for-Performance (PFP) programs, participating hotels gain enhanced  visibility with some of the most influential travel advisors and agencies  worldwide.</p>\n                                  <p> <strong>Market  Reach:</strong><br>\n                                  Travel agents primarily use the Global Distribution Systems* (GDS) as their  channel of choice to make real-time reservations for both corporate and leisure  travelers and are doing so in record numbers. GDSs help hotels access nearly  100,000 portals and more than 600,000 travel agents worldwide.**</p>\n                                  <p> <em>*Global  Distribution Systems (GDS): Amadeus, Sabre, Travelport (Worldspan, Apollo,  Galileo)</em></p>\n                                  <p>                                    Learn more  about <a href=\"https://connect.choicehotels.com/resources?name=00442-Travel-Management-Companies--Consortia&amp;tabName=Reference\">TMC &amp; Consortia Market</a>.</p>\n                                  <p> <strong>Hotel  Responsibility</strong><br>\n                                    To maximize opportunities generated through Choice’s TMC and Consortia  partnerships, hotels should maintain accurate GDS content, competitive rate  availability, current amenities, and timely responses to travel advisor  inquiries. Active participation helps improve visibility and conversion within  these channels.</p>\n                                  <p> <strong>Marketing Opportunities:</strong><br>\n                                    <a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/TMC_Marketing_Programs.pdf\">TMC Property Level Marketing  Opportunities</a> (1 Page PDF)<br>\n                                    <a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/TMC_Secondary_Programs_2026_Connect.pdf\">Search the National Account List</a> (3 Page PDF)</p>\n<!-- end content -->\n                                    \n                                    </div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</div>\n                            </div>\n                            \n                        </div>\n                    </div>\n                    \n                    \n                    \n                   \n \n                </div>\n                           </div>\n        </div>\n    ",
+      "summary": "\t\t\t\t\t\t\t\t  Choice has  over 100 sellers across the U.S., Canada, and CALA, representing all brands to more  than1,600 national and globally managed accounts. Choice also has a specialized  team dedicated to fostering local demand among more than 28,000 small- to  mid-size accounts.",
+      "category": [
+        "Home"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/B2B-Marketing-Opportunities.asp?Action=GET&ID=brandstandards/localmarketing/files/TMC_Marketing_Programs.pdf",
+          "title": "TMC Property Level Marketing  Opportunities",
+          "type": "pdf",
+          "filename": "tmc-property-level-marketing-opportunities-4a31e5.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/tmc-property-level-marketing-opportunities-4a31e5.pdf",
+          "size": 65255
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/B2B-Marketing-Opportunities.asp?Action=GET&ID=brandstandards/localmarketing/files/TMC_Secondary_Programs_2026_Connect.pdf",
+          "title": "Search the National Account List",
+          "type": "pdf",
+          "filename": "search-the-national-account-list-360363.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/search-the-national-account-list-360363.pdf",
+          "size": 111009
+        }
+      ],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:50:20.571Z",
+        "wordCount": 551,
+        "hasVideo": false,
+        "hasDocuments": true,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    },
+    {
+      "id": "indexasp",
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/choice-accelerate/index.asp",
+      "title": "Choice Accelerate",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Choice Accelerate"
+        }
+      ],
+      "body": "Reaching  consumers through every stage of their path to purchase, throughout the entire  marketing funnel, is key within Choice Hotel’s marketing strategy. Consumers  have new methods of researching, are influenced by channels that didn’t exist  five orten years ago and are making purchase decisions  differently than they have in the past.\n                                                            Choice  Accelerate is Choice Hotel’s new paid media program that will:\n                             \n                               Enable Choice’s digital marketing strategy to be more  targeted to reach your customers in the channels and places where they spend  time. Ensure Choice Hotels shows up throughout the customer’s travel booking  journey, across multiple channels and devices.\n                               Help lower reliance on OTAs to drive occupancy, competing  more effectively to reach target customers. \n                               Help drive bookings through cost-efficient direct channels  (choicehotels.com, Choice Hotels mobile app).\n                             \n                             Here are  some materials to help you learn more about Choice Accelerate:\n                             \n                                 Choice Accelerate Overview (1 Page PDF)\n                               Choice Accelerate FAQs (8 Page PDF)\n                             \n                             If you  have additional questions, please send the Choice Hotels Marketing team a question  via our ChoiceNow form, we will get back to you within 5-10 business  days.",
+      "bodyHtml": "\n        <div class=\"container-fluid\">\n            <!--<div class=\"row justify-content-center\">\n                <div class=\"col-lg-5\">\n                    <div class=\"section_tittle text-center\">\n                        <p>recent work</p>\n                        <h2>Creative work for client</h2>\n                    </div>\n                </div>\n            </div>-->\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    \n                    <div class=\"single_work\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"container\">\n\t\t\t\t\t\t\t\t<img src=\"/choicebuys/brandstandards/LocalMarketing/images/ChoiceAccelerate_logos_RGB_FullColor.png\" id=\"regular-top\" alt=\"logo\" title=\"Choice Accelerate\" width=\"300\">\n                             <p>Reaching  consumers through every stage of their path to purchase, throughout the entire  marketing funnel, is key within Choice Hotel’s marketing strategy. Consumers  have new methods of researching, are influenced by channels that didn’t exist  five orten years ago and are making purchase decisions  differently than they have in the past.</p>\n                             <p>                               Choice  Accelerate is Choice Hotel’s new paid media program that will:</p>\n                             <ul id=\"content\">\n                               <li>Enable Choice’s digital marketing strategy to be more  targeted to reach your customers in the channels and places where they spend  time. Ensure Choice Hotels shows up throughout the customer’s travel booking  journey, across multiple channels and devices.</li>\n                               <li>Help lower reliance on OTAs to drive occupancy, competing  more effectively to reach target customers. </li>\n                               <li>Help drive bookings through cost-efficient direct channels  (choicehotels.com, Choice Hotels mobile app).</li>\n                             </ul>\n                             <p>Here are  some materials to help you learn more about Choice Accelerate:</p>\n                             <ul id=\"content\">\n                                 <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Choice_Accelerate_Overview_-_June_2026.pdf\">Choice Accelerate Overview</a> (1 Page PDF)</li>\n                               <li><a href=\"?Action=GET&amp;ID=brandstandards/localmarketing/files/Choice_Accelerate_FAQs_June_2026.pdf\">Choice Accelerate FAQs</a> (8 Page PDF)</li>\n                             </ul>\n                             <p>If you  have additional questions, please send the Choice Hotels Marketing team a question  via our <a href=\"https://choicehotels.service-now.com/hp?id=sc_cat_item&amp;sys_id=76efaebc8783411053e0ed3e8bbb3551\" target=\"_blank\">ChoiceNow form</a>, we will get back to you within 5-10 business  days.</p>\n                             \n                            </div>\n                            \n                        </div>\n                    </div>\n                    \n                    \n                    \n                   \n \n                </div>\n            </div>\n        </div>\n    ",
+      "summary": "Reaching  consumers through every stage of their path to purchase, throughout the entire  marketing funnel, is key within Choice Hotel’s marketing strategy. Consumers  have new methods of researching, are influenced by channels that didn’t exist  five orten years ago and are making purchase decis...",
+      "category": [
+        "Home"
+      ],
+      "topics": [],
+      "videos": [],
+      "images": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/img/2023-lmss-choice-logo-stacked-rgb.png",
+          "alt": "logo",
+          "title": "Home",
+          "filename": "home-c74859.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/home-c74859.png",
+          "size": 31149
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/images/ChoiceAccelerate_logos_RGB_FullColor.png",
+          "alt": "logo",
+          "title": "Choice Accelerate",
+          "filename": "choice-accelerate-fa4df8.png",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-accelerate-fa4df8.png",
+          "size": 36879
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/choice-accelerate/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_Accelerate_Overview_-_June_2026.pdf",
+          "title": "Choice Accelerate Overview",
+          "type": "pdf",
+          "filename": "choice-accelerate-overview-59ae79.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-accelerate-overview-59ae79.pdf",
+          "size": 5901543
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/choice-accelerate/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_Accelerate_FAQs_June_2026.pdf",
+          "title": "Choice Accelerate FAQs",
+          "type": "pdf",
+          "filename": "choice-accelerate-faqs-82811c.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-accelerate-faqs-82811c.pdf",
+          "size": 278345
+        }
+      ],
+      "metadata": {
+        "scrapedAt": "2026-08-03T23:50:54.775Z",
+        "wordCount": 179,
+        "hasVideo": false,
+        "hasDocuments": true,
+        "hasImages": true
+      },
+      "depth": 1,
+      "parent": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/What_is_Marketing_July_2023.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/What_is_Marketing_July_2023.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:50:24.024Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Local%20Marketing_Checklist_February_2024.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Local%20Marketing_Checklist_February_2024.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:50:25.396Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Local_Marketing_Checklist_-_Secondary_Name.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Local_Marketing_Checklist_-_Secondary_Name.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:50:26.734Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/2026_-_How_Choice_Marketing_Supports_Your_Hotel.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/2026_-_How_Choice_Marketing_Supports_Your_Hotel.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:50:28.055Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/2026_WorldCup_MessagingGuide.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/2026_WorldCup_MessagingGuide.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:50:59.148Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Choice_Hotels_Reaching_AARP_Members_September_2023.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Choice_Hotels_Reaching_AARP_Members_September_2023.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:51:00.478Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/What_Is_Paid_Search_April_2024.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/What_Is_Paid_Search_April_2024.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:51:01.717Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/What_Is_Metasearch_July_2023.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/What_Is_Metasearch_July_2023.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:51:02.851Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_and_Sojerns_Pay_on_the_Stay_-_US_-_April_2023.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_and_Sojerns_Pay_on_the_Stay_-_US_-_April_2023.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:51:04.382Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Sojern_-_Pay_on_the_Stay_-_April_2022.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Sojern_-_Pay_on_the_Stay_-_April_2022.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:51:05.558Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Your_Guide_to_SEO_and_AEO.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Your_Guide_to_SEO_and_AEO.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:51:07.004Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Understanding_Search_Engines_-_July_2023.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Understanding_Search_Engines_-_July_2023.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:51:08.509Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Creating_CH.com_Package_Links_-_Jan_2024.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Creating_CH.com_Package_Links_-_Jan_2024.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:51:10.094Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Secondary-Name-Guidelines-Franchisees-08-2022.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Secondary-Name-Guidelines-Franchisees-08-2022.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:51:11.579Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Secondary_Name_Request_Form.docx",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Secondary_Name_Request_Form.docx\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:51:12.698Z"
+    },
+    {
+      "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_-_Funding_Guide_Direct_Bill_only.pdf",
+      "error": "page.goto: Download is starting\nCall log:\n  - navigating to \"https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_-_Funding_Guide_Direct_Bill_only.pdf\", waiting until \"domcontentloaded\"\n",
+      "timestamp": "2026-08-03T23:51:13.842Z"
+    }
+  ]
+}

@@ -1,0 +1,465 @@
+{
+  "libraryIdPrefix": "00018-local-marketing-support-suite",
+  "pages": [
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite",
+      "title": "Local Marketing Support Suite",
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/What_is_Marketing_July_2023.pdf",
+          "title": "What  is Marketing?",
+          "filename": "what-is-marketing-d0bb81.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/what-is-marketing-d0bb81.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Local%20Marketing_Checklist_February_2024.pdf",
+          "title": "Local Marketing Checklist",
+          "filename": "local-marketing-checklist-606f92.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/local-marketing-checklist-606f92.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Local_Marketing_Checklist_-_Secondary_Name.pdf",
+          "title": "Secondary Name Checklist",
+          "filename": "secondary-name-checklist-73b682.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/secondary-name-checklist-73b682.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/2026_-_How_Choice_Marketing_Supports_Your_Hotel.pdf",
+          "title": "How Choice Marketing Supports Your Hotel",
+          "filename": "how-choice-marketing-supports-your-hotel-c530b4.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/how-choice-marketing-supports-your-hotel-c530b4.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/2026_WorldCup_MessagingGuide.pdf",
+          "title": "Celebrate the World’s Biggest Soccer Event – 2026",
+          "filename": "celebrate-the-worlds-biggest-soccer-event-2026-1801a0.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/celebrate-the-worlds-biggest-soccer-event-2026-1801a0.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Choice_Hotels_Reaching_AARP_Members_September_2023.pdf",
+          "title": "Choice Hotels Reaching AARP Members",
+          "filename": "choice-hotels-reaching-aarp-members-a28a70.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-hotels-reaching-aarp-members-a28a70.pdf"
+        }
+      ]
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-digital-marketing",
+      "title": "Digital Marketing",
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/What_Is_Paid_Search_April_2024.pdf",
+          "title": "Paid  Search",
+          "filename": "paid-search-3c6bc2.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/paid-search-3c6bc2.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/What_Is_Metasearch_July_2023.pdf",
+          "title": "Metasearch",
+          "filename": "metasearch-01ea51.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/metasearch-01ea51.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_and_Sojerns_Pay_on_the_Stay_-_US_-_April_2023.pdf",
+          "title": "Overview",
+          "filename": "overview-59e84f.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/overview-59e84f.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Sojern_-_Pay_on_the_Stay_-_April_2022.pdf",
+          "title": "Getting Started",
+          "filename": "getting-started-2932c8.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/getting-started-2932c8.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Your_Guide_to_SEO_and_AEO.pdf",
+          "title": "Your Guide to SEO and GEO",
+          "filename": "your-guide-to-seo-and-geo-993b7d.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/your-guide-to-seo-and-geo-993b7d.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Understanding_Search_Engines_-_July_2023.pdf",
+          "title": "Understanding  Search Engines",
+          "filename": "understanding-search-engines-3ae5d6.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/understanding-search-engines-3ae5d6.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Creating_CH.com_Package_Links_-_Jan_2024.pdf",
+          "title": "How to create ch.com links for specific rates / packages",
+          "filename": "how-to-create-chcom-links-for-specific-rates-packages-df1b43.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/how-to-create-chcom-links-for-specific-rates-packages-df1b43.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Secondary-Name-Guidelines-Franchisees-08-2022.pdf",
+          "title": "Secondary Name Guidelines",
+          "filename": "secondary-name-guidelines-8964ad.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/secondary-name-guidelines-8964ad.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Secondary_Name_Request_Form.docx",
+          "title": "Secondary Name Request Form",
+          "filename": "secondary-name-request-form-95b482.docx",
+          "localPath": "output/choicecentral-local-marketing/downloads/secondary-name-request-form-95b482.docx"
+        }
+      ]
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-digital-marketing-revup",
+      "title": "RevUp",
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_-_Funding_Guide_Direct_Bill_only.pdf",
+          "title": "Choice - Funding Guide Direct Bill only",
+          "filename": "choice-funding-guide-direct-bill-only-cf343a.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-funding-guide-direct-bill-only-cf343a.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_-_Tactic_Overview.pdf",
+          "title": "Choice - Tactic Overview",
+          "filename": "choice-tactic-overview-58ac4a.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-tactic-overview-58ac4a.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_RevUp_-_Live_Chat_Onesheet.pdf",
+          "title": "Choice RevUp - Live Chat Onesheet",
+          "filename": "choice-revup-live-chat-onesheet-842a7d.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-revup-live-chat-onesheet-842a7d.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_RevUp_-_Program_Overview_FAQ.pdf",
+          "title": "Choice RevUp - Program Overview FAQ",
+          "filename": "choice-revup-program-overview-faq-8199a9.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-revup-program-overview-faq-8199a9.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_RevUp_Reco_Engine_-_How_it_Works.pdf",
+          "title": "Choice RevUp Reco Engine - How it Works",
+          "filename": "choice-revup-reco-engine-how-it-works-5d3ae4.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-revup-reco-engine-how-it-works-5d3ae4.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_RevUp_Reco_Engine_-_Overview.pdf",
+          "title": "Choice RevUp Reco Engine - Overview",
+          "filename": "choice-revup-reco-engine-overview-154e63.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-revup-reco-engine-overview-154e63.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/choicerevup_bestpractices_guide.pdf",
+          "title": "Choice RevUp Best Practices Guide",
+          "filename": "choice-revup-best-practices-guide-4a0fc5.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-revup-best-practices-guide-4a0fc5.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/RevUp_Paid_Social_Guide.pdf",
+          "title": "RevUp Paid Social Guide",
+          "filename": "revup-paid-social-guide-19bf25.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/revup-paid-social-guide-19bf25.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/RevUp_Case_Study_-_Economy.pdf",
+          "title": "RevUp Case Study - Economy",
+          "filename": "revup-case-study-economy-19d9e7.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/revup-case-study-economy-19d9e7.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/RevUp_Case_Study_-_Extended_Stay.pdf",
+          "title": "RevUp Case Study - Extended Stay",
+          "filename": "revup-case-study-extended-stay-d4abc2.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/revup-case-study-extended-stay-d4abc2.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/RevUp_Case_Study_-_Midscale.pdf",
+          "title": "RevUp Case Study - Midscale",
+          "filename": "revup-case-study-midscale-fb5e89.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/revup-case-study-midscale-fb5e89.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/revup.asp?Action=GET&ID=brandstandards/localmarketing/files/RevUp_Case_Study_-_Upscale.pdf",
+          "title": "RevUp Case Study - Upscale",
+          "filename": "revup-case-study-upscale-547e88.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/revup-case-study-upscale-547e88.pdf"
+        }
+      ]
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-digital-marketing-seo",
+      "title": "Search Engine Optimization (SEO)",
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/What_Is_SEO_April_2022.pdf",
+          "title": "What is SEO?",
+          "filename": "what-is-seo-241e21.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/what-is-seo-241e21.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/SEO_and_AI_Search_Overview_-_June_2026.pdf",
+          "title": "SEO and AI Search Overview - great information to know regarding AI-related search",
+          "filename": "seo-and-ai-search-overview-great-information-to-know-regarding-ai-related-search-e2ea44.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/seo-and-ai-search-overview-great-information-to-know-regarding-ai-related-search-e2ea44.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/Your_Guide_to_SEO_and_AEO.pdf",
+          "title": "Your Guide to SEO and GEO",
+          "filename": "your-guide-to-seo-and-geo-0a6062.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/your-guide-to-seo-and-geo-0a6062.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/SEO_Top_Activities_March2024.pdf",
+          "title": "Top 5 Local SEO Action Items",
+          "filename": "top-5-local-seo-action-items-d20036.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/top-5-local-seo-action-items-d20036.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/Online_Reviews_and_Impact_on_Visibility_March_2024_v2.pdf",
+          "title": "Online Reviews & Impact on Visibility",
+          "filename": "online-reviews-impact-on-visibility-c9e635.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/online-reviews-impact-on-visibility-c9e635.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/Google_Business_Profile_-_Local_Search_-_August_2023.pdf",
+          "title": "Google Business Profile & Local Search",
+          "filename": "google-business-profile-local-search-686b3c.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/google-business-profile-local-search-686b3c.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/property-backlinking-tracker.xlsx",
+          "title": "Backlinking Tracker: use this to get started",
+          "filename": "backlinking-tracker-use-this-to-get-started-caca0c.xlsx",
+          "localPath": "output/choicecentral-local-marketing/downloads/backlinking-tracker-use-this-to-get-started-caca0c.xlsx"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/digital-marketing-google-my-business-101.pdf",
+          "title": "Google My Business 101",
+          "filename": "google-my-business-101-56ab90.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/google-my-business-101-56ab90.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/Accessing_Your_Google_Business_Profile_-_August_2023.pdf",
+          "title": "Accessing Your Hotel's Google My Business Listing",
+          "filename": "accessing-your-hotels-google-my-business-listing-34b5c8.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/accessing-your-hotels-google-my-business-listing-34b5c8.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/seo.asp?Action=GET&ID=brandstandards/localmarketing/files/Google_Business_Profile_Sustainability_Attributes_March2024.pdf",
+          "title": "Updating Your Hotel's Google My Business Listing - Sustainability Attributes",
+          "filename": "updating-your-hotels-google-my-business-listing-sustainability-attributes-c6c8c6.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/updating-your-hotels-google-my-business-listing-sustainability-attributes-c6c8c6.pdf"
+        }
+      ]
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-digital-marketing-social-media",
+      "title": "Social Media",
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/social-media.asp?Action=GET&ID=brandstandards/localmarketing/files/Social_Media_Guidelines_2026.pdf",
+          "title": "Choice Hotels’ Social Media Guidelines for Hotels",
+          "filename": "choice-hotels-social-media-guidelines-for-hotels-0b5d30.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-hotels-social-media-guidelines-for-hotels-0b5d30.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/social-media.asp?Action=GET&ID=brandstandards/localmarketing/files/Social_Media_Content_September_2023.pdf",
+          "title": "Social Media Content Ideas",
+          "filename": "social-media-content-ideas-10caf0.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/social-media-content-ideas-10caf0.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/social-media.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Social_Media_Calendar_Template_June_2023.xlsx",
+          "title": "Content Calendar Template",
+          "filename": "content-calendar-template-e19ccb.xlsx",
+          "localPath": "output/choicecentral-local-marketing/downloads/content-calendar-template-e19ccb.xlsx"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/social-media.asp?Action=GET&ID=brandstandards/localmarketing/files/Organic_Social_Media_Guide.pdf",
+          "title": "Organic Social Media Guide",
+          "filename": "organic-social-media-guide-1c808e.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/organic-social-media-guide-1c808e.pdf"
+        }
+      ]
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-digital-marketing-tripadvisor",
+      "title": "Tripadvisor",
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/tripadvisor.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Business_Advantage_Enterprise_One-Pager.pdf",
+          "title": "Tripadvisor Business Advantage  Overview",
+          "filename": "tripadvisor-business-advantage-overview-bceba3.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/tripadvisor-business-advantage-overview-bceba3.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/One_Sheet_Choice_Hotels_and_Sojern_Pay_on_the_Stay_-_April_2022.pdf",
+          "title": "Sojern’s Pay on the Stay",
+          "filename": "sojerns-pay-on-the-stay-f689fb.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/sojerns-pay-on-the-stay-f689fb.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/index.asp?Action=GET&ID=brandstandards/localmarketing/files/CHERP_FAQs_September_2023.pdf",
+          "title": "pay  10% on consumed stays",
+          "filename": "pay-10-on-consumed-stays-8ff2be.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/pay-10-on-consumed-stays-8ff2be.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/tripadvisor.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Tripadvisor_-_Overview_-_July_2024.pdf",
+          "title": "What  is Tripadvisor?",
+          "filename": "what-is-tripadvisor-2753da.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/what-is-tripadvisor-2753da.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/digital-marketing/tripadvisor.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Business_Advantage_Enterprise_One-Pager.pdf",
+          "title": "Tripadvisor  Business Advantage Overview",
+          "filename": "tripadvisor-business-advantage-overview-bceba3.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/tripadvisor-business-advantage-overview-bceba3.pdf"
+        }
+      ]
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-website",
+      "title": "Website",
+      "documents": []
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-website-vanity-sites",
+      "title": "Vanity Sites",
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/ccweb/content/resources/ecomm/digital-marketing-vanity-requirements.pdf",
+          "title": "Vanity  Website Requirements",
+          "filename": "vanity-website-requirements-57789e.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/vanity-website-requirements-57789e.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/ccweb/content/resources/ecomm/digital-marketing-domain-name-policy.pdf",
+          "title": "Domain  Name Policy",
+          "filename": "domain-name-policy-408979.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/domain-name-policy-408979.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/ccweb/content/resources/ecomm/digital-marketing-domain-policy-q-and-a.pdf",
+          "title": "US Domain Name Q&A",
+          "filename": "us-domain-name-qa-05cb58.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/us-domain-name-qa-05cb58.pdf"
+        }
+      ]
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-collateral-photography",
+      "title": "Collateral & Photography",
+      "documents": []
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-collateral-photography-smartmarketing",
+      "title": "SmartMarketing",
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/collateral-photography/collateral.asp?Action=GET&ID=brandstandards/localmarketing/files/SmartMarketing_Overview_and_FAQ.pdf",
+          "title": "Click here",
+          "filename": "click-here-a34884.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/click-here-a34884.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/collateral-photography/collateral.asp?Action=GET&ID=brandstandards/localmarketing/files/Updating_your_QR_Code_Piece_-_Online_GDS.pdf",
+          "title": "Click here",
+          "filename": "click-here-ce5d5d.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/click-here-ce5d5d.pdf"
+        }
+      ]
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-co-op-marketing",
+      "title": "Co-op Marketing Program",
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/co-op-marketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/CHOC_Co-op_Marketing_Program_2026.pdf",
+          "title": "CHOC Co-op Marketing  Program One Pager",
+          "filename": "choc-co-op-marketing-program-one-pager-a0d2ec.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choc-co-op-marketing-program-one-pager-a0d2ec.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/co-op-marketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Economy_Co-op_Marketing_Program_2026.pdf",
+          "title": "Economy Co-op Marketing  Program One Pager",
+          "filename": "economy-co-op-marketing-program-one-pager-6b48ab.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/economy-co-op-marketing-program-one-pager-6b48ab.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/co-op-marketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/Extended_Stay_Collateral_Refresh.pdf",
+          "title": "Extended Stay Co-op Marketing Program One Pager",
+          "filename": "extended-stay-co-op-marketing-program-one-pager-535c8e.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/extended-stay-co-op-marketing-program-one-pager-535c8e.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/co-op-marketing/index.asp?Action=GET&ID=brandstandards/LocalMarketing/files/How_to_Join_the_Co-op_Marketing_Program_-_September_2025.pdf",
+          "title": "Costs and How to Join",
+          "filename": "costs-and-how-to-join-53836b.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/costs-and-how-to-join-53836b.pdf"
+        }
+      ]
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-new-hotels",
+      "title": "New Hotels",
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/new-hotels/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Local_Marketing_Checklist_-_NEW_Hotels_January_2024.pdf",
+          "title": "Local Marketing Checklist – New Build Hotels",
+          "filename": "local-marketing-checklist-new-build-hotels-ddc23a.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/local-marketing-checklist-new-build-hotels-ddc23a.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/new-hotels/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Local_Marketing_Checklist_-_Conversion_Hotels_-_February_2024.pdf",
+          "title": "Local Marketing Checklist – Conversion Hotels",
+          "filename": "local-marketing-checklist-conversion-hotels-4914ac.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/local-marketing-checklist-conversion-hotels-4914ac.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/new-hotels/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Local_Marketing_Checklist_-_Repositioning_Hotels_February_2024.pdf",
+          "title": "Local Marketing Checklist – Choice to Choice Repositioning Hotels",
+          "filename": "local-marketing-checklist-choice-to-choice-repositioning-hotels-c0ef0c.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/local-marketing-checklist-choice-to-choice-repositioning-hotels-c0ef0c.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/new-hotels/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Welcome_to_the_Choice_Hotels_Family_of_Brands_-_Marketing_Overview_and_Actions_for_NEW_Hotels.pdf",
+          "title": "Marketing Overview",
+          "filename": "marketing-overview-f76642.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/marketing-overview-f76642.pdf"
+        }
+      ]
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-b2b-marketing",
+      "title": "B2B Marketing",
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/B2B-Marketing-Opportunities.asp?Action=GET&ID=brandstandards/localmarketing/files/TMC_Marketing_Programs.pdf",
+          "title": "TMC Property Level Marketing  Opportunities",
+          "filename": "tmc-property-level-marketing-opportunities-4a31e5.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/tmc-property-level-marketing-opportunities-4a31e5.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/B2B-Marketing-Opportunities.asp?Action=GET&ID=brandstandards/localmarketing/files/TMC_Secondary_Programs_2026_Connect.pdf",
+          "title": "Search the National Account List",
+          "filename": "search-the-national-account-list-360363.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/search-the-national-account-list-360363.pdf"
+        }
+      ]
+    },
+    {
+      "contentUniqueId": "00018-local-marketing-support-suite-choice-accelerate",
+      "title": "Choice Accelerate",
+      "documents": [
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/choice-accelerate/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_Accelerate_Overview_-_June_2026.pdf",
+          "title": "Choice Accelerate Overview",
+          "filename": "choice-accelerate-overview-59ae79.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-accelerate-overview-59ae79.pdf"
+        },
+        {
+          "url": "https://apps.choicecentral.com/choicebuys/brandstandards/LocalMarketing/choice-accelerate/index.asp?Action=GET&ID=brandstandards/localmarketing/files/Choice_Accelerate_FAQs_June_2026.pdf",
+          "title": "Choice Accelerate FAQs",
+          "filename": "choice-accelerate-faqs-82811c.pdf",
+          "localPath": "output/choicecentral-local-marketing/downloads/choice-accelerate-faqs-82811c.pdf"
+        }
+      ]
+    }
+  ]
+}
