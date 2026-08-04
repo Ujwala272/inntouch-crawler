@@ -212,7 +212,7 @@ public class ChoiceCentralLocalMarketingImporter {
             Version__c = 1,
             Title__c = LIBRARY_NAME,
             Summary__c = '${escapeApexString(truncate(libraryPage.summary || libraryPage.body, 250))}',
-            Body__c = '${escapeApexString(truncate(libraryPage.bodyHtml, 30000))}',
+            Body__c = '${escapeApexString(truncate(libraryPage.bodyHtml, 30000, '<!-- truncated -->'))}',
             Status__c = 'Published'
         ));
 `;
@@ -226,7 +226,7 @@ public class ChoiceCentralLocalMarketingImporter {
             Version__c = 1,
             Title__c = '${escapeApexString(entry.title)}',
             Summary__c = '${escapeApexString(truncate(page.summary || page.body, 250))}',
-            Body__c = '${escapeApexString(truncate(page.bodyHtml, 30000))}',
+            Body__c = '${escapeApexString(truncate(page.bodyHtml, 30000, '<!-- truncated -->'))}',
             Status__c = 'Published'
         ));
 `;
@@ -241,7 +241,7 @@ public class ChoiceCentralLocalMarketingImporter {
             Version__c = 1,
             Title__c = '${escapeApexString(entry.title)}',
             Summary__c = '${escapeApexString(truncate(page.summary || page.body, 250))}',
-            Body__c = '${escapeApexString(truncate(page.bodyHtml, 30000))}',
+            Body__c = '${escapeApexString(truncate(page.bodyHtml, 30000, '<!-- truncated -->'))}',
             Status__c = 'Published'
         ));
 `;
@@ -357,10 +357,14 @@ public class ChoiceCentralLocalMarketingImporter {
   console.log('Generated: generated-apex/choicecentral-local-marketing-file-manifest.json');
 }
 
-function truncate(str, maxLength) {
+// marker defaults to none: Summary__c is plain text (no HTML rendering to
+// hide an HTML comment inside), so an HTML-comment marker there shows up as
+// literal visible text. Body__c passes '<!-- truncated -->' explicitly,
+// since lightning-formatted-rich-text/rendered HTML there does hide it.
+function truncate(str, maxLength, marker = '') {
   if (!str) return '';
   if (str.length <= maxLength) return str;
-  return str.substring(0, maxLength) + '<!-- truncated -->';
+  return str.substring(0, maxLength) + marker;
 }
 
 function escapeApexString(str) {

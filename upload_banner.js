@@ -1,12 +1,17 @@
 #!/usr/bin/env node
 /**
- * Upload the Local Marketing Support Suite banner image, linked to the
- * library's Content__c record via FirstPublishLocationId. ccUtilityClass.
- * getImageFromRelatedFiles resolves the banner by looking up
- * ContentDocumentLink -> ContentVersion.FirstPublishLocationId against the
- * Content__c/Translations__c Ids it's given, so this must point at the
- * library's Content__c.Id (not a Translations__c.Id) to render as the
- * library's card image on the Resources page.
+ * Upload the Local Marketing Support Suite banner image and link it two
+ * ways, since two different pages resolve the banner two different ways:
+ *  - The Overview/grid card (ccReferenceGuidesCtrl) resolves it via
+ *    ContentDocumentLink -> ContentVersion.FirstPublishLocationId against
+ *    the Content__c Id (getImageFromRelatedFiles) - covered by uploading
+ *    with FirstPublishLocationId = library Id.
+ *  - The library detail hero banner (libraryContentDetailCtrl /
+ *    libraryContentDetail LWC) reads Content__c.Banner_Image__c directly
+ *    and does NOT look at ContentDocumentLink at all - without this field
+ *    set, the hero renders as a blank box (its CSS background-image URL
+ *    resolves to nothing). Patched here right after upload, since the
+ *    ContentDocument Id needed for the URL is only known post-upload.
  */
 const fs = require('fs');
 const path = require('path');
@@ -64,6 +69,12 @@ async function main() {
 
   const docId = (await queryAll(A, `SELECT ContentDocumentId FROM ContentVersion WHERE Id = '${cv.id}'`))[0].ContentDocumentId;
   console.log(`ContentDocument Id: ${docId}`);
+
+  const downloadUrl = `${A.url}/sfc/servlet.shepherd/document/download/${docId}`;
+  await rest(A, `/services/data/${API}/sobjects/Content__c/${lib.Id}`, 'PATCH', {
+    Banner_Image__c: downloadUrl
+  });
+  console.log(`Set Content__c.Banner_Image__c: ${downloadUrl}`);
   console.log('\nDone.');
 }
 
