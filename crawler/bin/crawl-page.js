@@ -8,12 +8,19 @@
  * only need one page's resources.
  *
  * Usage:
- *   node bin/crawl-page.js <url> [--out <dir>]
+ *   node bin/crawl-page.js <url> [--out <dir>] [--config <file>]
  *
  * Example:
  *   node bin/crawl-page.js "https://www.inn-touch.ca/community/local-sales-library/closing-the-sale/pages/main"
+ *
+ * --config <file> reuses the auth block, allowedDomains, and
+ * extraction.selectors from an existing crawler config (e.g.
+ * config/choicecentral-local-marketing.config.json) instead of the
+ * hardcoded InnTouch login - use this for single-page crawls of any
+ * other already-configured site.
  */
 
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
@@ -27,14 +34,18 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const args = process.argv.slice(2);
-const url = args.find(a => !a.startsWith('--'));
+const url = args.find((a, i) => !a.startsWith('--') && args[i - 1] !== '--out' && args[i - 1] !== '--config');
 const outIdx = args.indexOf('--out');
 const outDir = outIdx !== -1 ? args[outIdx + 1] : null;
+const configIdx = args.indexOf('--config');
+const configFile = configIdx !== -1 ? args[configIdx + 1] : null;
 
 if (!url) {
-  console.error('Usage: node bin/crawl-page.js <url> [--out <dir>]');
+  console.error('Usage: node bin/crawl-page.js <url> [--out <dir>] [--config <file>]');
   process.exit(1);
 }
+
+const siteConfig = configFile ? JSON.parse(fs.readFileSync(path.resolve(configFile), 'utf8')) : null;
 
 function slugFromUrl(u) {
   try {
@@ -55,43 +66,49 @@ async function main() {
   // depth-1 candidate); includePatterns restricts what depth-1 links are
   // allowed, so it never wanders into other category/place pages on the
   // site. Nothing past depth 1 is ever queued.
+  const defaultAuth = {
+    strategy: 'form',
+    loginUrl: 'https://www.inn-touch.ca/login.jspa',
+    credentials: {
+      username: '${INNTOUCH_USERNAME}',
+      password: '${INNTOUCH_PASSWORD}',
+    },
+    selectors: {
+      username: "input[name='username'], input#username",
+      password: "input[name='password'], input#password",
+      submit: "button[type='submit'], input[type='submit']",
+    },
+    successIndicator: { urlNotContains: '/login' },
+  };
+  const defaultCrawl = {
+    maxDepth: 1,
+    maxPages: 60,
+    allowedDomains: ['www.inn-touch.ca', 'inn-touch.ca'],
+    includePatterns: ['/docs/DOC-'],
+    excludePatterns: ['/login', '/logout', '/profile', '/people', '/admin', '/diff$', '/version/', '/edit$'],
+    waitForSelector: '.jive-rendered-content',
+    delay: 1000,
+  };
+  const defaultExtraction = {
+    useHeuristics: true,
+    selectors: {
+      title: 'h1, .j-placeTitle, span.j-place-name',
+      body: '.jive-rendered-content, .j-description',
+      category: 'h2',
+      videos: "iframe[src*='vimeo'], iframe[src*='youtube']",
+      images: "img[src*='cachefly'], img[src*='/servlet/']",
+      documents: "a[href*='/docs/DOC-'], a[href*='/servlet/JiveServlet/download'], a[href$='.pdf'], a[href$='.docx'], a[href$='.xlsx'], a[href$='.pptx']",
+    },
+  };
+
   const config = {
     startUrl: [url],
     headless: true,
-    auth: {
-      strategy: 'form',
-      loginUrl: 'https://www.inn-touch.ca/login.jspa',
-      credentials: {
-        username: '${INNTOUCH_USERNAME}',
-        password: '${INNTOUCH_PASSWORD}',
-      },
-      selectors: {
-        username: "input[name='username'], input#username",
-        password: "input[name='password'], input#password",
-        submit: "button[type='submit'], input[type='submit']",
-      },
-      successIndicator: { urlNotContains: '/login' },
-    },
-    crawl: {
-      maxDepth: 1,
-      maxPages: 60,
-      allowedDomains: ['www.inn-touch.ca', 'inn-touch.ca'],
-      includePatterns: ['/docs/DOC-'],
-      excludePatterns: ['/login', '/logout', '/profile', '/people', '/admin', '/diff$', '/version/', '/edit$'],
-      waitForSelector: '.jive-rendered-content',
-      delay: 1000,
-    },
-    extraction: {
-      useHeuristics: true,
-      selectors: {
-        title: 'h1, .j-placeTitle, span.j-place-name',
-        body: '.jive-rendered-content, .j-description',
-        category: 'h2',
-        videos: "iframe[src*='vimeo'], iframe[src*='youtube']",
-        images: "img[src*='cachefly'], img[src*='/servlet/']",
-        documents: "a[href*='/docs/DOC-'], a[href*='/servlet/JiveServlet/download'], a[href$='.pdf'], a[href$='.docx'], a[href$='.xlsx'], a[href$='.pptx']",
-      },
-    },
+    auth: siteConfig ? siteConfig.auth : defaultAuth,
+    crawl: siteConfig
+      ? { ...siteConfig.crawl, maxDepth: 0, maxPages: 1 }
+      : defaultCrawl,
+    extraction: siteConfig ? siteConfig.extraction : defaultExtraction,
     download: {
       enabled: true,
       downloadDir: path.join(outputDir, 'downloads'),

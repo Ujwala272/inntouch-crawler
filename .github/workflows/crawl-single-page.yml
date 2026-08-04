@@ -4,8 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       page_url:
-        description: 'Full URL of the single InnTouch page to crawl'
+        description: 'Full URL of the single page to crawl'
         required: true
+        type: string
+      config_file:
+        description: 'Config file (crawler/config/) to reuse auth/selectors from, for non-InnTouch sites'
+        required: false
+        default: ''
         type: string
 
 jobs:
@@ -34,8 +39,15 @@ jobs:
         env:
           INNTOUCH_USERNAME: ${{ secrets.INNTOUCH_USERNAME }}
           INNTOUCH_PASSWORD: ${{ secrets.INNTOUCH_PASSWORD }}
+          CHOICECENTRAL_USERNAME: ${{ secrets.CHOICECENTRAL_USERNAME }}
+          CHOICECENTRAL_PASSWORD: ${{ secrets.CHOICECENTRAL_PASSWORD }}
+          CONFIG_FILE: ${{ github.event.inputs.config_file }}
         run: |
-          node bin/crawl-page.js "${{ github.event.inputs.page_url }}" --verbose
+          ARGS=("${{ github.event.inputs.page_url }}" --verbose)
+          if [ -n "$CONFIG_FILE" ]; then
+            ARGS+=(--config "$CONFIG_FILE")
+          fi
+          node bin/crawl-page.js "${ARGS[@]}"
 
       - name: Show results
         working-directory: ./crawler
