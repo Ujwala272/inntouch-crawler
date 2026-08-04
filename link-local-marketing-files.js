@@ -17,7 +17,15 @@
  *    at upload time - see upload-choicecentral-local-marketing-files.js).
  *  - Internal nav links (anchor text matches another page's title in
  *    this same library, e.g. "RevUp", "Tripadvisor"): point at that
- *    page's Content_Article_URL__c instead.
+ *    page's Content_Article_URL__c instead, with showLibraryHeader=true
+ *    &libraryName=...&librarySubtitle=... appended - matching the
+ *    convention ccViewLibraryContent.handleGuideClick already uses when
+ *    navigating there via its card UI. Without this param,
+ *    ccResourcesSidebar can't tell the destination page was reached from
+ *    a library context and adds an unwanted 200px top margin
+ *    (add-margin) on top of the page's own hero banner, since these are
+ *    raw in-body <a> hrefs the browser follows directly - no LWC click
+ *    handler ever runs to append it for us.
  * Same approach as LinkAllCategoryPDFs.cls for InnTouch, adapted for
  * real <a> tags instead of bare <strong> text, and extended to cover
  * intra-library navigation as well as document downloads.
@@ -94,6 +102,28 @@ async function ensureDistributionUrl(A, versionId, title) {
   return rows[0].DistributionPublicUrl;
 }
 
+// Upgrades already-working internal links (fixed by an earlier run of this
+// script, before showLibraryHeader was added here) that still point at a
+// bare Content_Article_URL__c for one of this library's own pages, missing
+// the showLibraryHeader param. Matched by contentUniqueId appearing in the
+// href's name= query param, not by anchor text (unlike the empty-href pass),
+// since these hrefs are already populated and just need the param appended.
+function upgradeInternalLinksInHtml(html, allContentUids, appendParams) {
+  let result = html;
+  let upgraded = 0;
+  const anchorRegex = /<a href="([^"]*)"([^>]*)>/g;
+  result = result.replace(anchorRegex, (match, href, restAttrs) => {
+    if (href.includes('showLibraryHeader')) return match;
+    const decoded = href.replace(/&amp;/g, '&');
+    const nameMatch = decoded.match(/name=([^&]+)/);
+    if (!nameMatch || !allContentUids.has(nameMatch[1])) return match;
+    upgraded++;
+    const upgradedHref = appendParams(decoded).replace(/&/g, '&amp;');
+    return `<a href="${upgradedHref}"${restAttrs}>`;
+  });
+  return { html: result, upgraded };
+}
+
 function linkEmptyHrefsInHtml(html, titleToUrl, specialCases) {
   const normalizedMap = new Map();
   for (const [title, url] of titleToUrl) normalizedMap.set(normalize(title), url);
@@ -129,14 +159,30 @@ async function main() {
   const contentIdMap = new Map(contentRecords.map(r => [r.Content_Unique_Id__c, r.Id]));
   const urlByUid = new Map(contentRecords.map(r => [r.Content_Unique_Id__c, r.Content_Article_URL__c]));
 
+  const libraryId = contentIdMap.get(LIBRARY_PREFIX);
+  const libraryTrans = libraryId
+    ? await queryAll(A, `SELECT Title__c, Summary__c FROM Translations__c WHERE Content__c = '${libraryId}' AND Name = 'English'`)
+    : [];
+  const libraryTitle = libraryTrans[0]?.Title__c || '';
+  const librarySummary = libraryTrans[0]?.Summary__c || '';
+
+  function withLibraryHeaderParams(url) {
+    const separator = url.includes('?') ? '&' : '?';
+    return `${url}${separator}showLibraryHeader=true&libraryName=${encodeURIComponent(libraryTitle)}&librarySubtitle=${encodeURIComponent(librarySummary)}`;
+  }
+
   // Internal nav-link targets: every other page's title -> its own
   // Content_Article_URL__c, shared across all pages in this run. HTML-encode
   // the '&' to match the convention already used for internal links
   // elsewhere (see 00004-driving-revenue's Body__c: href="...&amp;name=...").
   const pageTitleToUrl = new Map();
   for (const rec of contentRecords) {
-    if (rec.Content_Article_URL__c) pageTitleToUrl.set(rec.Name, rec.Content_Article_URL__c.replace(/&/g, '&amp;'));
+    if (rec.Content_Article_URL__c) {
+      pageTitleToUrl.set(rec.Name, withLibraryHeaderParams(rec.Content_Article_URL__c).replace(/&/g, '&amp;'));
+    }
   }
+
+  const allContentUids = new Set(contentRecords.map(r => r.Content_Unique_Id__c));
 
   let totalReplaced = 0;
   let totalPagesUpdated = 0;
@@ -165,20 +211,23 @@ async function main() {
       specialCases = {};
       for (const [text, targetUid] of Object.entries(SPECIAL_CASE_LINKS[page.contentUniqueId])) {
         const targetUrl = urlByUid.get(targetUid);
-        if (targetUrl) specialCases[text] = targetUrl.replace(/&/g, '&amp;');
+        if (targetUrl) specialCases[text] = withLibraryHeaderParams(targetUrl).replace(/&/g, '&amp;');
       }
     }
 
-    const { html, replaced } = linkEmptyHrefsInHtml(trans[0].Body__c, titleToUrl, specialCases);
-    if (replaced > 0) {
-      console.log(`  ${page.title}: ${replaced} link(s) fixed`);
-      totalReplaced += replaced;
+    const { html: fixedHtml, replaced } = linkEmptyHrefsInHtml(trans[0].Body__c, titleToUrl, specialCases);
+    const { html, upgraded } = upgradeInternalLinksInHtml(fixedHtml, allContentUids, withLibraryHeaderParams);
+    const totalChanged = replaced + upgraded;
+
+    if (totalChanged > 0) {
+      console.log(`  ${page.title}: ${replaced} dead link(s) fixed, ${upgraded} internal link(s) upgraded with showLibraryHeader`);
+      totalReplaced += totalChanged;
       totalPagesUpdated++;
       if (!dryRun) {
         await rest(A, `/services/data/${API}/sobjects/Translations__c/${trans[0].Id}`, 'PATCH', { Body__c: html });
       }
     } else {
-      console.log(`  ${page.title}: no matching empty-href anchors found`);
+      console.log(`  ${page.title}: no changes needed`);
     }
   }
 
