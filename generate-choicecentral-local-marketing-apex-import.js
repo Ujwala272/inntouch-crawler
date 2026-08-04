@@ -45,6 +45,13 @@ console.log('=== Generating ChoiceCentral Local Marketing Apex Import ===\n');
 const data = JSON.parse(fs.readFileSync(INPUT_FILE, 'utf8'));
 console.log(`Loaded ${data.pages.length} crawled pages\n`);
 
+// Exact topic associations as curated by hand in the sandbox org (exported via
+// SOQL from Content_Topic__c) - replicated here instead of the original
+// generic "attach everything to one Marketing topic" placeholder, so a
+// replicate-to-another-org run reproduces the real curation, not the seed.
+const TOPIC_MAP_FILE = path.join(OUTPUT_DIR, 'choicecentral-local-marketing-topic-map.json');
+const topicMap = fs.existsSync(TOPIC_MAP_FILE) ? JSON.parse(fs.readFileSync(TOPIC_MAP_FILE, 'utf8')) : null;
+
 const pagesByUrl = new Map(data.pages.map(p => [p.url, p]));
 
 function findPage(urlSuffix) {
@@ -245,25 +252,63 @@ public class ChoiceCentralLocalMarketingImporter {
         System.debug('Created ' + translations.size() + ' translations');
     }
 
+    // Ensures a CMS_Topic__c with this Name/Parent_Topic__c exists, creating
+    // it if this org doesn't have it yet (matches sandbox's curated topics).
+    private static Id ensureTopic(Map<String, Id> topicCache, String name, String parentTopic) {
+        String cacheKey = name + '|' + parentTopic;
+        if (topicCache.containsKey(cacheKey)) return topicCache.get(cacheKey);
+
+        List<CMS_Topic__c> existing = [
+            SELECT Id FROM CMS_Topic__c WHERE Name = :name AND Parent_Topic__c = :parentTopic LIMIT 1
+        ];
+        Id topicId;
+        if (!existing.isEmpty()) {
+            topicId = existing[0].Id;
+        } else {
+            CMS_Topic__c t = new CMS_Topic__c(Name = name, Parent_Topic__c = parentTopic);
+            insert t;
+            topicId = t.Id;
+            System.debug('Created missing topic: ' + name + ' (parent: ' + parentTopic + ')');
+        }
+        topicCache.put(cacheKey, topicId);
+        return topicId;
+    }
+
     private static void createTopicAssociations(Content__c library, Map<String, Content__c> categoryMap, Map<String, Content__c> articleMap) {
-        List<CMS_Topic__c> marketingTopics = [SELECT Id FROM CMS_Topic__c WHERE Name = 'Marketing' LIMIT 1];
-        if (marketingTopics.isEmpty()) {
-            System.debug('Topic "Marketing" not found - skipping associations');
-            return;
-        }
+        Map<Id, Content__c> allByContentId = new Map<Id, Content__c>();
+        allByContentId.put(library.Id, library);
+        for (Content__c c : categoryMap.values()) allByContentId.put(c.Id, c);
+        for (Content__c c : articleMap.values()) allByContentId.put(c.Id, c);
 
-        Id topicId = marketingTopics[0].Id;
+        Map<String, Content__c> byUid = new Map<String, Content__c>();
+        for (Content__c c : allByContentId.values()) byUid.put(c.Content_Unique_Id__c, c);
+
+        Map<String, Id> topicCache = new Map<String, Id>();
         List<Content_Topic__c> junctions = new List<Content_Topic__c>();
+`;
 
-        junctions.add(new Content_Topic__c(Content__c = library.Id, Topic__c = topicId));
-        for (Content__c cat : categoryMap.values()) {
-            junctions.add(new Content_Topic__c(Content__c = cat.Id, Topic__c = topicId));
+  if (topicMap) {
+    for (const [uid, topics] of Object.entries(topicMap)) {
+      for (const t of topics) {
+        apex += `        if (byUid.containsKey('${uid}')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('${uid}').Id, Topic__c = ensureTopic(topicCache, '${escapeApexString(t.name)}', '${escapeApexString(t.parent.trim())}')));
         }
-        for (Content__c art : articleMap.values()) {
-            junctions.add(new Content_Topic__c(Content__c = art.Id, Topic__c = topicId));
+`;
+      }
+    }
+  } else {
+    apex += `        // No topic map found - falling back to a single generic "Marketing" topic
+        Id fallbackTopicId = ensureTopic(topicCache, 'Marketing', 'Guest Experience');
+        for (Content__c c : allByContentId.values()) {
+            junctions.add(new Content_Topic__c(Content__c = c.Id, Topic__c = fallbackTopicId));
         }
+`;
+  }
 
-        insert junctions;
+  apex += `
+        if (!junctions.isEmpty()) {
+            insert junctions;
+        }
         System.debug('Created ' + junctions.size() + ' topic associations');
     }
 

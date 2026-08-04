@@ -395,25 +395,97 @@ public class ChoiceCentralLocalMarketingImporter {
         System.debug('Created ' + translations.size() + ' translations');
     }
 
+    // Ensures a CMS_Topic__c with this Name/Parent_Topic__c exists, creating
+    // it if this org doesn't have it yet (matches sandbox's curated topics).
+    private static Id ensureTopic(Map<String, Id> topicCache, String name, String parentTopic) {
+        String cacheKey = name + '|' + parentTopic;
+        if (topicCache.containsKey(cacheKey)) return topicCache.get(cacheKey);
+
+        List<CMS_Topic__c> existing = [
+            SELECT Id FROM CMS_Topic__c WHERE Name = :name AND Parent_Topic__c = :parentTopic LIMIT 1
+        ];
+        Id topicId;
+        if (!existing.isEmpty()) {
+            topicId = existing[0].Id;
+        } else {
+            CMS_Topic__c t = new CMS_Topic__c(Name = name, Parent_Topic__c = parentTopic);
+            insert t;
+            topicId = t.Id;
+            System.debug('Created missing topic: ' + name + ' (parent: ' + parentTopic + ')');
+        }
+        topicCache.put(cacheKey, topicId);
+        return topicId;
+    }
+
     private static void createTopicAssociations(Content__c library, Map<String, Content__c> categoryMap, Map<String, Content__c> articleMap) {
-        List<CMS_Topic__c> marketingTopics = [SELECT Id FROM CMS_Topic__c WHERE Name = 'Marketing' LIMIT 1];
-        if (marketingTopics.isEmpty()) {
-            System.debug('Topic "Marketing" not found - skipping associations');
-            return;
-        }
+        Map<Id, Content__c> allByContentId = new Map<Id, Content__c>();
+        allByContentId.put(library.Id, library);
+        for (Content__c c : categoryMap.values()) allByContentId.put(c.Id, c);
+        for (Content__c c : articleMap.values()) allByContentId.put(c.Id, c);
 
-        Id topicId = marketingTopics[0].Id;
+        Map<String, Content__c> byUid = new Map<String, Content__c>();
+        for (Content__c c : allByContentId.values()) byUid.put(c.Content_Unique_Id__c, c);
+
+        Map<String, Id> topicCache = new Map<String, Id>();
         List<Content_Topic__c> junctions = new List<Content_Topic__c>();
-
-        junctions.add(new Content_Topic__c(Content__c = library.Id, Topic__c = topicId));
-        for (Content__c cat : categoryMap.values()) {
-            junctions.add(new Content_Topic__c(Content__c = cat.Id, Topic__c = topicId));
+        if (byUid.containsKey('00018-local-marketing-support-suite')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite').Id, Topic__c = ensureTopic(topicCache, 'Marketing', 'Guest Experience')));
         }
-        for (Content__c art : articleMap.values()) {
-            junctions.add(new Content_Topic__c(Content__c = art.Id, Topic__c = topicId));
+        if (byUid.containsKey('00018-local-marketing-support-suite-b2b-marketing')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-b2b-marketing').Id, Topic__c = ensureTopic(topicCache, 'Marketing', 'Guest Experience')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-b2b-marketing')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-b2b-marketing').Id, Topic__c = ensureTopic(topicCache, 'Sales Fundamentals', 'Sales')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-choice-accelerate')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-choice-accelerate').Id, Topic__c = ensureTopic(topicCache, 'Revenue Growth Programs', 'Sales')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-co-op-marketing')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-co-op-marketing').Id, Topic__c = ensureTopic(topicCache, 'Marketing', 'Guest Experience')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-co-op-marketing')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-co-op-marketing').Id, Topic__c = ensureTopic(topicCache, 'Marketing Programs', 'Marketing')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-collateral-photography')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-collateral-photography').Id, Topic__c = ensureTopic(topicCache, 'Marketing', 'Guest Experience')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-collateral-photography-smartmarketing')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-collateral-photography-smartmarketing').Id, Topic__c = ensureTopic(topicCache, 'Marketing', 'Guest Experience')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-collateral-photography-smartmarketing')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-collateral-photography-smartmarketing').Id, Topic__c = ensureTopic(topicCache, 'Marketing Programs', 'Marketing')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-digital-marketing')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-digital-marketing').Id, Topic__c = ensureTopic(topicCache, 'Online Marketing', 'Marketing')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-digital-marketing-revup')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-digital-marketing-revup').Id, Topic__c = ensureTopic(topicCache, 'Revenue Growth Programs', 'Sales')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-digital-marketing-seo')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-digital-marketing-seo').Id, Topic__c = ensureTopic(topicCache, 'Search & Online Visibility', 'Marketing')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-digital-marketing-social-media')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-digital-marketing-social-media').Id, Topic__c = ensureTopic(topicCache, 'Online Marketing', 'Marketing')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-digital-marketing-tripadvisor')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-digital-marketing-tripadvisor').Id, Topic__c = ensureTopic(topicCache, 'Search & Online Visibility', 'Marketing')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-new-hotels')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-new-hotels').Id, Topic__c = ensureTopic(topicCache, 'New Hotel Marketing', 'Development')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-website')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-website').Id, Topic__c = ensureTopic(topicCache, 'Website & Digital Presence', 'Marketing')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-website')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-website').Id, Topic__c = ensureTopic(topicCache, 'Online Marketing', 'Marketing')));
+        }
+        if (byUid.containsKey('00018-local-marketing-support-suite-website-vanity-sites')) {
+            junctions.add(new Content_Topic__c(Content__c = byUid.get('00018-local-marketing-support-suite-website-vanity-sites').Id, Topic__c = ensureTopic(topicCache, 'Website & Digital Presence', 'Marketing')));
         }
 
-        insert junctions;
+        if (!junctions.isEmpty()) {
+            insert junctions;
+        }
         System.debug('Created ' + junctions.size() + ' topic associations');
     }
 

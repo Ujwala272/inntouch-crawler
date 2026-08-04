@@ -1,0 +1,102 @@
+{
+  "00018-local-marketing-support-suite": [
+    {
+      "name": "Marketing",
+      "parent": "Guest Experience"
+    }
+  ],
+  "00018-local-marketing-support-suite-b2b-marketing": [
+    {
+      "name": "Marketing",
+      "parent": "Guest Experience"
+    },
+    {
+      "name": "Sales Fundamentals",
+      "parent": "Sales"
+    }
+  ],
+  "00018-local-marketing-support-suite-choice-accelerate": [
+    {
+      "name": "Revenue Growth Programs",
+      "parent": "Sales"
+    }
+  ],
+  "00018-local-marketing-support-suite-co-op-marketing": [
+    {
+      "name": "Marketing",
+      "parent": "Guest Experience"
+    },
+    {
+      "name": "Marketing Programs",
+      "parent": "Marketing"
+    }
+  ],
+  "00018-local-marketing-support-suite-collateral-photography": [
+    {
+      "name": "Marketing",
+      "parent": "Guest Experience"
+    }
+  ],
+  "00018-local-marketing-support-suite-collateral-photography-smartmarketing": [
+    {
+      "name": "Marketing",
+      "parent": "Guest Experience"
+    },
+    {
+      "name": "Marketing Programs",
+      "parent": "Marketing"
+    }
+  ],
+  "00018-local-marketing-support-suite-digital-marketing": [
+    {
+      "name": "Online Marketing",
+      "parent": "Marketing"
+    }
+  ],
+  "00018-local-marketing-support-suite-digital-marketing-revup": [
+    {
+      "name": "Revenue Growth Programs",
+      "parent": "Sales"
+    }
+  ],
+  "00018-local-marketing-support-suite-digital-marketing-seo": [
+    {
+      "name": "Search & Online Visibility",
+      "parent": "Marketing"
+    }
+  ],
+  "00018-local-marketing-support-suite-digital-marketing-social-media": [
+    {
+      "name": "Online Marketing",
+      "parent": "Marketing"
+    }
+  ],
+  "00018-local-marketing-support-suite-digital-marketing-tripadvisor": [
+    {
+      "name": "Search & Online Visibility",
+      "parent": "Marketing"
+    }
+  ],
+  "00018-local-marketing-support-suite-new-hotels": [
+    {
+      "name": "New Hotel Marketing",
+      "parent": "Development"
+    }
+  ],
+  "00018-local-marketing-support-suite-website": [
+    {
+      "name": "Website & Digital Presence",
+      "parent": "Marketing"
+    },
+    {
+      "name": "Online Marketing",
+      "parent": "Marketing"
+    }
+  ],
+  "00018-local-marketing-support-suite-website-vanity-sites": [
+    {
+      "name": "Website & Digital Presence",
+      "parent": "Marketing"
+    }
+  ]
+}
